@@ -1,10 +1,20 @@
+##
+## Makefile for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
+##
+## Made by Hugo Laloge
+## Login   <laloge_h@epitech.net>
+##
+## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
+## Last update Wed May 27 07:50:16 2015 Hugo Laloge
+##
 
 NAME	=	my_pokemon
 
-SRCS	=	src/main.cpp						\
-		src/game/PokemonModele/PokemonModele.cpp
+include	sources.mk
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+DEPS	=	$(SRCS:.cpp=.d)
 
 LIBS	=
 
@@ -44,7 +54,7 @@ endif
 
 clean:		cleanlib
 		@echo "\033[33;32m=== Suppresion des fichiers objets\033[33;39m"
-		$(RM) $(OBJS)
+		$(RM) $(OBJS) $(DEPS)
 
 fclean:		fcleanlib clean
 		@echo "\033[33;32m=== Suppression de l'executable\033[33;39m"
@@ -55,7 +65,6 @@ re:		fclean all
 ## Compilation de la lib
 
 lib:
-		@echo "\033[33;32m=== Compilation des libs\033[33;39m"
 		$(foreach LIB, $(LIBS), @$(MAKE) -sC lib/$(LIB) all CLANG=$(CLANG) DEBUG=$(DEBUG);)
 
 cleanlib:
@@ -67,4 +76,13 @@ fcleanlib:
 relib:
 		$(foreach LIB, $(LIBS), @$(MAKE) -sC lib/$(LIB) re CLANG=$(CLANG) DEBUG=$(DEBUG);)
 
-.PHONY:		all clean fclean re lib cleanlib fcleanlib relib
+## Regles speciales
+
+%.o:	%.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	@$(CXX) $(CXXFLAGS) -MM -o $*.d $<
+	@sed -i -e 's|.*:|$*.o:|' $*.d
+
+-include $(DEPS)
+
+.PHONY:	all clean fclean re lib cleanlib fcleanlib relib
