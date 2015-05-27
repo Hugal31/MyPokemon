@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Tue May 26 16:08:54 2015 Hugo Laloge
+** Last update Tue May 26 19:25:56 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -13,6 +13,7 @@
 
 # include	<iostream>
 # include	<string>
+# include	"Stat.hpp"
 
 namespace game
 {
@@ -20,6 +21,8 @@ namespace game
   {
     const unsigned int	_id;
     std::string		_name;
+
+    /* Stats */
 
   public:
     /* Constructeur */
