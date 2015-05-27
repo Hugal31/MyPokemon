@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Wed May 27 07:56:31 2015 Hugo Laloge
+** Last update Wed May 27 21:17:57 2015 Hugo Laloge
 */
 
 #include	<ostream>

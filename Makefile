@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Wed May 27 07:50:16 2015 Hugo Laloge
+## Last update Wed May 27 22:00:44 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -18,14 +18,18 @@ DEPS	=	$(SRCS:.cpp=.d)
 
 LIBS	=
 
-INCLUDE	=	-I include/	\
-		$(foreach LIB, $(LIBS), -I lib/$(LIB)/include/)
+INCLUDE	=	$(foreach LIB, $(LIBS), -I lib/$(LIB)/include/)		\
+		-I include/						\
+		-I /usr/local/lib/boost_1_58_0/include/			\
 
 RM	=	rm -f
 
+CXXFLAGS	+=	-std=c++11
 CXXFLAGS	+=	$(INCLUDE)
 
-LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))
+LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
+		-L/usr/local/lib/boost_1_58_0/lib			\
+		-lboost_program_options
 
 CLANG	?=	0
 
