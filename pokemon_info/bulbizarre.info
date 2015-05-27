@@ -1,0 +1,71 @@
+Nom français	Bulbizarre
+Nom anglais	Bulbasaur
+Nom japonais	Fushigidane
+Taille		0.7 m
+Poids		6.9 kg
+Expérience max	1059860
+Espèce	   	Graine
+Numéro National	#001
+Numéro Sinnoh	-
+Type 1 		PLANTE
+Type 2		POISON
+Taux de capture	45
+Genre		M : 87.5% F : 12,5%
+
+Resum
+La graine sur le dos de Bulbizarre est une réserve de nutriments. Il la fait doucement pousser en absorbant les rayons du soleil, et emmagasine de l'énergie dedans en vue de son évolution. S'il dépense trop souvent son énergie, il n'évoluera pas car l'ouverture de son bulbe dépend de ses réserves de nutriments.
+
+PV	45	295
+ATK	49	197
+DEF	49	197
+SPA	65	229
+SPD	65	229
+SPE	45	189
+
+Attaque		RSE	RFVF	DP
+Charge		1	1	1
+Rugissement	4	4	3
+Vampigraine	7	7	7
+Fouet Lianes	10	10	9
+Poudre Dodo	15	15	13
+Poudre Toxik	15	15	13
+Belier 		-	-	15
+Tranch'Herbe	20	20	19
+Doux Parfum	25	25	21
+Damocles	-	-	27
+Croissance	32	32	25
+Soucigraine	-	-	31
+Synthese	39	39	33
+Canon Graine	-	-	37
+Lance-Soleil	46	46	-
+
+CT/CS
+Attaque		RSERFVF	DP
+Coupe		CS 01	CS 01
+Force		CS 04	CS 04
+Flash		CS 05	CT 70
+Eclate-Roc 	CS 06   CS 06
+Toxik	   	CT 06   CT 06
+Balle Graine  	CT 09   CT 09
+Puis. Cachee  	CT 10   CT 10
+Zenith	      	CT 11   CT 11
+Abri	      	CT 17   CT 17
+Giga-Sangsue  	CT 19   CT 19
+Frustration   	CT 21   CT 21
+Lance-Soleil  	CT 22   CT 22
+Retour	      	CT 27   CT 27
+Reflet	      	CT 32   CT 32
+Bomb-Beurk    	CT 36   CT 36
+Facade	      	CT 42   CT 42
+Force Cachee  	CT 43   CT 43
+Repos 		CT 44   CT 44
+Attraction    	CT 45	CT 45
+Eco-Sphere    	-	CT 53
+Tenacite      	-	CT 58
+Danse-Lames   	-	CT 75
+Seduction     	-	CT 78
+Blabla Dodo   	-	CT 82
+Don naturel   	-	CT 83
+Noeud Herbe   	-	CT 86
+Vantardise    	-	CT 87
+Clonage   	-	CT 90
