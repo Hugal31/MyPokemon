@@ -32,7 +32,6 @@
 
 // Raccourcis pour les fonctionnalités du parseur d'argument de boost
 namespace po = boost::program_options;
-namespace ed = boost::exception_detail;
 
 int				main(int argc, char **argv)
 {
