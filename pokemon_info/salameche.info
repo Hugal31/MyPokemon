@@ -1,0 +1,75 @@
+Nom français	Salameche
+Nom anglais	Charmander
+Nom japonais	Hitokage
+Taille		0.6 m
+Poids		8.5 kg
+Expérience max	1059860
+Espèce	    	Lézard
+Numéro National	#004
+Numéro Sinnoh	-
+Type 1 		6	FEU
+Type 2		-1	AUCUN
+Taux de capture	45
+Genre		M : 87.5%	F : 12,5%
+
+Resum
+De récentes études prouvent que la flamme qui brûle sur la queue de Salamèche indique son état de santé, mais aussi son caractère. S'il se sent faible, la flamme sera toute petite. Et si par malheur sa flamme s'éteint, il meurt, car c'est le seul moyen pour lui de se refroidir.
+
+PV 	    39	   282
+ATK	    52	   203
+DEF	    43	   185
+SPA	    60	   219
+SPD	    50	   199
+SPE	    65	   229
+
+Attaque	       	RSE	RFVF	DP
+Griffe	       	1	1	1
+Rugissement   	1	1	1
+Flammeche     	7	7	7
+Griffe Acier  	-	13	-
+Brouillard    	13	19	10
+Frenesie      	19	-	-
+Grimace	      	25	25	19
+Crocs Feu     	-	-	25
+Lance-Flamme   	31	31	34
+Draco-Rage     	43	43	16
+Tranche	       	37	37	28
+Danseflamme    	49	49	37
+
+CT/CS
+Attaque		RSERFVF	DP
+Coupe		CS 01	CS 01
+Force		CS 04	CS 04
+Eclate-Roc 	CS 06   CS 06
+Mitra-Poing   	CT 01   CT 01
+Dracogriffe   	CT 02   CT 02
+Toxik	      	CT 06   CT 06
+Puis. Cachee  	CT 10   CT 10
+Zenith	      	CT 11   CT 11
+Abri	      	CT 17   CT 17
+Frustration   	CT 21   CT 21
+Queue De Fer  	CT 23   CT 23
+Retour	 	CT 27	CT 27
+Tunnel	 	CT 28	CT 28
+Casse-Brique	CT 31	CT 31
+Reflet		CT 32	CT 32
+Lance-Flamme	CT 35	CT 35
+Deflagration	CT 38	CT 38
+Tomberoche	-  	CT 39
+Aeropique	CT 40 	CT 40
+Facade		CT 42 	CT 42
+Force Cachee	CT 43 	CT 43
+Repos 		CT 44	CT 44
+Attraction	CT 45	CT 45
+Surchauffe	CT 50	CT 50
+Degommage	-  	CT 56
+Tenacite	-  	CT 58
+Feu Follet	-  	CT 61
+Griffe Ombre	-  	CT 65
+Danse-Lames	-  	CT 75
+Seduction	-  	CT 78
+Eboulement	-  	CT 80
+Blabla Dodo	-  	CT 82
+Don naturel	-  	CT 83
+Vantardise	-  	CT 87
+Clonage		-  	CT 90

@@ -1,0 +1,75 @@
+Nom français	Carapuce
+Nom anglais	Squirtle
+Nom japonais	Zenigame
+Taille		0.5 m
+Poids		9.0 kg
+Expérience max	1059860
+Espèce	   	Minitortue
+Numéro National	#007
+Numéro Sinnoh	-
+Type 1 		4	EAU
+Type 2 		-1	AUCUN
+Taux de capture	45
+Genre		M : 87.5%	F : 12,5%
+
+Resum
+Les bébés Carapuce sont extrêmement vulnérables à la naissance, car leur carapace est toute molle. C'est pourquoi ils boivent régulièrement une eau riche en minéraux. Elle devient ensuite dure comme de la pierre. S'il est menacé, il se réfugie à l'intérieur et envoie un jet d'eau à son agresseur.
+
+PV  	  44	   292
+ATK	  48	   195
+DEF	  65	   229
+SPA	  50	   199
+SPD	  64	   227
+SPE	  43	   185
+
+Attaque	  	   RSE	RFVF	DP
+Charge	  	   1	1	1
+Mimi-Queue	   4	4	4
+Ecume		   7	7	7
+Repli		   10	10	10
+Pistolet A O	   13	13	13
+Morsure	   	   18	18	16
+Tour Rapide	   23	23	19
+Vibraqua	   -	-	25
+Abri		   28	28	22
+Hydroqueue	   -	-	28
+Danse Pluie	   33	33	34
+Coud'Krane	   40	40	31
+Hydrocanon	   47	47	37
+
+CT/CS
+Attaque		RSERFVF	DP
+Surf		CS 03	CS 03
+Force		CS 04	CS 04
+Eclate-Roc 	CS 06   CS 06
+Cascade	   	CS 07   CS 07
+Plongee	   	CS 08   -
+Mitra-Poing   	CT 01	CT 01
+Vibraqua      	CT 03	CT 03
+Toxik	      	CT 06	CT 06
+Grele	      	CT 07	CT 07
+Puis. Cachee  	CT 10	CT 10
+Laser Glace   	CT 13	CT 13
+Blizzard      	CT 14	CT 14
+Abri	      	CT 17	CT 17
+Danse Pluie   	CT 18	CT 18
+Frustration   	CT 21	CT 21
+Queue De Fer  	CT 23	CT 23
+Retour	 	CT 27	CT 27
+Tunnel	 	CT 28	CT 28
+Casse-Brique	CT 31	CT 31
+Reflet		CT 32	CT 32
+Tomberoche	-  	CT 39
+Facade		CT 42 	CT 42
+Force Cachee	CT 43 	CT 43
+Repos 		CT 44	CT 44
+Attraction	CT 45	CT 45
+Saumure		-  	CT 55
+Degommage	-  	CT 56
+Tenacite	-  	CT 58
+Gyroballe	-  	CT 74
+Seduction	-  	CT 78
+Blabla Dodo	-  	CT 82
+Don naturel	-  	CT 83
+Vantardise	-  	CT 87
+Clonage		-  	CT 90

@@ -1,0 +1,70 @@
+Nom français	Herbizarre
+Nom anglais	Ivysaur
+Nom japonais	Fushigisou
+Taille		1.0 m
+Poids		13.0 kg
+Expérience max	1059860
+Espèce	   	Graine
+Numéro National	#002
+Numéro Sinnoh	-
+Type 1 		PLANTE
+Type 2		POISO?
+Taux de capture	45
+Genre	 	M : 87.5%	F : 12,5%
+
+Resum
+Le bulbe sur le dos de Herbizarre a éclos, dévoilant ainsi une fleur fermée. Plus il passe de temps au soleil, plus sa fleur se prépare à s'ouvrir, et quelques temps avant son évolution, il dégage une douce odeur fruitée. Attention à ses Tranch'herbes et à ses Fouets lianes.
+
+PV 	 60  	324
+ATK	 62	223
+DEF	 63	225
+SPA	 80	259
+SPD	 80	259
+SPE	 60	219
+
+Attaque	 	RSE	RFVF	DP
+Charge		1	1	1
+Rugissement	4	4	3
+Vampigraine	7	7	7
+Fouet Lianes	10	10	9
+Poudre Dodo	15	15	13
+Poudre Toxik	15	15	13
+Belier 		-	-	15
+Tranch'Herbe	22	22	20
+Doux Parfum	29	29	23
+Damocles	-	-	31
+Croissance	38	38	28
+Soucigraine	-	-	36
+Synthese	47	47	39
+Lance-Soleil	56	56	44
+
+CT/CS
+Attaque		RSERFVF	DP
+Coupe		CS 01	CS 01
+Force		CS 04	CS 04
+Flash		CS 05	CT 70
+Eclate-Roc 	CS 06   CS 06
+Toxik	   	CT 06   CT 06
+Balle Graine  	CT 09   CT 09
+Puis. Cachee  	CT 10   CT 10
+Zenith	      	CT 11   CT 11
+Abri	      	CT 17   CT 17
+Giga-Sangsue  	CT 19   CT 19
+Frustration   	CT 21   CT 21
+Lance-Soleil  	CT 22   CT 22
+Retour	      	CT 27   CT 27
+Reflet	      	CT 32   CT 32
+Bomb-Beurk    	CT 36   CT 36
+Facade	      	CT 42   CT 42
+Force Cachee  	CT 43   CT 43
+Repos 		CT 44  	CT 44
+Attraction    	CT 45	CT 45
+Eco-Sphere    	-	CT 53
+Tenacite      	-	CT 58
+Danse-Lames   	-	CT 75
+Seduction     	-	CT 78
+Blabla Dodo   	-	CT 82
+Don naturel   	-	CT 83
+Noeud Herbe   	-	CT 86
+Vantardise    	-	CT 87
+Clonage	      	-	CT 90
