@@ -5,10 +5,11 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Thu May 28 09:23:26 2015 Hugo Laloge
+** Last update Thu May 28 09:49:42 2015 Hugo Laloge
 */
 
 #include	<string>
+#include	<fstream>
 #include	<iostream>
 #include	<s11n.net/readline/Readline.hpp>
 #include	<s11n.net/shellish/shellish.hpp>
@@ -50,7 +51,14 @@ namespace
 
   int	open_poke_handler(const shellish::arguments &args)
   {
-    (void)args;
+    new_pokemon_modele_from_id(0);
+
+    {
+      ifstream	file("file.poke");
+
+      boost::archive::text_iarchive	ia(file);
+      ia >> *target;
+    }
     return (0);
   }
 
@@ -88,9 +96,19 @@ namespace
 
   int	save_handler(const shellish::arguments &args)
   {
-    int	ret(0);
+    int	ret(-1);
 
     (void)args;
+    if (target == NULL)
+      ;
+    else
+      {
+	ofstream	file("file.poke");
+
+	boost::archive::text_oarchive	oa(file);
+	oa << *target;
+	ret = 0;
+      }
     return (ret);
   }
 

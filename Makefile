@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Thu May 28 08:44:07 2015 Hugo Laloge
+## Last update Thu May 28 09:42:13 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -31,12 +31,15 @@ LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
 		-lncurses						\
 		-lboost_program_options					\
+		-lboost_serialization					\
 		$(shell pkg-config --libs libreadline_cpp)		\
 		$(shell pkg-config --libs libshellish)			\
 
 CLANG	?=	0
 
 DEBUG	?=	0
+
+WERROR	?=	0
 
 ifeq ($(CLANG), 1)
 	CXX	=	clang++
@@ -49,6 +52,10 @@ endif
 
 ifeq	($(DEBUG), 1)
 	CXXFLAGS	+=	-g -DDEBUG=1
+endif
+
+ifeq	($(WERROR), 1)
+	CXXFLAGS	+=	-Werror
 endif
 
 all:		lib $(NAME)
