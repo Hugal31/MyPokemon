@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Thu May 28 09:49:42 2015 Hugo Laloge
+** Last update Thu May 28 20:54:45 2015 Hugo Laloge
 */
 
 #include	<string>
@@ -51,8 +51,8 @@ namespace
 
   int	open_poke_handler(const shellish::arguments &args)
   {
+    (void)args;
     new_pokemon_modele_from_id(0);
-
     {
       ifstream	file("file.poke");
 

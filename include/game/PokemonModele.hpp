@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Thu May 28 09:50:31 2015 Hugo Laloge
+** Last update Thu May 28 20:53:47 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -22,6 +22,9 @@
 # pragma clang diagnostic ignored "-Wundef"
 # pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 # pragma clang diagnostic ignored "-Wdeprecated"
+# pragma clang diagnostic ignored "-Wglobal-constructors"
+# pragma clang diagnostic ignored "-Wexit-time-destructors"
+# pragma clang diagnostic ignored "-Wdivision-by-zero"
 
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
