@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Wed May 27 22:00:44 2015 Hugo Laloge
+## Last update Thu May 28 08:04:37 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -29,7 +29,9 @@ CXXFLAGS	+=	$(INCLUDE)
 
 LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
-		-lboost_program_options
+		-lboost_program_options					\
+		-lreadline_cpp						\
+		-lncurses						\
 
 CLANG	?=	0
 
