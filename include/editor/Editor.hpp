@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:27:04 2015 Hugo Laloge
-** Last update Wed May 27 23:30:51 2015 Hugo Laloge
+** Last update Thu May 28 21:01:25 2015 Hugo Laloge
 */
 
 #ifndef		EDITOR_HPP_
@@ -16,7 +16,7 @@ namespace	editor
   class		Editor
   {
   public:
-    Editor();
+    static void	do_prompt();
   };
 }
 

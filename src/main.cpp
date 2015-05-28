@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:55:50 2015 Hugo Laloge
-** Last update Thu May 28 20:52:20 2015 Hugo Laloge
+** Last update Thu May 28 21:01:10 2015 Hugo Laloge
 */
 
 #include	<exception>
@@ -52,7 +52,7 @@ int				main(int argc, char **argv)
       if (vm.count("help"))
 	std::cout << desc << std::endl;
       else if (vm.count("editor"))
-	editor::Editor();
+	editor::Editor::do_prompt();
     }
   catch (const std::exception &e)
     {

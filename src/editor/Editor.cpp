@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Thu May 28 20:54:45 2015 Hugo Laloge
+** Last update Thu May 28 21:01:44 2015 Hugo Laloge
 */
 
 #include	<string>
@@ -114,7 +114,7 @@ namespace
 
 }
 
-Editor::Editor()
+void	Editor::do_prompt()
 {
   readlinecpp::Readline	line_editor;
 

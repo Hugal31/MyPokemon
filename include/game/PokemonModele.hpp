@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Thu May 28 20:53:47 2015 Hugo Laloge
+** Last update Thu May 28 20:58:56 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -32,7 +32,6 @@
 # pragma clang diagnostic pop
 
 # include	"Stat.hpp"
-
 
 namespace game
 {
@@ -69,5 +68,7 @@ namespace game
 
   std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);
 }
+
+BOOST_CLASS_VERSION(game::PokemonModele, 0)
 
 #endif		/* !POKEMON_MODELE_HPP_ */
