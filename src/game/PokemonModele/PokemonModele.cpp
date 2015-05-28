@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Wed May 27 21:17:57 2015 Hugo Laloge
+** Last update Thu May 28 09:14:06 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -31,6 +31,15 @@ unsigned int	PokemonModele::get_id() const
 const std::string	&PokemonModele::get_name() const
 {
   return (_name);
+}
+
+/*
+** Asseteurs
+*/
+
+void	PokemonModele::set_name(const std::string &name)
+{
+  _name = name;
 }
 
 /*

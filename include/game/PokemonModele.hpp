@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Wed May 27 21:11:00 2015 Hugo Laloge
+** Last update Thu May 28 09:14:39 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -47,6 +47,9 @@ namespace game
     /* Accesseurs */
     unsigned int	get_id() const;
     const std::string	&get_name() const;
+
+    /* Assesseurs */
+    void	        set_name(const std::string &name);
   };
 
   std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);
