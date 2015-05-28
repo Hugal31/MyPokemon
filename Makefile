@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Thu May 28 08:04:37 2015 Hugo Laloge
+## Last update Thu May 28 08:44:07 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -29,9 +29,10 @@ CXXFLAGS	+=	$(INCLUDE)
 
 LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
-		-lboost_program_options					\
-		-lreadline_cpp						\
 		-lncurses						\
+		-lboost_program_options					\
+		$(shell pkg-config --libs libreadline_cpp)		\
+		$(shell pkg-config --libs libshellish)			\
 
 CLANG	?=	0
 
