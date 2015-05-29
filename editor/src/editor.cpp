@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Fri May 29 17:25:29 2015 Hugo Laloge
+** Last update Fri May 29 18:15:00 2015 Hugo Laloge
 */
 
 #include	<string>
@@ -42,23 +42,37 @@ namespace
       {
 	unsigned int	id;
 
-	id = (unsigned int)stoi(args[1]);
-	new_pokemon_modele_from_id(id);
-	cout << *target;
+	try {
+	  id = (unsigned int)stoi(args[1]);
+	  new_pokemon_modele_from_id(id);
+	  cout << *target;
+	} catch (invalid_argument) {
+	  cerr << "invalid argument" << endl;
+	}
       }
     return (0);
   }
 
   int	open_poke_handler(const shellish::arguments &args)
   {
-    (void)args;
-    new_pokemon_modele_from_id(0);
-    {
-      ifstream	file("file.poke");
+    if (args.argc() != 2)
+      cerr << "usage :" << endl << "open <id>" << endl;
+    else
+      {
+	try {
+	  size_t		idx;
+	  unsigned int	id((unsigned int)stoi(args[1], &idx));
+	  if (args[1].c_str()[idx] != '\0')
+	    throw (invalid_argument("stoi"));
+	  ifstream	file(args[1] + ".poke");
 
-      boost::archive::text_iarchive	ia(file);
-      ia >> *target;
-    }
+	  new_pokemon_modele_from_id(id);
+	  boost::archive::text_iarchive	ia(file);
+	  ia >> *target;
+	} catch (invalid_argument) {
+	  cerr << "invalid argument" << endl;
+	}
+      }
     return (0);
   }
 
@@ -85,7 +99,7 @@ namespace
 
     (void)args;
     if (target == NULL)
-      cerr << "No pokemon selected" << endl;
+      cerr << "no pokemon selected" << endl;
     else
       {
 	cout << *target;
@@ -98,12 +112,13 @@ namespace
   {
     int	ret(-1);
 
-    (void)args;
-    if (target == NULL)
-      ;
+    if (args.argc() != 1)
+      cerr << "save doesn't need argument" << endl;
+    else if (target == NULL)
+      cerr << "no pokemon selected" << endl;
     else
       {
-	ofstream	file("file.poke");
+	ofstream	file(to_string(target->get_id()) + ".poke");
 
 	boost::archive::text_oarchive	oa(file);
 	oa << *target;
