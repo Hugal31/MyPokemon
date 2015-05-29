@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Thu May 28 09:42:13 2015 Hugo Laloge
+## Last update Fri May 29 13:36:48 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -58,7 +58,7 @@ ifeq	($(WERROR), 1)
 	CXXFLAGS	+=	-Werror
 endif
 
-all:		lib $(NAME)
+all:		lib $(DEPS) $(NAME)
 
 $(NAME):	$(OBJS)
 		$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
@@ -90,13 +90,14 @@ fcleanlib:
 relib:
 		$(foreach LIB, $(LIBS), @$(MAKE) -sC lib/$(LIB) re CLANG=$(CLANG) DEBUG=$(DEBUG);)
 
+depends:	$(DEPS)
+
 ## Regles speciales
 
-%.o:	%.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	@$(CXX) $(CXXFLAGS) -MM -o $*.d $<
-	@sed -i -e 's|.*:|$*.o:|' $*.d
+%.d:	%.cpp
+	@$(CXX) $(CXXFLAGS) -MM -o $@ $<
+	@sed -i -e 's|.*:|$*.o:|' $@
 
 -include $(DEPS)
 
-.PHONY:	all clean fclean re lib cleanlib fcleanlib relib
+.PHONY:	all clean fclean re lib cleanlib fcleanlib relib depends
