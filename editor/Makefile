@@ -5,10 +5,10 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Fri May 29 17:25:42 2015 Hugo Laloge
+## Last update Fri May 29 16:32:30 2015 Hugo Laloge
 ##
 
-NAME	=	my_pokemon
+NAME	=	editor
 
 include	sources.mk
 
@@ -19,17 +19,21 @@ DEPS	=	$(SRCS:.cpp=.d)
 LIBS	=
 
 INCLUDE	=	$(foreach LIB, $(LIBS), -I lib/$(LIB)/include/)		\
-		-I include/						\
+		-I include						\
+		-I ../include						\
 		-I /usr/local/lib/boost_1_58_0/include/			\
 
 RM	=	rm -f
 
-CXXFLAGS	+=	-std=c++11
-CXXFLAGS	+=	$(INCLUDE)
+CXXFLAGS+=	-std=c++11
+CXXFLAGS+=	$(INCLUDE)
 
 LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
+		-lncurses						\
 		-lboost_serialization					\
+		$(shell pkg-config --libs libreadline_cpp)		\
+		$(shell pkg-config --libs libshellish)			\
 
 CLANG	?=	0
 
@@ -39,19 +43,19 @@ WERROR	?=	0
 
 ifeq ($(CLANG), 1)
 	CXX	=	clang++
-	CXXFLAGS	+=	-Weverything -Wno-padded
+	CXXFLAGS+=	-Weverything -Wno-padded
 else
 	CXX	=	g++
-	CXXFLAGS	+=	-W -Wextra -Wall
-	CXXFLAGS	+=	-ansi -pedantic
+	CXXFLAGS+=	-W -Wextra -Wall
+	CXXFLAGS+=	-ansi -pedantic
 endif
 
 ifeq	($(DEBUG), 1)
-	CXXFLAGS	+=	-g -DDEBUG=1
+	CXXFLAGS+=	-g -DDEBUG=1
 endif
 
 ifeq	($(WERROR), 1)
-	CXXFLAGS	+=	-Werror
+	CXXFLAGS+=	-Werror
 endif
 
 all:		lib $(DEPS) $(NAME)

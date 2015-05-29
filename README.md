@@ -21,6 +21,9 @@ Installation des dépendances
 
 Boost : ```sudo apt-get install libboost-all-dev```
 
+Pour l'editeur :
+----------------
+
 ncurses : ```sudo apt-get install libncurses5-dev```
 
 readline : ```sudo apt-get install libreadline-dev```
