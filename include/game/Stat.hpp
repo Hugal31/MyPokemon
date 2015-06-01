@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Wed May 27 07:56:54 2015 Hugo Laloge
+// Last update Fri May 29 15:36:10 2015 Hippolyte QUIEF
 */
 
 #ifndef		STAT_HPP_

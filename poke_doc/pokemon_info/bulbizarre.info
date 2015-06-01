@@ -7,18 +7,21 @@ Expérience max	1059860
 Espèce	   	Graine
 Numéro National	#001
 Numéro Sinnoh	-
-Type 1 		PLANTE
-Type 2		POISON
+Type 1 		10	PLANTE
+Type 2		11	POISON
 Taux de capture	45
 Genre		M : 87.5% F : 12,5%
 
 Resum
 La graine sur le dos de Bulbizarre est une réserve de nutriments. Il la fait doucement pousser en absorbant les rayons du soleil, et emmagasine de l'énergie dedans en vue de son évolution. S'il dépense trop souvent son énergie, il n'évoluera pas car l'ouverture de son bulbe dépend de ses réserves de nutriments.
 
+Capacités spéciales
+Engrais : Donne un bonus mulitiplicateur de X1.5 aux attaques plante lorsque les PV de ce Pokémon sont inférieurs à 1/3.
+
 PV	45	295
 ATK	49	197
 DEF	49	197
-SPA	65	229
+SPA	65	229	+1
 SPD	65	229
 SPE	45	189
 

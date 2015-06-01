@@ -7,19 +7,22 @@ Expérience max	1059860
 Espèce	   	Graine
 Numéro National	#002
 Numéro Sinnoh	-
-Type 1 		PLANTE
-Type 2		POISO?
+Type 1 		10	PLANTE
+Type 2		11	POISON
 Taux de capture	45
 Genre	 	M : 87.5%	F : 12,5%
 
 Resum
 Le bulbe sur le dos de Herbizarre a éclos, dévoilant ainsi une fleur fermée. Plus il passe de temps au soleil, plus sa fleur se prépare à s'ouvrir, et quelques temps avant son évolution, il dégage une douce odeur fruitée. Attention à ses Tranch'herbes et à ses Fouets lianes.
 
+Capacités spéciales
+Engrais : Donne un bonus mulitiplicateur de X1.5 aux attaques plante lorsque les PV de ce Pokémon sont inférieurs à 1/3.
+
 PV 	 60  	324
 ATK	 62	223
 DEF	 63	225
-SPA	 80	259
-SPD	 80	259
+SPA	 80	259	+1
+SPD	 80	259	+1
 SPE	 60	219
 
 Attaque	 	RSE	RFVF	DP

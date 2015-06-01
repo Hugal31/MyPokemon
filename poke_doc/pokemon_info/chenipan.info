@@ -1,0 +1,32 @@
+Nom français	Chenipan
+Nom anglais	Caterpie
+Nom japonais	Catapie
+Taille		0.3 m
+Poids		2.9 kg
+Expérience max	1000000
+Espèce	   	Ver
+Numéro National	#010
+Numéro Sinnoh	-
+Type 1		8	INSECT
+Type 2		-1
+Taux de capture	255
+Genre		M : 50.0%	F : 50%
+
+Resum
+S'il paraît mignon, les antennes rouges de Chenipan dégagent en revanche une odeur proche de la moisissure. Les ventouses sur ses pattes lui permettent de grimper partout. Les agriculteurs le considèrent comme nuisible, car il a un appétit d'ogre : un seul Chenipan peut manger toutes les feuilles d'un arbre en quelques jours.
+
+Capacités spéciales
+Ecran poudre : Empêche le cumul d'effets.
+
+HP    45
+ATK   30
+DEF   35
+SPA   20
+SPD   20
+SPE   45
+
+Attaque	     RSE       RFVF	DP
+Charge	     1	       1	1
+Secretion    1	       1	1
+
+Pas de CT/CS

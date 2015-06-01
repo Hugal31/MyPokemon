@@ -15,9 +15,12 @@ Genre		M : 87.5%	F : 12,5%
 Resum
 Les bébés Carapuce sont extrêmement vulnérables à la naissance, car leur carapace est toute molle. C'est pourquoi ils boivent régulièrement une eau riche en minéraux. Elle devient ensuite dure comme de la pierre. S'il est menacé, il se réfugie à l'intérieur et envoie un jet d'eau à son agresseur.
 
+Capacités spéciales
+Torrent : Donne un bonus mulitiplicateur de X1.5 aux attaques eau lorsque les PV de ce Pokémon sont inférieurs à 1/3.
+
 PV  	  44	   292
 ATK	  48	   195
-DEF	  65	   229
+DEF	  65	   229	+1
 SPA	  50	   199
 SPD	  64	   227
 SPE	  43	   185
