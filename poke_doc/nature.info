@@ -1,0 +1,27 @@
+
+Nature	Anglais	Japonais	Attaque	Défense	Attaque spéciale	Défense spéciale	Vitesse
+Assuré	Bold	ずぶとい	-10%	+10%	-	-		-
+Bizarre	Quirky	きまぐれ	-	-	-	-		-
+Brave	Brave	ゆうかん	+10%	-	-	-		-10%
+Calme	Calm	おだやか	-10%	-	-	+10%		-
+Discret	Quiet	れいせい	-	-	+10%	-		-10%
+Docile	Docile	すなお		-	-	-	-		-
+Doux	Mild	おっとり	-	-10%	+10%	-		-
+Foufou	Rash	うっかりや	-	-	+10%	-10%		-
+Gentil	Gentle	おとなしい	-	-10%	-	+10%		-
+Hardi	Hardy	がんばりや	-	-	-	-		-
+Jovial	Jolly	ようき		-	-	-10%	-		+10%
+Lâche	Lax	のうてんき	-	+10%	-	-10%		-
+Malin	Impish	わんぱく	-	+10%	-10%	-		-
+Malpoli	Sassy	なまいき	-	-	-	+10%		-10%
+Mauvais	Naughty	やんちゃ	+10%	-	-	-10%		-
+Modeste	Modest	ひかえめ	-10%	-	+10%	-		-
+Naïf	Naive	むじゃき	-	-	-	-10%		+10%
+Pressé	Hasty	せかつち	-	-10%	-	-		+10%
+Prudent	Careful	しんちょう	-	-	-10%	+10%		-
+Pudique	Bashful	てれや		-	-	-	-		-
+Relax	Relaxed	のんき		-	+10%	-	-		-10%
+Rigide	Adamant	いじっぱり	+10%	-	-10%	-		-
+Sérieux	Serious	まじめ		-	-	-	-		-
+Solo	Lonely	さみしがり	+10%	-10%	-	-		-
+Timide	Timid	おくびょう	-10%	-	-	-		+10%
