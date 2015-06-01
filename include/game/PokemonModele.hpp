@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun  1 13:29:17 2015 Hugo Laloge
+** Last update Mon Jun  1 16:34:15 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -32,7 +32,7 @@
 # pragma clang diagnostic pop
 
 # include	"Type.hpp"
-# include	"Stat.hpp"
+# include	"StatModele.hpp"
 
 namespace game
 {
@@ -41,18 +41,25 @@ namespace game
   private:
     friend class	boost::serialization::access;
 
-    unsigned int	_id;
     std::string		_name;
-    Type		_types[];
+    std::string		_species;
+    std::string		_resum;
+    Type		_types[2];
+    unsigned int	_id;
+    unsigned int	_max_xp;
+    unsigned short int	_heigth;
+    unsigned short int	_weigth;
+    unsigned short int	_catch_rate;
+    unsigned short int	_gender_rate;
 
     /* Stats */
 
-    game::StatModele	hp;
-    game::StatModele	atk;
-    game::StatModele	def;
-    game::StatModele	spa;
-    game::StatModele	spd;
-    game::StatModele	spe;
+    game::StatModele	_hp;
+    game::StatModele	_atk;
+    game::StatModele	_def;
+    game::StatModele	_spa;
+    game::StatModele	_spd;
+    game::StatModele	_spe;
 
     /* Serialisation */
 
@@ -62,10 +69,22 @@ namespace game
       (void)version;
       ar & _id;
       ar & _name;
+      ar & _species;
+      ar & _types;
+      ar & _max_xp;
+      ar & _heigth;
+      ar & _weigth;
+      ar & _catch_rate;
+      ar & _gender_rate;
+      ar & _hp;
+      ar & _atk;
+      ar & _def;
+      ar & _spa;
+      ar & _spd;
+      ar & _spe;
     }
 
   public:
-
     /* Constructeur */
     PokemonModele(unsigned int id);
 

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Fri May 29 18:41:30 2015 Hugo Laloge
+** Last update Mon Jun  1 16:11:10 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
@@ -30,18 +30,18 @@
 
 # pragma clang diagnostic pop
 
-# include	"Stat.hpp"
-
-enum	e_type
-  {
-    NORMAL
-  };
-
 namespace	game
 {
+  enum	e_type
+    {
+      TYPE_NONE,
+      TYPE_NORMAL
+    };
+
   class		Type
   {
   private:
+    friend class	boost::serialization::access;
     e_type	_value;
 
     /* Serialisation */
@@ -53,8 +53,14 @@ namespace	game
     }
 
   public:
+    Type();
     Type(e_type value);
+
+    /* Accesseur */
     e_type	get_value() const;
+
+    /* Assesseur*/
+    void	set_value(e_type type);
 
     static std::string	names;
   };

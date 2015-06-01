@@ -30,6 +30,7 @@
 *.out
 *.app
 my_pokemon
+editor/editor
 
 # Temporary files
 *~

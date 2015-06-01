@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Wed May 27 07:56:07 2015 Hugo Laloge
+** Last update Mon Jun  1 16:19:43 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -13,17 +13,31 @@
 
 using namespace	game;
 
-Stat::Stat()
+Stat::Stat(bool is_hp) :
+  StatModele(is_hp)
 {
-  (void)_value;
+
 }
 
 /*
-** Surcharges d'operateur externes
+** Accesseurs
+**
+** @TODO : Rajouter la nature
 */
 
-std::ostream	&game::operator<<(std::ostream &os, const Stat &stat)
+unsigned int	Stat::get_value_other(unsigned int level) const
 {
-  os << "Value : " << stat << std::endl;
-  return (os);
+  return (((((_iv + (2 * _stat_base) + (_ev / 4) * level) / 100 + 5))));
+}
+
+unsigned int	Stat::get_value_hp() const
+{
+  return (((_iv + (2 * _stat_base) + (_ev / 4) + 100) / 100) + 10);
+}
+
+void	Stat::display(std::ostream &os) const
+{
+  os << "Base :\t" << _stat_base << std::endl
+     << "EV :\t" << _ev << std::endl
+     << "IV :\t" << _iv << std::endl;
 }
