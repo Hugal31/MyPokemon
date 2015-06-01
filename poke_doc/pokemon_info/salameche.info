@@ -15,12 +15,15 @@ Genre		M : 87.5%	F : 12,5%
 Resum
 De récentes études prouvent que la flamme qui brûle sur la queue de Salamèche indique son état de santé, mais aussi son caractère. S'il se sent faible, la flamme sera toute petite. Et si par malheur sa flamme s'éteint, il meurt, car c'est le seul moyen pour lui de se refroidir.
 
+Capacités spéciales
+Brasier : Donne un bonus mulitiplicateur de X1.5 aux attaques feu lorsque les PV de ce Pokémon sont inférieurs à 1/3.
+
 PV 	    39	   282
 ATK	    52	   203
 DEF	    43	   185
 SPA	    60	   219
 SPD	    50	   199
-SPE	    65	   229
+SPE	    65	   229	+1
 
 Attaque	       	RSE	RFVF	DP
 Griffe	       	1	1	1

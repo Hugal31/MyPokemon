@@ -1,0 +1,70 @@
+Nom français	Roucool
+Nom anglais	Pidgey
+Nom japonais	Poppo
+Taille		0.3 m
+Poids		1.8 kg
+Expérience max	1059860
+Espèce	   	Minoiseau
+Numéro National	#016
+Numéro Sinnoh	-
+Type 1 		9	NORMAL
+Type 2		17	VOL
+Taux de capture	255
+Genre		M : 50.0% F : 50%
+
+Resum
+Les Roucool vivent principalement en forêt. Si l'un d'eux est obligé de se battre, il envoie du sable en battant des ailes. Il possède un sens de l'orientation extraordinaire car il parvient toujours à retrouver son nid, où qu'il soit. Avant l'existence du téléphone, on les utilisait comme messagers.
+
+Capacités spéciales
+Regard vif : Empêche perte de précision
+
+PV     40
+ATK    45
+DEF    40
+SPA    35
+SPD    35
+SPE    56
+
+Attaque		     RSE   RFVF	   DP
+Charge	   	     1	   1	   1
+Jet De Sable	     5	   5	   5
+Tornade		     9	   9	   9
+Vive-Attaque	     13	   13	   13
+Cyclone		     19	   19	   17
+Ouragan		     -	   -	   21
+Cru-Aile	     25	   25	   33
+Danse-Plume	     31	   31	   25
+Hâte		     39	   39	   29
+Atterrissage	     -	   -	   37
+Vent Arriere	     -	   -	   41
+Mimique		     47	   47	   45
+Lame d'Air	     -	   -	   49
+
+CT/CS
+Attaque		RSERFVF	DP
+Vol		CS 02	CS 02
+Anti-Brume 	-	CS 05
+Toxik	   	CT 06   CT 06
+Puis. Cachee  	CT 10   CT 10
+Zenith	      	CT 11   CT 11
+Abri	      	CT 17   CT 17
+Danse Pluie   	CT 18   CT 18
+Frustration   	CT 21   CT 21
+Retour	      	CT 27   CT 27
+Reflet	      	CT 32   CT 32
+Aeropique     	CT 40   CT 40
+Facade	      	CT 42   CT 42
+Force Cachee  	CT 43   CT 43
+Repos CT 44   	CT 44
+Attraction    	CT 45	CT 45
+Larcin	      	CT 46	CT 46
+Aile D'Acier  	CT 47	CT 47
+Atterrissage  	-	 CT 51
+Tenacite      	-	 CT 58
+Seduction     	-	 CT 78
+Blabla Dodo   	-	 CT 82
+Don naturel   	-	 CT 83
+Vantardise    	-	 CT 87
+Picore	      	-	 CT 88
+Demi-Tour     	-	 CT 89
+Clonage	      	-	 CT 90

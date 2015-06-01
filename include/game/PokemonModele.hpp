@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Fri May 29 18:48:08 2015 Hugo Laloge
+** Last update Mon Jun  1 13:29:17 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -47,7 +47,15 @@ namespace game
 
     /* Stats */
 
+    game::StatModele	hp;
+    game::StatModele	atk;
+    game::StatModele	def;
+    game::StatModele	spa;
+    game::StatModele	spd;
+    game::StatModele	spe;
+
     /* Serialisation */
+
     template<class Archive>
     void		serialize(Archive &ar, const unsigned int version)
     {
@@ -57,6 +65,7 @@ namespace game
     }
 
   public:
+
     /* Constructeur */
     PokemonModele(unsigned int id);
 
