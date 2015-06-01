@@ -1,0 +1,38 @@
+BUG
+DARK
+DRAGON
+ELECTR
+FIGHT
+FIRE
+FLYING
+GHOST
+GRASS
+GROUND
+ICE
+NORMAL
+POISON
+PSYCHIC
+ROCK
+STEEL
+WATER
+
+		Defending Type
+ATK Type	Normal	Fighting	Flying	Poison	Ground	Rock	Bug	Ghost	Steel	Fire	Water	Grass	Electric	Psychic	Ice	Dragon	Dark
+Normal		1×	1×		1×	1×	1×	0.5×	1×	0×	0.5×	1×	1×	1×	1×		1×	1×	1×	1×
+Fighting	2×	1×		0.5×	0.5×	1×	2×	0.5×	0×	2×	1×	1×	1×	1×		0.5×	2×	1×	2×
+Flying		1×	2×		1×	1×	1×	0.5×	2×	1×	0.5×	1×	1×	2×	0.5×		1×	1×	1×	1×
+Poison		1×	1×		1×	0.5×	0.5×	0.5×	1×	0.5×	0×	1×	1×	2×	1×		1×	1×	1×	1×
+Ground		1×	1×		0×	2×	1×	2×	0.5×	1×	2×	2×	1×	0.5×	2×		1×	1×	1×	1×
+Rock		1×	0.5×		2×	1×	0.5×	1×	2×	1×	0.5×	2×	1×	1×	1×		1×	2×	1×	1×
+Bug		1×	0.5×		0.5×	0.5×	1×	1×	1×	0.5×	0.5×	0.5×	1×	2×	1×		2×	1×	1×	2×
+Ghost		0×	1×		1×	1×	1×	1×	1×	2×	0.5×	1×	1×	1×	1×		2×	1×	1×	0.5×
+Steel		1×	1×		1×	1×	1×	2×	1×	1×	0.5×	0.5×	0.5×	1×	0.5×		1×	2×	1×	1×
+Fire		1×	1×		1×	1×	1×	0.5×	2×	1×	2×	0.5×	0.5×	2×	1×		1×	2×	0.5×	1×
+Water		1×	1×		1×	1×	2×	2×	1×	1×	1×	2×	0.5×	0.5×	1×		1×	1×	0.5×	1×
+Grass		1×	1×		0.5×	0.5×	2×	2×	0.5×	1×	0.5×	0.5×	2×	0.5×	1×		1×	1×	0.5×	1×
+Electric	1×	1×		2×	1×	0×	1×	1×	1×	1×	1×	2×	0.5×	0.5×		1×	1×	0.5×	1×
+Psychic		1×	2×		1×	2×	1×	1×	1×	1×	0.5×	1×	1×	1×	1×		0.5×	1×	1×	0×
+Ice		1×	1×		2×	1×	2×	1×	1×	1×	0.5×	0.5×	0.5×	2×	1×		1×	0.5×	2×	1×
+Dragon		1×	1×		1×	1×	1×	1×	1×	1×	0.5×	1×	1×	1×	1×		1×	1×	2×	1×
+Dark		1×	0.5×		1×	1×	1×	1×	1×	2×	0.5×	1×	1×	1×	1×		2×	1×	1×	0.5×
+These matchups are suitable for Generation II to Generation V.
