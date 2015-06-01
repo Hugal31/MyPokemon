@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Mon Jun  1 16:11:10 2015 Hugo Laloge
+** Last update Mon Jun  1 17:35:45 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
@@ -35,7 +35,8 @@ namespace	game
   enum	e_type
     {
       TYPE_NONE,
-      TYPE_NORMAL
+      TYPE_NORMAL,
+      TYPE_FIGHT
     };
 
   class		Type
@@ -62,7 +63,7 @@ namespace	game
     /* Assesseur*/
     void	set_value(e_type type);
 
-    static std::string	names;
+    static std::string	names[];
   };
 
   std::ostream	&operator<<(std::ostream &os, const Type &type);

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun  1 17:09:49 2015 Hugo Laloge
+** Last update Mon Jun  1 17:48:17 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -52,14 +52,12 @@ namespace game
     unsigned short int	_catch_rate;
     unsigned short int	_gender_rate;
 
-    /* Stats */
-
-    game::StatModele	_hp;
-    game::StatModele	_atk;
-    game::StatModele	_def;
-    game::StatModele	_spa;
-    game::StatModele	_spd;
-    game::StatModele	_spe;
+    StatModele		_hp;
+    StatModele		_atk;
+    StatModele		_def;
+    StatModele		_spa;
+    StatModele		_spd;
+    StatModele		_spe;
 
     /* Serialisation */
 
@@ -92,16 +90,30 @@ namespace game
     const std::string	&get_name() const;
     const std::string	&get_species() const;
     const std::string	&get_resum() const;
-    const Type		*get_type();
+    const Type		*get_types() const;
     unsigned int	get_id() const;
     unsigned int	get_max_xp() const;
     unsigned short int	get_heigth() const;
     unsigned short int	get_weight() const;
     unsigned short int	get_catch_rate() const;
     unsigned short int	get_gender_rate() const;
+    const StatModele	&get_hp() const;
+    const StatModele	&get_atk() const;
+    const StatModele	&get_def() const;
+    const StatModele	&get_spa() const;
+    const StatModele	&get_spd() const;
+    const StatModele	&get_spe() const;
 
     /* Assesseurs */
     void	        set_name(const std::string &name);
+    void		set_species(const std::string &species);
+    void		set_resum(const std::string &resum);
+    void		set_types(const Type &type1, const Type &type2);
+    void		set_max_xp(const unsigned int max_xp);
+    void		set_heigth(const unsigned short int heigth);
+    void		set_weight(const unsigned short int weight);
+    void		set_catch_rate(const unsigned short int catch_rate);
+    void		set_gender_rate(const unsigned short int gender_rate);
   };
 
   std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);

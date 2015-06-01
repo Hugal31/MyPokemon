@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:25:30 2015 Hugo Laloge
-** Last update Mon Jun  1 15:44:55 2015 Hugo Laloge
+** Last update Mon Jun  1 17:40:40 2015 Hugo Laloge
 */
 
 #include	<string>
@@ -14,9 +14,10 @@
 
 using namespace	game;
 
-std::string	Type::names("NONE", "NORMAL");
+std::string	Type::names[] = {"NONE", "NORMAL"};
 
-Type::Type()
+Type::Type() :
+  _value(TYPE_NONE)
 {
 
 }
