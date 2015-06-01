@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun  1 16:34:15 2015 Hugo Laloge
+** Last update Mon Jun  1 17:09:49 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -48,7 +48,7 @@ namespace game
     unsigned int	_id;
     unsigned int	_max_xp;
     unsigned short int	_heigth;
-    unsigned short int	_weigth;
+    unsigned short int	_weight;
     unsigned short int	_catch_rate;
     unsigned short int	_gender_rate;
 
@@ -73,7 +73,7 @@ namespace game
       ar & _types;
       ar & _max_xp;
       ar & _heigth;
-      ar & _weigth;
+      ar & _weight;
       ar & _catch_rate;
       ar & _gender_rate;
       ar & _hp;
@@ -89,8 +89,16 @@ namespace game
     PokemonModele(unsigned int id);
 
     /* Accesseurs */
-    unsigned int	get_id() const;
     const std::string	&get_name() const;
+    const std::string	&get_species() const;
+    const std::string	&get_resum() const;
+    const Type		*get_type();
+    unsigned int	get_id() const;
+    unsigned int	get_max_xp() const;
+    unsigned short int	get_heigth() const;
+    unsigned short int	get_weight() const;
+    unsigned short int	get_catch_rate() const;
+    unsigned short int	get_gender_rate() const;
 
     /* Assesseurs */
     void	        set_name(const std::string &name);

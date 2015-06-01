@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Mon Jun  1 16:32:22 2015 Hugo Laloge
+** Last update Mon Jun  1 17:10:17 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -15,7 +15,7 @@
 using namespace	game;
 
 PokemonModele::PokemonModele(unsigned int id) :
-  _id(id), _max_xp(0), _heigth(10), _weigth(10),
+  _id(id), _max_xp(0), _heigth(10), _weight(10),
   _catch_rate(50), _gender_rate(50), _hp(true)
 {
   //Ouvrir le fichier/DB et parser les infos
@@ -25,14 +25,54 @@ PokemonModele::PokemonModele(unsigned int id) :
 ** Accesseurs
 */
 
+const std::string	&PokemonModele::get_name() const
+{
+  return (_name);
+}
+
+const std::string	&PokemonModele::get_species() const
+{
+  return (_species);
+}
+
+const std::string	&PokemonModele::get_resum() const
+{
+  return (_resum);
+}
+
+const Type	*PokemonModele::get_type()
+{
+  return (_types);
+}
+
 unsigned int	PokemonModele::get_id() const
 {
   return (_id);
 }
 
-const std::string	&PokemonModele::get_name() const
+unsigned int	PokemonModele::get_max_xp() const
 {
-  return (_name);
+  return (_max_xp);
+}
+
+unsigned short int	PokemonModele::get_heigth() const
+{
+  return (_heigth);
+}
+
+unsigned short int	PokemonModele::get_weight() const
+{
+  return (_weight);
+}
+
+unsigned short int	PokemonModele::get_catch_rate() const
+{
+  return (_catch_rate);
+}
+
+unsigned short int	PokemonModele::get_gender_rate() const
+{
+  return (_gender_rate);
 }
 
 /*
