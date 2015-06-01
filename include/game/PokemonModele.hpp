@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-// Last update Fri May 29 16:06:44 2015 Hippolyte QUIEF
+** Last update Mon Jun  1 13:29:17 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -31,6 +31,7 @@
 
 # pragma clang diagnostic pop
 
+# include	"Type.hpp"
 # include	"Stat.hpp"
 
 namespace game
@@ -42,6 +43,7 @@ namespace game
 
     unsigned int	_id;
     std::string		_name;
+    Type		_types[];
 
     /* Stats */
 
