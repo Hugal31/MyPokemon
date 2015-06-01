@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Mon Jun  1 15:51:43 2015 Hugo Laloge
+** Last update Mon Jun  1 16:19:21 2015 Hugo Laloge
 */
 
 #ifndef		STATMODELE_HPP_
@@ -41,6 +41,7 @@ namespace game
     friend class	boost::serialization::access;
     unsigned int	_stat_base;
     unsigned int	_give_ev;
+    bool		_is_hp;
 
     /* Serialisation */
     template<class Archive>
@@ -52,7 +53,7 @@ namespace game
     }
 
   public:
-    StatModele();
+    StatModele(bool is_hp = false);
     virtual ~StatModele();
 
     virtual void	display(std::ostream &os = std::cout) const;

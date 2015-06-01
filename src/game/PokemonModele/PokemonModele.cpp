@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Mon Jun  1 15:45:14 2015 Hugo Laloge
+** Last update Mon Jun  1 16:32:22 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -15,7 +15,8 @@
 using namespace	game;
 
 PokemonModele::PokemonModele(unsigned int id) :
-  _id(id)
+  _id(id), _max_xp(0), _heigth(10), _weigth(10),
+  _catch_rate(50), _gender_rate(50), _hp(true)
 {
   //Ouvrir le fichier/DB et parser les infos
 }

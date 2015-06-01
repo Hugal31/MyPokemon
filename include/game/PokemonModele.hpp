@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun  1 15:53:37 2015 Hugo Laloge
+** Last update Mon Jun  1 16:34:15 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -41,9 +41,16 @@ namespace game
   private:
     friend class	boost::serialization::access;
 
-    unsigned int	_id;
     std::string		_name;
+    std::string		_species;
+    std::string		_resum;
     Type		_types[2];
+    unsigned int	_id;
+    unsigned int	_max_xp;
+    unsigned short int	_heigth;
+    unsigned short int	_weigth;
+    unsigned short int	_catch_rate;
+    unsigned short int	_gender_rate;
 
     /* Stats */
 
@@ -62,7 +69,13 @@ namespace game
       (void)version;
       ar & _id;
       ar & _name;
+      ar & _species;
       ar & _types;
+      ar & _max_xp;
+      ar & _heigth;
+      ar & _weigth;
+      ar & _catch_rate;
+      ar & _gender_rate;
       ar & _hp;
       ar & _atk;
       ar & _def;
@@ -72,7 +85,6 @@ namespace game
     }
 
   public:
-
     /* Constructeur */
     PokemonModele(unsigned int id);
 

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Mon Jun  1 15:52:09 2015 Hugo Laloge
+** Last update Mon Jun  1 16:20:27 2015 Hugo Laloge
 */
 
 #ifndef		STAT_HPP_
@@ -51,7 +51,7 @@ namespace game
     }
 
   public:
-    Stat();
+    Stat(bool is_hp);
 
     virtual void	display(std::ostream &os = std::cout) const;
 

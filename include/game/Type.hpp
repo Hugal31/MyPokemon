@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Mon Jun  1 15:49:13 2015 Hugo Laloge
+** Last update Mon Jun  1 16:11:10 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
@@ -30,14 +30,14 @@
 
 # pragma clang diagnostic pop
 
-enum	e_type
-  {
-    TYPE_NONE,
-    TYPE_NORMAL
-  };
-
 namespace	game
 {
+  enum	e_type
+    {
+      TYPE_NONE,
+      TYPE_NORMAL
+    };
+
   class		Type
   {
   private:

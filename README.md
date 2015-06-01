@@ -28,10 +28,6 @@ ncurses : ```sudo apt-get install libncurses5-dev```
 
 readline : ```sudo apt-get install libreadline-dev```
 
-readline_cpp :
+readline_cpp : http://wanderinghorse.net/computing/readline/
 
-http://wanderinghorse.net/computing/readline/
-
-shellish :
-
-http://wanderinghorse.net/wh/computing/shellish/
+shellish : http://wanderinghorse.net/wh/computing/shellish/

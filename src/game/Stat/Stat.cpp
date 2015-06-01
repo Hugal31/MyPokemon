@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Mon Jun  1 15:30:23 2015 Hugo Laloge
+** Last update Mon Jun  1 16:19:43 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -13,8 +13,8 @@
 
 using namespace	game;
 
-Stat::Stat() :
-  StatModele()
+Stat::Stat(bool is_hp) :
+  StatModele(is_hp)
 {
 
 }
