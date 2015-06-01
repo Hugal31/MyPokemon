@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun  1 13:32:27 2015 Hugo Laloge
+** Last update Mon Jun  1 15:53:37 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -43,16 +43,16 @@ namespace game
 
     unsigned int	_id;
     std::string		_name;
-    //Type		_types[];
+    Type		_types[2];
 
     /* Stats */
 
-    game::StatModele	hp;
-    game::StatModele	atk;
-    game::StatModele	def;
-    game::StatModele	spa;
-    game::StatModele	spd;
-    game::StatModele	spe;
+    game::StatModele	_hp;
+    game::StatModele	_atk;
+    game::StatModele	_def;
+    game::StatModele	_spa;
+    game::StatModele	_spd;
+    game::StatModele	_spe;
 
     /* Serialisation */
 
@@ -62,6 +62,13 @@ namespace game
       (void)version;
       ar & _id;
       ar & _name;
+      ar & _types;
+      ar & _hp;
+      ar & _atk;
+      ar & _def;
+      ar & _spa;
+      ar & _spd;
+      ar & _spe;
     }
 
   public:

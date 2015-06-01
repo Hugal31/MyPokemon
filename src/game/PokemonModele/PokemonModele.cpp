@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Thu May 28 09:46:02 2015 Hugo Laloge
+** Last update Mon Jun  1 15:45:14 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -14,7 +14,8 @@
 
 using namespace	game;
 
-PokemonModele::PokemonModele(unsigned int id) : _id(id)
+PokemonModele::PokemonModele(unsigned int id) :
+  _id(id)
 {
   //Ouvrir le fichier/DB et parser les infos
 }

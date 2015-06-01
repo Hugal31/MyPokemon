@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:25:30 2015 Hugo Laloge
-** Last update Fri May 29 18:46:32 2015 Hugo Laloge
+** Last update Mon Jun  1 15:44:55 2015 Hugo Laloge
 */
 
 #include	<string>
@@ -14,7 +14,12 @@
 
 using namespace	game;
 
-std::string	Type::names("NORMAL");
+std::string	Type::names("NONE", "NORMAL");
+
+Type::Type()
+{
+
+}
 
 Type::Type(e_type value):
   _value(value)
@@ -25,6 +30,11 @@ Type::Type(e_type value):
 e_type	Type::get_value() const
 {
   return (_value);
+}
+
+void	Type::set_value(e_type type)
+{
+  _value = type;
 }
 
 std::ostream	&game::operator<<(std::ostream &os, const Type &type)
