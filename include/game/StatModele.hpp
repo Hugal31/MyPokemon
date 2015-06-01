@@ -1,30 +1,41 @@
-//
-// StatModele.hpp for my_pokemon in /home/quief_h/rendu/MyPokemon/include/game
-//
-// Made by Hippolyte QUIEF
-// Login   <quief_h@epitech.net>
-//
-// Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-// Last update Fri May 29 16:06:23 2015 Hippolyte QUIEF
-//
+/*
+** StatModele.hpp for my_pokemon in /home/quief_h/rendu/MyPokemon/include/game
+**
+** Made by Hippolyte QUIEF
+** Login   <quief_h@epitech.net>
+**
+** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
+** Last update Mon Jun  1 15:20:00 2015 Hugo Laloge
+*/
 
 #ifndef		STATMODELE_HPP_
 # define	STATMODELE_HPP_
 
-/* stat_max -> iv_max(31) et ev_max(252) */
+# include	<iostream>
+
+# define	STAT_IV_MAX	31
+# define	STAT_EV_MAX	252
 
 namespace game
 {
   class			StatModele
   {
-  private:
+  protected:
     unsigned int	_stat_base;
     unsigned int	_give_ev;
-    unsigned int	_save_ev;
-    unsigned int	_iv;
 
   public:
+    StatModele();
+    virtual ~StatModele();
+
+    virtual void	display(std::ostream &os = std::cout) const;
+
+    /* Accesseurs */
+    unsigned int	get_stat_base() const;
+    unsigned int        get_give_ev() const;
   };
+
+  std::ostream	&operator<<(std::ostream &os, const StatModele &stat);
 }
 
 #endif		/* !STATMODELE_HPP_ */
