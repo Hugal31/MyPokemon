@@ -1,17 +1,16 @@
 /*
-** PokemonModele.hpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
+** Type.hpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon/src/game
 **
 ** Made by Hugo Laloge
 ** Login   <laloge_h@epitech.net>
 **
-** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Fri May 29 18:48:08 2015 Hugo Laloge
+** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
+** Last update Fri May 29 18:41:30 2015 Hugo Laloge
 */
 
-#ifndef		POKEMON_MODELE_HPP_
-# define	POKEMON_MODELE_HPP_
+#ifndef		TYPE_H_
+# define	TYPE_H_
 
-# include	<iostream>
 # include	<string>
 
 # pragma clang diagnostic push
@@ -31,46 +30,36 @@
 
 # pragma clang diagnostic pop
 
-# include	"Type.hpp"
 # include	"Stat.hpp"
 
-namespace game
+enum	e_type
+  {
+    NORMAL
+  };
+
+namespace	game
 {
-  class			PokemonModele
+  class		Type
   {
   private:
-    friend class	boost::serialization::access;
-
-    unsigned int	_id;
-    std::string		_name;
-    Type		_types[];
-
-    /* Stats */
+    e_type	_value;
 
     /* Serialisation */
     template<class Archive>
     void		serialize(Archive &ar, const unsigned int version)
     {
       (void)version;
-      ar & _id;
-      ar & _name;
+      ar & _value;
     }
 
   public:
-    /* Constructeur */
-    PokemonModele(unsigned int id);
+    Type(e_type value);
+    e_type	get_value() const;
 
-    /* Accesseurs */
-    unsigned int	get_id() const;
-    const std::string	&get_name() const;
-
-    /* Assesseurs */
-    void	        set_name(const std::string &name);
+    static std::string	names;
   };
 
-  std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);
+  std::ostream	&operator<<(std::ostream &os, const Type &type);
 }
 
-BOOST_CLASS_VERSION(game::PokemonModele, 0)
-
-#endif		/* !POKEMON_MODELE_HPP_ */
+#endif		/* !TYPE_H_ */
