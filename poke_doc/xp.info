@@ -100,3 +100,67 @@ Erratic		Fast	Medium_Fast	Medium_Slow	Slow	Fluctuating	Level	Erratic Fast	Medium
 583539		752953	941192 		995030		1176490	1524731		98	8343	23286	29107		32073		36383	47153
 591882		776239	970299 		1027103		1212873	1571884		99	8118	23761	29701		32757		37127	68116
 600000		800000	1000000		1059860		1250000	1640000		100	-	-	-		-		-	-
+
+
+FORMULES XP PER LEVEL
+
+ERRATIC :
+XP = ((n^3 * (100 - n)) / 50)			n < 50
+XP = ((n^3 * (150 - n)) / 100)			50 <= n < 68
+XP = ((n^3 * ((1911 - 10 * n) / 3)) / 500)	68 <= n < 98
+XP = ((n^3 * (160 - n)) / 50)			98 <= n <= 100
+
+FAST :
+
+XP = ((4 * n^3) / 5)
+
+MEDIUM_FAST :
+
+XP = n^3
+
+MEDIUM_SLOW :
+
+XP = (6 / 5) * n^3 - 15 * n^2 + 100 * n - 140
+
+SLOW :
+
+XP = (5 * n^3) / 4
+
+FLUCTUATING :
+
+XP = n^3 * ((((n + 1) / 3) + 24) / 50)		n < 15
+XP = n^3 * ((n + 14) / 50)			15 <= n < 36
+XP = n^3 * (((n / 2) + 32) / 50)		36 <= n <= 100
+
+FORMULES XP GAIN BY COMBAT
+
+a is equal to...
+1 if the fainted Pokémon is wild
+1.5 if the fainted Pokémon is owned by a Trainer
+
+b is the base experience yield of the fainted Pokémon's species, values for the current Generation listed here.
+
+e is equal to...
+1.5 if the winning Pokémon is holding a Lucky Egg
+1 otherwise.
+
+L is the level of the fainted Pokémon.
+
+Lp is the level of the victorious Pokémon.
+
+s is equal to...
+In Generations II-V...
+If no Pokémon in the party is holding an Exp. Share...
+The number of Pokémon that participated in the battle and have not fainted
+If at least one Pokémon in the party is holding an Exp. Share...
+Twice the number of Pokémon that participated and have not fainted, when calculating the experience of a Pokémon that participated in battle
+Twice the number of Pokémon holding an Exp. Share, when calculating the experience of a Pokémon holding Exp. Share
+In Generation VI...
+1 when calculating the experience of a Pokémon that participated in battle
+2 when calculating the experience of a Pokémon that did not participate in battle and if Exp. Share is turned on
+
+v is equal to...
+Generation VI only: 1.2 if the winning Pokémon is at or past the level where it would be able to evolve, but it has not
+1 otherwise
+
+XP = (((a * b * L) / (5 * s)) * (((2 * L)^2.5) / ((L * Lp + 10)^2.5)) + 1) * e
