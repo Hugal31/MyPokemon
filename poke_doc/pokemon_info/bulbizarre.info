@@ -24,6 +24,8 @@ DEF	49	197
 SPA	65	229	+1
 SPD	65	229
 SPE	45	189
+XP	64
+
 
 Attaque		RSE	RFVF	DP
 Charge		1	1	1

@@ -31,7 +31,7 @@ LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
 		-lboost_serialization					\
 
-CLANG	?=	0
+CLANG	?=	1
 
 DEBUG	?=	0
 
