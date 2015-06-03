@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Mon Jun  1 16:19:21 2015 Hugo Laloge
+** Last update Wed Jun  3 13:18:39 2015 Hugo Laloge
 */
 
 #ifndef		STATMODELE_HPP_
@@ -13,22 +13,14 @@
 
 # include	<iostream>
 
-# pragma clang diagnostic push
-# pragma clang diagnostic ignored "-Wweak-vtables"
-# pragma clang diagnostic ignored "-Wextra-semi"
-# pragma clang diagnostic ignored "-Wconversion"
-# pragma clang diagnostic ignored "-Wunused-parameter"
-# pragma clang diagnostic ignored "-Wundef"
-# pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-# pragma clang diagnostic ignored "-Wdeprecated"
-# pragma clang diagnostic ignored "-Wglobal-constructors"
-# pragma clang diagnostic ignored "-Wexit-time-destructors"
-# pragma clang diagnostic ignored "-Wdivision-by-zero"
+# include	"no_warnings.hpp"
+
+NO_WARNINGS
 
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
 
-# pragma clang diagnostic pop
+WARNINGS
 
 # define	STAT_IV_MAX	31
 # define	STAT_EV_MAX	252

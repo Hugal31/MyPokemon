@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun  1 17:48:17 2015 Hugo Laloge
+** Last update Wed Jun  3 13:18:43 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -14,22 +14,14 @@
 # include	<iostream>
 # include	<string>
 
-# pragma clang diagnostic push
-# pragma clang diagnostic ignored "-Wweak-vtables"
-# pragma clang diagnostic ignored "-Wextra-semi"
-# pragma clang diagnostic ignored "-Wconversion"
-# pragma clang diagnostic ignored "-Wunused-parameter"
-# pragma clang diagnostic ignored "-Wundef"
-# pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-# pragma clang diagnostic ignored "-Wdeprecated"
-# pragma clang diagnostic ignored "-Wglobal-constructors"
-# pragma clang diagnostic ignored "-Wexit-time-destructors"
-# pragma clang diagnostic ignored "-Wdivision-by-zero"
+# include	"no_warnings.hpp"
+
+NO_WARNINGS
 
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
 
-# pragma clang diagnostic pop
+WARNINGS
 
 # include	"Type.hpp"
 # include	"StatModele.hpp"

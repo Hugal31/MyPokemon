@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Mon Jun  1 16:20:27 2015 Hugo Laloge
+** Last update Wed Jun  3 13:18:28 2015 Hugo Laloge
 */
 
 #ifndef		STAT_HPP_
@@ -14,22 +14,14 @@
 # include	<iostream>
 # include	"StatModele.hpp"
 
-# pragma clang diagnostic push
-# pragma clang diagnostic ignored "-Wweak-vtables"
-# pragma clang diagnostic ignored "-Wextra-semi"
-# pragma clang diagnostic ignored "-Wconversion"
-# pragma clang diagnostic ignored "-Wunused-parameter"
-# pragma clang diagnostic ignored "-Wundef"
-# pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-# pragma clang diagnostic ignored "-Wdeprecated"
-# pragma clang diagnostic ignored "-Wglobal-constructors"
-# pragma clang diagnostic ignored "-Wexit-time-destructors"
-# pragma clang diagnostic ignored "-Wdivision-by-zero"
+# include	"no_warnings.hpp"
+
+NO_WARNINGS
 
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
 
-# pragma clang diagnostic pop
+WARNINGS
 
 namespace game
 {

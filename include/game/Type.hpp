@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Mon Jun  1 17:35:45 2015 Hugo Laloge
+** Last update Wed Jun  3 13:18:35 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
@@ -13,22 +13,14 @@
 
 # include	<string>
 
-# pragma clang diagnostic push
-# pragma clang diagnostic ignored "-Wweak-vtables"
-# pragma clang diagnostic ignored "-Wextra-semi"
-# pragma clang diagnostic ignored "-Wconversion"
-# pragma clang diagnostic ignored "-Wunused-parameter"
-# pragma clang diagnostic ignored "-Wundef"
-# pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-# pragma clang diagnostic ignored "-Wdeprecated"
-# pragma clang diagnostic ignored "-Wglobal-constructors"
-# pragma clang diagnostic ignored "-Wexit-time-destructors"
-# pragma clang diagnostic ignored "-Wdivision-by-zero"
+# include	"no_warnings.hpp"
+
+NO_WARNINGS
 
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
 
-# pragma clang diagnostic pop
+WARNINGS
 
 namespace	game
 {

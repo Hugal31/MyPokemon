@@ -1,7 +1,7 @@
 # MyPokemon
 Un jeu pokemon pour s'exercer au C++
 
-REQUIREMENT
+DEPENDANCES
 ===========
 
 Ce programme nécessite l'installation de :
@@ -15,6 +15,8 @@ readline
 readline_cpp
 
 shellish
+
+Attention : l'editeur nécéssite gcc-5 ou clang pour être compilé
 
 Installation des dépendances
 ============================

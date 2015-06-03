@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Mon Jun  1 15:59:22 2015 Hugo Laloge
+## Last update Wed Jun  3 17:34:29 2015 Hugo Laloge
 ##
 
 NAME	=	editor
@@ -32,8 +32,8 @@ LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
 		-lncurses						\
 		-lboost_serialization					\
-		$(shell pkg-config --libs libreadline_cpp)		\
 		$(shell pkg-config --libs libshellish)			\
+		$(shell pkg-config --libs libreadline_cpp)		\
 
 CLANG	?=	1
 

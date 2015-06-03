@@ -5,13 +5,12 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Fri May 29 18:15:00 2015 Hugo Laloge
+** Last update Wed Jun  3 17:25:38 2015 Hugo Laloge
 */
 
 #include	<string>
 #include	<fstream>
 #include	<iostream>
-#include	<s11n.net/readline/Readline.hpp>
 #include	<s11n.net/shellish/shellish.hpp>
 
 #include	"editor.hpp"
@@ -19,6 +18,8 @@
 
 using namespace	std;
 using namespace	editor;
+
+namespace	ba = boost::archive;
 
 namespace
 {
@@ -37,7 +38,7 @@ namespace
   int	create_poke_handler(const shellish::arguments &args)
   {
     if (args.argc() != 2)
-      cerr << "usage :" << endl << "new id" << endl;
+      cerr << "usage :" << endl << "create id" << endl;
     else
       {
 	unsigned int	id;
@@ -61,13 +62,13 @@ namespace
       {
 	try {
 	  size_t		idx;
-	  unsigned int	id((unsigned int)stoi(args[1], &idx));
+	  unsigned int		id((unsigned int)stoi(args[1], &idx));
 	  if (args[1].c_str()[idx] != '\0')
 	    throw (invalid_argument("stoi"));
-	  ifstream	file(args[1] + ".poke");
+	  ifstream		file(args[1] + ".poke");
 
 	  new_pokemon_modele_from_id(id);
-	  boost::archive::text_iarchive	ia(file);
+	  ba::text_iarchive	ia(file);
 	  ia >> *target;
 	} catch (invalid_argument) {
 	  cerr << "invalid argument" << endl;
@@ -89,6 +90,8 @@ namespace
 	ret = 0;
 	if (args[1] == "name")
 	  target->set_name(args[2]);
+	else if (args[1] == "resum")
+	  target->set_resum(args[2]);
       }
     return (0);
   }
@@ -118,21 +121,18 @@ namespace
       cerr << "no pokemon selected" << endl;
     else
       {
-	ofstream	file(to_string(target->get_id()) + ".poke");
+	ofstream		file(to_string(target->get_id()) + ".poke");
 
-	boost::archive::text_oarchive	oa(file);
+	ba::text_oarchive	oa(file);
 	oa << *target;
 	ret = 0;
       }
     return (ret);
   }
-
 }
 
 int	editor::editor(void)
 {
-  readlinecpp::Readline	line_editor;
-
   shellish::init(0, NULL);
   shellish::map_commander("create", &create_poke_handler, "create a pokemon");
   shellish::map_commander("open", &open_poke_handler, "ouvre le fichier d'un pokemon");
@@ -140,7 +140,7 @@ int	editor::editor(void)
   shellish::map_commander("view", &view_handler, "view pokemon attributs");
   shellish::map_commander("save", &save_handler, "save pokemon");
   cout << "Mode d'edition" << endl;
-  shellish::input_loop(">> ");
+  shellish::input_loop(">>  ");
   cout << endl;
   return (0);
 }

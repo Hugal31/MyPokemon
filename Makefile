@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Fri May 29 18:45:35 2015 Hugo Laloge
+## Last update Wed Jun  3 13:03:56 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -24,8 +24,8 @@ INCLUDE	=	$(foreach LIB, $(LIBS), -I lib/$(LIB)/include/)		\
 
 RM	=	rm -f
 
-CXXFLAGS	+=	-std=c++11
-CXXFLAGS	+=	$(INCLUDE)
+CXXFLAGS+=	-std=c++11
+CXXFLAGS+=	$(INCLUDE)
 
 LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
@@ -59,7 +59,7 @@ endif
 all:		lib $(DEPS) $(NAME)
 
 $(NAME):	$(OBJS)
-		$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(NAME) $(OBJS)
 ifeq	($(DEBUG), 1)
 		@echo "\033[33;32m=== Compilation in debug mode\t\t\tDONE\033[33;39m"
 endif
@@ -88,8 +88,6 @@ fcleanlib:
 relib:
 		$(foreach LIB, $(LIBS), @$(MAKE) -sC lib/$(LIB) re CLANG=$(CLANG) DEBUG=$(DEBUG);)
 
-depends:	$(DEPS)
-
 ## Regles speciales
 
 %.d:	%.cpp
@@ -98,4 +96,4 @@ depends:	$(DEPS)
 
 -include $(DEPS)
 
-.PHONY:	all clean fclean re lib cleanlib fcleanlib relib depends
+.PHONY:	all clean fclean re lib cleanlib fcleanlib relib
