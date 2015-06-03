@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Wed Jun  3 13:18:43 2015 Hugo Laloge
+** Last update Wed Jun  3 17:47:53 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_

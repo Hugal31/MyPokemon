@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Wed Jun  3 13:18:35 2015 Hugo Laloge
+** Last update Wed Jun  3 17:48:02 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
