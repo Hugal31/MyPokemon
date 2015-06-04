@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Wed Jun  3 17:34:29 2015 Hugo Laloge
+## Last update Thu Jun  4 10:05:04 2015 Hippolyte QUIEF
 ##
 
 NAME	=	editor
@@ -35,7 +35,7 @@ LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		$(shell pkg-config --libs libshellish)			\
 		$(shell pkg-config --libs libreadline_cpp)		\
 
-CLANG	?=	1
+CLANG	?=	0
 
 DEBUG	?=	0
 
