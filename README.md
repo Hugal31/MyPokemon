@@ -4,9 +4,9 @@ Un jeu pokemon pour s'exercer au C++
 DEPENDANCES
 ===========
 
-Ce programme nécessite l'installation de :
+Le jeu nécessite l'installation de boost 1.58.0
 
-boost 1.58.0
+L'éditeur nécessite l'installation de :
 
 ncurses
 
