@@ -5,13 +5,12 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Wed Jun  3 17:25:38 2015 Hugo Laloge
+** Last update Tue Jun  9 15:40:50 2015 Hippolyte QUIEF
 */
 
 #include	<string>
 #include	<fstream>
 #include	<iostream>
-#include	<s11n.net/shellish/shellish.hpp>
 
 #include	"editor.hpp"
 #include	"game/PokemonModele.hpp"
@@ -44,7 +43,7 @@ namespace
 	unsigned int	id;
 
 	try {
-	  id = (unsigned int)stoi(args[1]);
+	  id = static_cast<unsigned int>(stoi(args[1]));
 	  new_pokemon_modele_from_id(id);
 	  cout << *target;
 	} catch (invalid_argument) {
@@ -62,7 +61,7 @@ namespace
       {
 	try {
 	  size_t		idx;
-	  unsigned int		id((unsigned int)stoi(args[1], &idx));
+	  unsigned int		id(static_cast<unsigned int>(stoi(args[1], &idx)));
 	  if (args[1].c_str()[idx] != '\0')
 	    throw (invalid_argument("stoi"));
 	  ifstream		file(args[1] + ".poke");
@@ -90,6 +89,8 @@ namespace
 	ret = 0;
 	if (args[1] == "name")
 	  target->set_name(args[2]);
+	else if (args[1] == "species")
+	  target->set_species(args[2]);
 	else if (args[1] == "resum")
 	  target->set_resum(args[2]);
       }
@@ -133,7 +134,7 @@ namespace
 
 int	editor::editor(void)
 {
-  shellish::init(0, NULL);
+  /*shellish::init(0, NULL);
   shellish::map_commander("create", &create_poke_handler, "create a pokemon");
   shellish::map_commander("open", &open_poke_handler, "ouvre le fichier d'un pokemon");
   shellish::map_commander("set", &set_handler, "set pokemon attributs");
@@ -141,6 +142,6 @@ int	editor::editor(void)
   shellish::map_commander("save", &save_handler, "save pokemon");
   cout << "Mode d'edition" << endl;
   shellish::input_loop(">>  ");
-  cout << endl;
+  cout << endl;*/
   return (0);
 }
