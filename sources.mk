@@ -4,3 +4,4 @@ SRCS	=	src/main.cpp						\
 		src/game/Stat/Stat.cpp					\
 		src/game/Stat/StatModele.cpp				\
 		src/game/Type.cpp					\
+		src/game/xp.cpp						\

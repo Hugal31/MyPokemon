@@ -102,7 +102,7 @@ Erratic		Fast	Medium_Fast	Medium_Slow	Slow	Fluctuating	Level	Erratic Fast	Medium
 600000		800000	1000000		1059860		1250000	1640000		100	-	-	-		-		-	-
 
 
-FORMULES XP PER LEVEL
+FORMULES TOTAL XP PER LEVEL
 
 ERRATIC :
 XP = ((n^3 * (100 - n)) / 50)			n < 50
