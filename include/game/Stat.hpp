@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Wed Jun  3 13:18:28 2015 Hugo Laloge
+** Last update Tue Jun  9 16:01:16 2015 Hugo Laloge
 */
 
 #ifndef		STAT_HPP_
@@ -53,6 +53,8 @@ namespace game
   };
 }
 
+NO_WARNINGS
 BOOST_CLASS_VERSION(game::Stat, 0)
+WARNINGS
 
 #endif		/* !STAT_HPP_ */

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed Jun  3 13:04:54 2015 Hugo Laloge
-** Last update Wed Jun  3 13:19:23 2015 Hugo Laloge
+** Last update Tue Jun  9 15:59:58 2015 Hugo Laloge
 */
 
 #ifndef		NO_WARNINGS_H_
@@ -23,7 +23,10 @@
   _Pragma("clang diagnostic ignored \"-Wdeprecated\"")			\
   _Pragma("clang diagnostic ignored \"-Wglobal-constructors\"")		\
   _Pragma("clang diagnostic ignored \"-Wexit-time-destructors\"")	\
-  _Pragma("clang diagnostic ignored \"-Wdivision-by-zero\"")
+  _Pragma("clang diagnostic ignored \"-Wdivision-by-zero\"")		\
+  _Pragma("clang diagnostic ignored \"-Wunused-local-typedef\"")	\
+  _Pragma("clang diagnostic ignored \"-Wold-style-cast\"")		\
+  _Pragma("clang diagnostic ignored \"-Wreserved-id-macro\"")
 #  define	WARNINGS	_Pragma("clang diagnostic pop")
 # else
 #  define       NO_WARNINGS

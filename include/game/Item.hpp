@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Thu Jun  4 09:42:29 2015 Hippolyte QUIEF
-** Last update Mon Jun  8 14:50:08 2015 Hugo Laloge
+** Last update Tue Jun  9 16:01:02 2015 Hugo Laloge
 */
 
 #ifndef		ITEM_H_
@@ -83,6 +83,8 @@ namespace	game
   std::ostream &operator<<(std::ostream &os, const Item &item);
 }
 
+NO_WARNINGS
 BOOST_CLASS_VERSION(game::Item, 0)
+WARNINGS
 
 #endif		/* !ITEM_H_ */

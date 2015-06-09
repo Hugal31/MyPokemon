@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Wed Jun  3 17:47:53 2015 Hugo Laloge
+** Last update Tue Jun  9 16:00:37 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -111,6 +111,8 @@ namespace game
   std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);
 }
 
+NO_WARNINGS
 BOOST_CLASS_VERSION(game::PokemonModele, 0)
+WARNINGS
 
 #endif		/* !POKEMON_MODELE_HPP_ */

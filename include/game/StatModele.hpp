@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Wed Jun  3 13:18:39 2015 Hugo Laloge
+** Last update Tue Jun  9 16:01:28 2015 Hugo Laloge
 */
 
 #ifndef		STATMODELE_HPP_
@@ -58,6 +58,8 @@ namespace game
   std::ostream	&operator<<(std::ostream &os, const StatModele &stat);
 }
 
+NO_WARNINGS
 BOOST_CLASS_VERSION(game::StatModele, 0)
+WARNINGS
 
 #endif		/* !STATMODELE_HPP_ */
