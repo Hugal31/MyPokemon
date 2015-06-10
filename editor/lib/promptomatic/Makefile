@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Tue Jun  9 16:11:10 2015 Hugo Laloge
-## Last update Wed Jun 10 10:48:15 2015 Hugo Laloge
+## Last update Wed Jun 10 17:02:27 2015 Hugo Laloge
 ##
 
 NAME	=	libpromptomatic.a
@@ -14,7 +14,7 @@ include	sources.mk
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-DEPS	=	$(SRCS:.cpp=.d)
+DEPS	=	$(SRCS:.cpp=.depend)
 
 INCLUDE	=	-I include						\
 
@@ -67,9 +67,9 @@ re:		fclean all
 
 ## Regles speciales
 
-%.d:	%.cpp
-	@$(CXX) $(CXXFLAGS) -MM -o $@ $<
-	@sed -i -e 's|.*:|$*.o:|' $@
+%.depend:	%.cpp
+		@$(CXX) $(CXXFLAGS) -MM -o $@ $<
+		@sed -i -e 's|.*:|$*.o:|' $@
 
 -include $(DEPS)
 

@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Tue Jun  9 15:39:57 2015 Hippolyte QUIEF
+## Last update Wed Jun 10 17:03:51 2015 Hugo Laloge
 ##
 
 NAME	=	editor
@@ -14,7 +14,7 @@ include	sources.mk
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-DEPS	=	$(SRCS:.cpp=.d)
+DEPS	=	$(SRCS:.cpp=.depend)
 
 LIBS	=
 
@@ -58,7 +58,7 @@ ifeq	($(WERROR), 1)
 	CXXFLAGS+=	-Werror
 endif
 
-all:		lib $(DEPS) $(NAME)
+all:		lib depends $(NAME)
 
 $(NAME):	$(OBJS)
 		$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
@@ -94,9 +94,9 @@ depends:	$(DEPS)
 
 ## Regles speciales
 
-%.d:	%.cpp
-	@$(CXX) $(CXXFLAGS) -MM -o $@ $<
-	@sed -i -e 's|.*:|$*.o:|' $@
+%.depend:	%.cpp
+		@$(CXX) $(CXXFLAGS) -MM -o $@ $<
+		@sed -i -e 's|.*:|$*.o:|' $@
 
 -include $(DEPS)
 

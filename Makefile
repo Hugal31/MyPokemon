@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Wed Jun  3 17:47:33 2015 Hugo Laloge
+## Last update Wed Jun 10 17:03:20 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -14,7 +14,7 @@ include	sources.mk
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-DEPS	=	$(SRCS:.cpp=.d)
+DEPS	=	$(SRCS:.cpp=.depend)
 
 LIBS	=
 
@@ -56,7 +56,7 @@ ifeq	($(WERROR), 1)
 	CXXFLAGS	+=	-Werror
 endif
 
-all:		lib $(DEPS) $(NAME)
+all:		lib depends $(NAME)
 
 $(NAME):	$(OBJS)
 		$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(NAME) $(OBJS)
@@ -88,11 +88,13 @@ fcleanlib:
 relib:
 		$(foreach LIB, $(LIBS), @$(MAKE) -sC lib/$(LIB) re CLANG=$(CLANG) DEBUG=$(DEBUG);)
 
+depends:	$(DEPS)
+
 ## Regles speciales
 
-%.d:	%.cpp
-	@$(CXX) $(CXXFLAGS) -MM -o $@ $<
-	@sed -i -e 's|.*:|$*.o:|' $@
+%.depend:	%.cpp
+		@$(CXX) $(CXXFLAGS) -MM -o $@ $<
+		@sed -i -e 's|.*:|$*.o:|' $@
 
 -include $(DEPS)
 

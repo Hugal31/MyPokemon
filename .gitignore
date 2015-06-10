@@ -6,6 +6,7 @@
 
 # Dependances files
 *.d
+*.depend
 
 # Precompiled Headers
 *.gch
@@ -30,7 +31,6 @@
 *.out
 *.app
 my_pokemon
-editor/editor
 
 # Temporary files
 *~
