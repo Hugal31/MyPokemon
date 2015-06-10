@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed Jun 10 10:15:00 2015 Hugo Laloge
-** Last update Wed Jun 10 10:25:40 2015 Hugo Laloge
+** Last update Wed Jun 10 17:24:19 2015 Hugo Laloge
 */
 
 #ifndef		PROMPTOMATIC_COMMAND_HPP_
@@ -13,17 +13,29 @@
 
 # include	"arguments.hpp"
 
-typedef	int	(*command_handler_func)(const promptomatic::Arguments &args);
-
 namespace	promptomatic
 {
+  class	Prompt;
+
+  typedef int	(*cmd_handler_func)(const Arguments &args);
+  typedef int	(*intern_cmd_handler_func)(const Arguments &args, Prompt &prompt);
+
   struct	Command
   {
-    command_handler_func	func;
+    cmd_handler_func	func;
+    std::string		desc;
+
+    Command(cmd_handler_func param_func, const std::string &param_desc = "");
+    virtual	~Command();
+  };
+
+  struct	InternCommand
+  {
+    intern_cmd_handler_func	func;
     std::string			desc;
 
-    Command(command_handler_func param_func, const std::string &param_desc = "");
-    virtual	~Command();
+    InternCommand(intern_cmd_handler_func param_func, const std::string &param_desc = "");
+    virtual	~InternCommand();
   };
 }
 
