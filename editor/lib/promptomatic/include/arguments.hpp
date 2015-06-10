@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue Jun  9 16:52:27 2015 Hugo Laloge
-** Last update Tue Jun  9 19:00:54 2015 Hugo Laloge
+** Last update Wed Jun 10 10:10:48 2015 Hugo Laloge
 */
 
 #ifndef		PROMPTOMATIC_ARGUMENTS_HPP_
@@ -38,8 +38,10 @@ namespace	promptomatic
     void		push_back(const std::string &arg);
 
     /* iterators */
+# if __cplusplus > 199711L
     args_const_iterator	begin() const;
     args_const_iterator	end() const;
+# endif	/* __cplusplus > 199711L */
     args_iterator	begin();
     args_iterator	end();
 

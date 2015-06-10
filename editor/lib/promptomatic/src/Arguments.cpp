@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue Jun  9 17:02:55 2015 Hugo Laloge
-** Last update Tue Jun  9 19:02:48 2015 Hugo Laloge
+** Last update Wed Jun 10 10:11:36 2015 Hugo Laloge
 */
 
 #include	<deque>
@@ -58,6 +58,7 @@ void	promptomatic::Arguments::push_back(const std::string &arg)
   _args_list.push_back(arg);
 }
 
+#if __cplusplus > 199711L
 args_const_iterator	promptomatic::Arguments::begin() const
 {
   return (_args_list.cbegin());
@@ -67,6 +68,7 @@ args_const_iterator	promptomatic::Arguments::end() const
 {
   return (_args_list.end());
 }
+#endif
 
 args_iterator		promptomatic::Arguments::begin()
 {

@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Tue Jun  9 16:11:10 2015 Hugo Laloge
-## Last update Tue Jun  9 16:32:38 2015 Hugo Laloge
+## Last update Wed Jun 10 10:48:15 2015 Hugo Laloge
 ##
 
 NAME	=	libpromptomatic.a
@@ -20,7 +20,6 @@ INCLUDE	=	-I include						\
 
 RM	=	rm -f
 
-CXXFLAGS+=	-std=c++11
 CXXFLAGS+=	$(INCLUDE)
 
 CLANG	?=	0
@@ -32,8 +31,6 @@ WERROR	?=	0
 ifeq ($(CLANG), 1)
 	CXX	=	clang++
 	CXXFLAGS+=	-Weverything -Wno-padded			\
-			-Wno-exit-time-destructors			\
-			-Wno-global-constructors			\
 
 else
 	CXX	=	g++

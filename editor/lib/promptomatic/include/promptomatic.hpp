@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue Jun  9 16:31:33 2015 Hugo Laloge
-** Last update Tue Jun  9 19:26:06 2015 Hugo Laloge
+** Last update Wed Jun 10 10:52:18 2015 Hugo Laloge
 */
 
 #ifndef		PROMPTOMATIC_HPP_
@@ -15,9 +15,9 @@
 # include	<string>
 # include	<utility>
 # include	"arguments.hpp"
+# include	"command.hpp"
 
-typedef	int	(*command_handler_func)(const promptomatic::Arguments &args);
-typedef std::map<std::string, std::pair<command_handler_func, std::string> >	command_map;
+typedef std::map<std::string, promptomatic::Command>	command_map;
 
 namespace	promptomatic
 {
@@ -26,14 +26,17 @@ namespace	promptomatic
   private:
     std::string	_prompt_str;
     command_map	_command_map;
+    bool	_continue;
 
   public:
     Prompt(const std::string &prompt_str = ">> ");
     virtual	~Prompt();
 
     void	set_prompt(const std::string &prompt_str);
-    void	map_commande(const std::string &key, command_handler_func,
+    void	map_command(const std::string &key, command_handler_func func,
 			     const std::string &helptext = "");
+    void	unmap_command(const std::string &key);
+    void	input_loop();
   };
 }
 

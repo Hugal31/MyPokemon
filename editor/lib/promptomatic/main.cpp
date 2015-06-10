@@ -1,14 +1,20 @@
 #include	<iostream>
 #include	<string>
-#include	"arguments.hpp"
+#include	"promptomatic.hpp"
+
+namespace
+{
+  int	put_bite(const promptomatic::Arguments &args)
+  {
+    std::cout << "bite." << std::endl;
+    return (0);
+  }
+}
 
 int	main(int argc, char **argv)
 {
-  if (argc > 1)
-    {
-      promptomatic::Arguments	args((std::string(argv[1])));
+  promptomatic::Prompt	prompt;
 
-      for (size_t i(0); i < args.argc(); i++)
-	std::cout << args[i] << std::endl;
-    }
+  prompt.map_command("bite", put_bite, "put \"bite.\"");
+  prompt.input_loop();
 }
