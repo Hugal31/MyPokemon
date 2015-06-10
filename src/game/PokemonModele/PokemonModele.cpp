@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Mon Jun  1 17:48:01 2015 Hugo Laloge
+** Last update Wed Jun 10 13:22:12 2015 Hippolyte QUIEF
 */
 
 #include	<ostream>
@@ -109,7 +109,7 @@ const StatModele	&PokemonModele::get_spe() const
 ** Asseteurs
 */
 
-void	PokemonModele::set_name(const std::string &name)
+void		PokemonModele::set_name(const std::string &name)
 {
   _name = name;
 }

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Tue Jun  9 16:00:37 2015 Hugo Laloge
+** Last update Wed Jun 10 12:53:11 2015 Hippolyte QUIEF
 */
 
 #ifndef		POKEMON_MODELE_HPP_
@@ -30,7 +30,7 @@ namespace game
 {
   class			PokemonModele
   {
-  private:
+  protected:
     friend class	boost::serialization::access;
 
     std::string		_name;
@@ -101,11 +101,11 @@ namespace game
     void		set_species(const std::string &species);
     void		set_resum(const std::string &resum);
     void		set_types(const Type &type1, const Type &type2);
-    void		set_max_xp(const unsigned int max_xp);
-    void		set_heigth(const unsigned short int heigth);
-    void		set_weight(const unsigned short int weight);
-    void		set_catch_rate(const unsigned short int catch_rate);
-    void		set_gender_rate(const unsigned short int gender_rate);
+    void		set_max_xp(unsigned int max_xp);
+    void		set_heigth(unsigned short int heigth);
+    void		set_weight(unsigned short int weight);
+    void		set_catch_rate(unsigned short int catch_rate);
+    void		set_gender_rate(unsigned short int gender_rate);
   };
 
   std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);

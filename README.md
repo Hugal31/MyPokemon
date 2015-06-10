@@ -33,3 +33,8 @@ readline : ```sudo apt-get install libreadline-dev```
 readline_cpp : http://wanderinghorse.net/computing/readline/
 
 shellish : http://wanderinghorse.net/wh/computing/shellish/
+
+TITRE
+=====
+
+Le jeux s'appelera : "Pokemon Caillou !!! mes mortels ennemies !"
