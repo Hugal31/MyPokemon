@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Wed Jun 10 16:36:51 2015 Hugo Laloge
+** Last update Wed Jun 10 16:41:39 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_HPP_
@@ -14,7 +14,7 @@
 # include	<iostream>
 # include	<string>
 
-# include	"game/PokemonModele.hpp"
+# include	"game/PokemonModel.hpp"
 # include	"game/Type.hpp"
 # include	"game/Stat.hpp"
 
@@ -68,7 +68,7 @@ namespace	game
 
   public:
     Pokemon();
-    Pokemon(const PokemonModele &model);
+    Pokemon(const PokemonModel &model);
     virtual	 ~Pokemon();
 
     /* Ageteurs */

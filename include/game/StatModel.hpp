@@ -1,15 +1,15 @@
 /*
-** StatModele.hpp for my_pokemon in /home/quief_h/rendu/MyPokemon/include/game
+** StatModel.hpp for my_pokemon in /home/quief_h/rendu/MyPokemon/include/game
 **
 ** Made by Hippolyte QUIEF
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Tue Jun  9 16:01:28 2015 Hugo Laloge
+** Last update Wed Jun 10 16:41:31 2015 Hugo Laloge
 */
 
-#ifndef		STATMODELE_HPP_
-# define	STATMODELE_HPP_
+#ifndef		STATMODEL_HPP_
+# define	STATMODEL_HPP_
 
 # include	<iostream>
 
@@ -27,7 +27,7 @@ WARNINGS
 
 namespace game
 {
-  class			StatModele
+  class			StatModel
   {
   protected:
     friend class	boost::serialization::access;
@@ -45,8 +45,8 @@ namespace game
     }
 
   public:
-    StatModele(bool is_hp = false);
-    virtual ~StatModele();
+    StatModel(bool is_hp = false);
+    virtual ~StatModel();
 
     virtual void	display(std::ostream &os = std::cout) const;
 
@@ -55,11 +55,11 @@ namespace game
     unsigned int        get_give_ev() const;
   };
 
-  std::ostream	&operator<<(std::ostream &os, const StatModele &stat);
+  std::ostream	&operator<<(std::ostream &os, const StatModel &stat);
 }
 
 NO_WARNINGS
-BOOST_CLASS_VERSION(game::StatModele, 0)
+BOOST_CLASS_VERSION(game::StatModel, 0)
 WARNINGS
 
-#endif		/* !STATMODELE_HPP_ */
+#endif		/* !STATMODEL_HPP_ */

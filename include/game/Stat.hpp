@@ -5,14 +5,14 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Wed Jun 10 16:37:37 2015 Hugo Laloge
+** Last update Wed Jun 10 16:41:38 2015 Hugo Laloge
 */
 
 #ifndef		STAT_HPP_
 # define	STAT_HPP_
 
 # include	<iostream>
-# include	"StatModele.hpp"
+# include	"StatModel.hpp"
 
 # include	"no_warnings.hpp"
 
@@ -25,7 +25,7 @@ WARNINGS
 
 namespace game
 {
-  class			Stat : public StatModele
+  class			Stat : public StatModel
   {
     friend class	boost::serialization::access;
     unsigned int	_ev;

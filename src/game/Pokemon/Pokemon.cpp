@@ -5,12 +5,12 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 12:54:45 2015 Hippolyte QUIEF
-** Last update Wed Jun 10 16:39:46 2015 Hugo Laloge
+** Last update Wed Jun 10 16:45:12 2015 Hugo Laloge
 */
 
 #include	<ostream>
 #include	<string>
-#include	"game/PokemonModele.hpp"
+#include	"game/PokemonModel.hpp"
 #include	"game/Pokemon.hpp"
 
 using namespace	game;
@@ -25,7 +25,7 @@ Pokemon::Pokemon() :
 
 }
 
-Pokemon::Pokemon(const PokemonModele &model)
+Pokemon::Pokemon(const PokemonModel &model)
 {
   (void)model;
 }

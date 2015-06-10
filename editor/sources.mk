@@ -1,5 +1,5 @@
 SRCS	=	src/main.cpp						\
 		src/editor.cpp						\
-		../src/game/PokemonModele/PokemonModele.cpp		\
+		../src/game/Pokemon/PokemonModel.cpp			\
 		../src/game/Type.cpp					\
-		../src/game/Stat/StatModele.cpp				\
+		../src/game/Stat/StatModel.cpp				\

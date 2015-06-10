@@ -5,12 +5,12 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Thu Jun  4 10:35:57 2015 Hippolyte QUIEF
-** Last update Mon Jun  8 14:52:05 2015 Hugo Laloge
+** Last update Wed Jun 10 16:45:01 2015 Hugo Laloge
 */
 
 #include	<ostream>
 #include	<string>
-#include	"game/PokemonModele.hpp"
+#include	"game/PokemonModel.hpp"
 #include	"game/Item.hpp"
 
 using namespace	game;

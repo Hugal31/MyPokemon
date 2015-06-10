@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Tue Jun  9 15:40:50 2015 Hippolyte QUIEF
+** Last update Wed Jun 10 17:01:13 2015 Hugo Laloge
 */
 
 #include	<string>
@@ -13,7 +13,7 @@
 #include	<iostream>
 
 #include	"editor.hpp"
-#include	"game/PokemonModele.hpp"
+#include	"game/PokemonModel.hpp"
 
 using namespace	std;
 using namespace	editor;
@@ -22,13 +22,13 @@ namespace	ba = boost::archive;
 
 namespace
 {
-  game::PokemonModele	*target(NULL);
+  game::PokemonModel	*target(NULL);
 
-  int new_pokemon_modele_from_id(unsigned int id)
+  int new_pokemon_model_from_id(unsigned int id)
   {
     if (target != NULL)
       delete target;
-    target = new game::PokemonModele(id);
+    target = new game::PokemonModel(id);
     return (0);
   }
 
@@ -44,7 +44,7 @@ namespace
 
 	try {
 	  id = static_cast<unsigned int>(stoi(args[1]));
-	  new_pokemon_modele_from_id(id);
+	  new_pokemon_model_from_id(id);
 	  cout << *target;
 	} catch (invalid_argument) {
 	  cerr << "invalid argument" << endl;
@@ -66,7 +66,7 @@ namespace
 	    throw (invalid_argument("stoi"));
 	  ifstream		file(args[1] + ".poke");
 
-	  new_pokemon_modele_from_id(id);
+	  new_pokemon_model_from_id(id);
 	  ba::text_iarchive	ia(file);
 	  ia >> *target;
 	} catch (invalid_argument) {

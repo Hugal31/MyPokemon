@@ -1,30 +1,30 @@
 /*
-** StatModele.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
+** StatModel.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
 **
 ** Made by Hugo Laloge
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Mon Jun  1 16:18:39 2015 Hugo Laloge
+** Last update Wed Jun 10 16:45:33 2015 Hugo Laloge
 */
 
 #include	<ostream>
-#include	"game/StatModele.hpp"
+#include	"game/StatModel.hpp"
 
 using namespace	game;
 
-StatModele::StatModele(bool is_hp) :
+StatModel::StatModel(bool is_hp) :
   _is_hp(is_hp)
 {
 
 }
 
-StatModele::~StatModele()
+StatModel::~StatModel()
 {
 
 }
 
-void	StatModele::display(std::ostream &os) const
+void	StatModel::display(std::ostream &os) const
 {
   os << "Base : " << _stat_base << std::endl
      << "Gived ev : " << _give_ev << std::endl;
@@ -34,12 +34,12 @@ void	StatModele::display(std::ostream &os) const
 ** Accesseurs
 */
 
-unsigned int	StatModele::get_stat_base() const
+unsigned int	StatModel::get_stat_base() const
 {
   return (_stat_base);
 }
 
-unsigned int	StatModele::get_give_ev() const
+unsigned int	StatModel::get_give_ev() const
 {
   return (_give_ev);
 }
@@ -48,7 +48,7 @@ unsigned int	StatModele::get_give_ev() const
 ** Surcharges d'operateur externes
 */
 
-std::ostream	&game::operator<<(std::ostream &os, const StatModele &stat)
+std::ostream	&game::operator<<(std::ostream &os, const StatModel &stat)
 {
   stat.display(os);
   return (os);

@@ -1,15 +1,15 @@
 /*
-** PokemonModele.hpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
+** PokemonModel.hpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
 **
 ** Made by Hugo Laloge
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Wed Jun 10 12:53:11 2015 Hippolyte QUIEF
+** Last update Wed Jun 10 16:41:38 2015 Hugo Laloge
 */
 
-#ifndef		POKEMON_MODELE_HPP_
-# define	POKEMON_MODELE_HPP_
+#ifndef		POKEMON_MODEL_HPP_
+# define	POKEMON_MODEL_HPP_
 
 # include	<iostream>
 # include	<string>
@@ -24,11 +24,11 @@ NO_WARNINGS
 WARNINGS
 
 # include	"Type.hpp"
-# include	"StatModele.hpp"
+# include	"StatModel.hpp"
 
 namespace game
 {
-  class			PokemonModele
+  class			PokemonModel
   {
   protected:
     friend class	boost::serialization::access;
@@ -44,12 +44,12 @@ namespace game
     unsigned short int	_catch_rate;
     unsigned short int	_gender_rate;
 
-    StatModele		_hp;
-    StatModele		_atk;
-    StatModele		_def;
-    StatModele		_spa;
-    StatModele		_spd;
-    StatModele		_spe;
+    StatModel		_hp;
+    StatModel		_atk;
+    StatModel		_def;
+    StatModel		_spa;
+    StatModel		_spd;
+    StatModel		_spe;
 
     /* Serialisation */
 
@@ -76,7 +76,7 @@ namespace game
 
   public:
     /* Constructeur */
-    PokemonModele(unsigned int id);
+    PokemonModel(unsigned int id);
 
     /* Accesseurs */
     const std::string	&get_name() const;
@@ -89,12 +89,12 @@ namespace game
     unsigned short int	get_weight() const;
     unsigned short int	get_catch_rate() const;
     unsigned short int	get_gender_rate() const;
-    const StatModele	&get_hp() const;
-    const StatModele	&get_atk() const;
-    const StatModele	&get_def() const;
-    const StatModele	&get_spa() const;
-    const StatModele	&get_spd() const;
-    const StatModele	&get_spe() const;
+    const StatModel	&get_hp() const;
+    const StatModel	&get_atk() const;
+    const StatModel	&get_def() const;
+    const StatModel	&get_spa() const;
+    const StatModel	&get_spd() const;
+    const StatModel	&get_spe() const;
 
     /* Assesseurs */
     void	        set_name(const std::string &name);
@@ -108,11 +108,11 @@ namespace game
     void		set_gender_rate(unsigned short int gender_rate);
   };
 
-  std::ostream	&operator<<(std::ostream &os, const PokemonModele &pokemon);
+  std::ostream	&operator<<(std::ostream &os, const PokemonModel &pokemon);
 }
 
 NO_WARNINGS
-BOOST_CLASS_VERSION(game::PokemonModele, 0)
+BOOST_CLASS_VERSION(game::PokemonModel, 0)
 WARNINGS
 
-#endif		/* !POKEMON_MODELE_HPP_ */
+#endif		/* !POKEMON_MODEL_HPP_ */
