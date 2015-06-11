@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 12:54:45 2015 Hippolyte QUIEF
-** Last update Wed Jun 10 16:45:12 2015 Hugo Laloge
+** Last update Thu Jun 11 14:13:33 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -25,9 +25,20 @@ Pokemon::Pokemon() :
 
 }
 
-Pokemon::Pokemon(const PokemonModel &model)
+Pokemon::Pokemon(const PokemonModel &model, unsigned int level, e_owner owner) :
+  _nickname(model.get_name()),
+  _id(model.get_id()),
+  _level(level),
+  _owner(owner),
+  /* _xp(xp_from_level()), */
+  _hp(model.get_hp()),
+  _atk(model.get_atk()),
+  _def(model.get_def()),
+  _spa(model.get_spa()),
+  _spd(model.get_spd()),
+  _spe(model.get_spe())
 {
-  (void)model;
+
 }
 
 Pokemon::~Pokemon()

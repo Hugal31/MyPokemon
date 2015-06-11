@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Wed Jun 10 16:41:38 2015 Hugo Laloge
+** Last update Thu Jun 11 14:06:41 2015 Hugo Laloge
 */
 
 #ifndef		STAT_HPP_
@@ -17,16 +17,15 @@
 # include	"no_warnings.hpp"
 
 NO_WARNINGS
-
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
-
 WARNINGS
 
 namespace game
 {
   class			Stat : public StatModel
   {
+  protected:
     friend class	boost::serialization::access;
     unsigned int	_ev;
     unsigned int	_iv;
@@ -43,13 +42,22 @@ namespace game
     }
 
   public:
-    Stat(bool is_hp = false);
+    Stat();
+    Stat(const StatModel &model);
+    virtual	~Stat();
 
-    virtual void	display(std::ostream &os = std::cout) const;
+    void	display(std::ostream &os = std::cout) const;
+    virtual unsigned int	get_value(unsigned int level) const;
+  };
 
-    /* Accesseurs */
-    unsigned int	get_value_other(unsigned int level) const;
-    unsigned int	get_value_hp() const;
+  class		StatHp : public Stat
+  {
+  public:
+    StatHp();
+    StatHp(const StatModel &model);
+    virtual	~StatHp();
+
+    unsigned int	get_value(unsigned int level) const;
   };
 }
 

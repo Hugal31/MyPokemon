@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Wed Jun 10 16:41:31 2015 Hugo Laloge
+** Last update Thu Jun 11 14:06:25 2015 Hugo Laloge
 */
 
 #ifndef		STATMODEL_HPP_
@@ -16,10 +16,8 @@
 # include	"no_warnings.hpp"
 
 NO_WARNINGS
-
 # include	<boost/archive/text_oarchive.hpp>
 # include	<boost/archive/text_iarchive.hpp>
-
 WARNINGS
 
 # define	STAT_IV_MAX	31
@@ -33,7 +31,6 @@ namespace game
     friend class	boost::serialization::access;
     unsigned int	_stat_base;
     unsigned int	_give_ev;
-    bool		_is_hp;
 
     /* Serialisation */
     template<class Archive>
@@ -45,7 +42,8 @@ namespace game
     }
 
   public:
-    StatModel(bool is_hp = false);
+    StatModel(const StatModel &stat);
+    StatModel(unsigned int stat_base = 0, unsigned int give_ev = 0);
     virtual ~StatModel();
 
     virtual void	display(std::ostream &os = std::cout) const;

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Wed Jun 10 16:45:33 2015 Hugo Laloge
+** Last update Thu Jun 11 14:06:56 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -13,8 +13,16 @@
 
 using namespace	game;
 
-StatModel::StatModel(bool is_hp) :
-  _is_hp(is_hp)
+StatModel::StatModel(const StatModel &stat) :
+  _stat_base(stat._stat_base),
+  _give_ev(stat._give_ev)
+{
+
+}
+
+StatModel::StatModel(unsigned int stat_base, unsigned int give_ev) :
+  _stat_base(stat_base),
+  _give_ev(give_ev)
 {
 
 }

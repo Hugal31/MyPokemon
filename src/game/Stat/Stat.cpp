@@ -5,34 +5,43 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Wed Jun 10 16:45:35 2015 Hugo Laloge
+** Last update Thu Jun 11 14:08:02 2015 Hugo Laloge
 */
 
+#include	<cstdlib>
 #include	<ostream>
 #include	"game/Stat.hpp"
 
 using namespace	game;
 
-Stat::Stat(bool is_hp) :
-  StatModel(is_hp)
+/*
+** @brief	Constructeur par defaut
+**		N'utiliser que pour avant une désérialisation
+*/
+Stat::Stat() :
+  _ev(0), _iv(0)
 {
 
 }
 
 /*
-** Accesseurs
-**
-** @TODO : Rajouter la nature
+** @brief	A utiliser lors de la creation d'un nouveau pokemon
 */
-
-unsigned int	Stat::get_value_other(unsigned int level) const
+Stat::Stat(const StatModel &model) :
+  StatModel(model),
+  _ev(0), _iv(rand() % 32)
 {
-  return (((((_iv + (2 * _stat_base) + (_ev / 4) * level) / 100 + 5))));
+
 }
 
-unsigned int	Stat::get_value_hp() const
+Stat::~Stat()
 {
-  return (((_iv + (2 * _stat_base) + (_ev / 4) + 100) / 100) + 10);
+
+}
+
+unsigned int	Stat::get_value(unsigned int level) const
+{
+  return (((((_iv + (2 * _stat_base) + (_ev / 4) * level) / 100 + 5))));
 }
 
 void	Stat::display(std::ostream &os) const
@@ -40,4 +49,30 @@ void	Stat::display(std::ostream &os) const
   os << "Base :\t" << _stat_base << std::endl
      << "EV :\t" << _ev << std::endl
      << "IV :\t" << _iv << std::endl;
+}
+
+/*
+** @brief	Constructeur par defaut
+**		N'utiliser que pour avant une désérialisation
+*/
+StatHp::StatHp()
+{
+
+}
+
+StatHp::StatHp(const StatModel &model) :
+  Stat(model)
+{
+
+}
+
+StatHp::~StatHp()
+{
+
+}
+
+unsigned int	StatHp::get_value(unsigned int level) const
+{
+  (void)level;
+  return (((_iv + (2 * _stat_base) + (_ev / 4) + 100) / 100) + 10);
 }

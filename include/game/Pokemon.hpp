@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Wed Jun 10 16:41:39 2015 Hugo Laloge
+** Last update Thu Jun 11 14:00:57 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_HPP_
@@ -39,7 +39,7 @@ namespace	game
     //unsigned int	_id_item_holding;
     unsigned int	_xp;
 
-    Stat		_hp;
+    StatHp		_hp;
     Stat		_atk;
     Stat		_def;
     Stat		_spa;
@@ -68,8 +68,12 @@ namespace	game
 
   public:
     Pokemon();
-    Pokemon(const PokemonModel &model);
+    Pokemon(const PokemonModel &model,
+	    unsigned int level = 1, e_owner owner = IS_WILD);
     virtual	 ~Pokemon();
+
+    void	generate(const PokemonModel &model,
+			  unsigned int level, e_owner owner);
 
     /* Ageteurs */
     const std::string	&get_nickname() const;
