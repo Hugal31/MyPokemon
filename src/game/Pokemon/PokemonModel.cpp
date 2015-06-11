@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Wed Jun 10 16:44:01 2015 Hugo Laloge
+** Last update Thu Jun 11 18:40:19 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -130,6 +130,13 @@ void	PokemonModel::set_types(const Type &type1, const Type &type2)
   _types[1] = type2;
 }
 
+void	PokemonModel::set_types(const std::string &type1,
+				const std::string &type2)
+{
+  _types[0].set_value(type1);
+  _types[1].set_value(type2);
+}
+
 void	PokemonModel::set_max_xp(const unsigned int max_xp)
 {
   _max_xp = max_xp;
@@ -164,6 +171,7 @@ std::ostream	&game::operator<<(std::ostream &os, const PokemonModel &pokemon)
   os << "Id : " << pokemon.get_id() << std::endl
      << "Name : " << pokemon.get_name() << std::endl
      << "Resum : " << pokemon.get_resum() << std::endl
+     << "Species : " << pokemon.get_species() << std::endl
      << "Types : " << pokemon.get_types()[0] << " and "
      << pokemon.get_types()[1] << std::endl
      << "Max xp : " << pokemon.get_max_xp() << std::endl

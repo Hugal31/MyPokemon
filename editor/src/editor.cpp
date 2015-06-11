@@ -5,12 +5,13 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Wed May 27 23:29:23 2015 Hugo Laloge
-** Last update Wed Jun 10 17:01:13 2015 Hugo Laloge
+** Last update Thu Jun 11 18:27:57 2015 Hugo Laloge
 */
 
 #include	<string>
 #include	<fstream>
 #include	<iostream>
+#include	"promptomatic.hpp"
 
 #include	"editor.hpp"
 #include	"game/PokemonModel.hpp"
@@ -18,13 +19,29 @@
 using namespace	std;
 using namespace	editor;
 
+namespace	pt = promptomatic;
 namespace	ba = boost::archive;
+
+game::PokemonModel	*editor::target(NULL);
 
 namespace
 {
-  game::PokemonModel	*target(NULL);
+  std::string	get_file_name(const std::string &id_str)
+  {
+    size_t		idx;
+    unsigned int	id(static_cast<unsigned int>(stoi(id_str, &idx)));
 
-  int new_pokemon_model_from_id(unsigned int id)
+    if (idx != id_str.size())
+      throw (invalid_argument("stoi"));
+    return ("../ressources/pokemon/" + to_string(id) + ".poke");
+  }
+
+  std::string	get_file_name(unsigned int id)
+  {
+    return ("../ressources/pokemon/" + to_string(id) + ".poke");
+  }
+
+  int new_pokemon_model(unsigned int id = 0)
   {
     if (target != NULL)
       delete target;
@@ -32,9 +49,9 @@ namespace
     return (0);
   }
 
-  // handlers pour shellist
+  // handlers pour promptomatic
 
-  int	create_poke_handler(const shellish::arguments &args)
+  int	create_poke_handler(const pt::Arguments &args)
   {
     if (args.argc() != 2)
       cerr << "usage :" << endl << "create id" << endl;
@@ -44,7 +61,9 @@ namespace
 
 	try {
 	  id = static_cast<unsigned int>(stoi(args[1]));
-	  new_pokemon_model_from_id(id);
+	  if (id == 0)
+	    throw invalid_argument("inferieur a 1");
+	  new_pokemon_model(id);
 	  cout << *target;
 	} catch (invalid_argument) {
 	  cerr << "invalid argument" << endl;
@@ -53,22 +72,22 @@ namespace
     return (0);
   }
 
-  int	open_poke_handler(const shellish::arguments &args)
+  int	open_poke_handler(const pt::Arguments &args)
   {
     if (args.argc() != 2)
       cerr << "usage :" << endl << "open <id>" << endl;
     else
       {
 	try {
-	  size_t		idx;
-	  unsigned int		id(static_cast<unsigned int>(stoi(args[1], &idx)));
-	  if (args[1].c_str()[idx] != '\0')
-	    throw (invalid_argument("stoi"));
-	  ifstream		file(args[1] + ".poke");
-
-	  new_pokemon_model_from_id(id);
-	  ba::text_iarchive	ia(file);
-	  ia >> *target;
+	  ifstream	file(get_file_name(args[1]));
+	  if (file)
+	    {
+	      new_pokemon_model();
+	      ba::text_iarchive	ia(file);
+	      ia >> *target;
+	    }
+	  else
+	    cerr << "invalid file" << endl;
 	} catch (invalid_argument) {
 	  cerr << "invalid argument" << endl;
 	}
@@ -76,28 +95,7 @@ namespace
     return (0);
   }
 
-  int	set_handler(const shellish::arguments &args)
-  {
-    int	ret(-1);
-
-    if (args.argc() != 3)
-      cerr << "usage :" << endl << "set <attribut> <value>" << endl;
-    else if (target == NULL)
-      cerr << "you need to create or open a pokemon first" << endl;
-    else
-      {
-	ret = 0;
-	if (args[1] == "name")
-	  target->set_name(args[2]);
-	else if (args[1] == "species")
-	  target->set_species(args[2]);
-	else if (args[1] == "resum")
-	  target->set_resum(args[2]);
-      }
-    return (0);
-  }
-
-  int	view_handler(const shellish::arguments &args)
+  int	view_handler(const pt::Arguments &args)
   {
     int	ret(-1);
 
@@ -112,7 +110,7 @@ namespace
     return (0);
   }
 
-  int	save_handler(const shellish::arguments &args)
+  int	save_handler(const pt::Arguments &args)
   {
     int	ret(-1);
 
@@ -122,11 +120,16 @@ namespace
       cerr << "no pokemon selected" << endl;
     else
       {
-	ofstream		file(to_string(target->get_id()) + ".poke");
+	ofstream		file(get_file_name(target->get_id()));
 
-	ba::text_oarchive	oa(file);
-	oa << *target;
-	ret = 0;
+	if (file)
+	  {
+	    ba::text_oarchive	oa(file);
+	    oa << *target;
+	    ret = 0;
+	  }
+	else
+	  cerr << "invalid file" << endl;
       }
     return (ret);
   }
@@ -134,14 +137,14 @@ namespace
 
 int	editor::editor(void)
 {
-  /*shellish::init(0, NULL);
-  shellish::map_commander("create", &create_poke_handler, "create a pokemon");
-  shellish::map_commander("open", &open_poke_handler, "ouvre le fichier d'un pokemon");
-  shellish::map_commander("set", &set_handler, "set pokemon attributs");
-  shellish::map_commander("view", &view_handler, "view pokemon attributs");
-  shellish::map_commander("save", &save_handler, "save pokemon");
+  pt::Prompt	prompt;
+
+  prompt.map_command("create", &create_poke_handler, "create a pokemon");
+  prompt.map_command("open", &open_poke_handler, "open a pokemon file");
+  prompt.map_command("set", &set_handler, "set pokemon attributs");
+  prompt.map_command("view", &view_handler, "view pokemon attributs");
+  prompt.map_command("save", &save_handler, "save pokemon");
   cout << "Mode d'edition" << endl;
-  shellish::input_loop(">>  ");
-  cout << endl;*/
+  prompt.input_loop();
   return (0);
 }

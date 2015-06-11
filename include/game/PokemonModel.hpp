@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Wed Jun 10 16:41:38 2015 Hugo Laloge
+** Last update Thu Jun 11 17:03:13 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -28,6 +28,10 @@ WARNINGS
 
 namespace game
 {
+  /*
+  ** @brief	Classe modele pour pokemon ayant pour but de pouvoir etre
+  **		sérialisé et modifié facilement
+  */
   class			PokemonModel
   {
   protected:
@@ -101,6 +105,7 @@ namespace game
     void		set_species(const std::string &species);
     void		set_resum(const std::string &resum);
     void		set_types(const Type &type1, const Type &type2);
+    void		set_types(const std::string &type1, const std::string &type2);
     void		set_max_xp(unsigned int max_xp);
     void		set_heigth(unsigned short int heigth);
     void		set_weight(unsigned short int weight);

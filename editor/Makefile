@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Wed Jun 10 17:03:51 2015 Hugo Laloge
+## Last update Thu Jun 11 15:06:53 2015 Hugo Laloge
 ##
 
 NAME	=	editor
@@ -16,7 +16,7 @@ OBJS	=	$(SRCS:.cpp=.o)
 
 DEPS	=	$(SRCS:.cpp=.depend)
 
-LIBS	=
+LIBS	=	promptomatic
 
 INCLUDE	=	$(foreach LIB, $(LIBS), -I lib/$(LIB)/include/)		\
 		-I include						\
