@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 12:54:45 2015 Hippolyte QUIEF
-** Last update Thu Jun 11 14:13:33 2015 Hugo Laloge
+** Last update Thu Jun 11 14:27:25 2015 Hippolyte QUIEF
 */
 
 #include	<ostream>
@@ -104,6 +104,27 @@ const Stat		&Pokemon::get_spe() const
 {
   return (_spe);
 }
+
+const Skill		&Pokemon::get_cap1() const;
+{
+  return (_skill[0]);
+}
+
+const Skill		&Pokemon::get_cap2() const;
+{
+  return (_skill[1]);
+}
+
+const Skill		&Pokemon::get_cap3() const;
+{
+  return (_skill[2]);
+}
+
+const Skill		&Pokemon::get_cap4() const;
+{
+  return (_skill[4]);
+}
+
 
 /*
 ** Asseteur

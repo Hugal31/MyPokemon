@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Tue Jun  9 11:34:28 2015 Hippolyte QUIEF
-** Last update Tue Jun  9 16:37:32 2015 Hippolyte QUIEF
+** Last update Thu Jun 11 14:13:22 2015 Hippolyte QUIEF
 */
 
 #include	<cmath>
@@ -143,6 +143,33 @@ namespace
     xp_need = calc_xp(lv, lv + 1, xp_type(xp_max)) - current_xp;
     return (xp_need);
   }
+}
+
+/*
+** @brief	Renvoie l'xp min a un level
+**
+** @param	level courrant
+** @return	xp min du level
+*/
+unsigned int		xp_from_level(unsigned int current_lv, unsigned int xp_max)
+{
+  e_xp_type		type;
+  unsigned int		xp;
+
+  type = xp_type(xp_max);
+  if (type == XP_ERRATIC)
+    xp = erratic_xp(current_lv);
+  else if (type == XP_FAST)
+    xp = fast_xp(current_lv);
+  else if (type == XP_MED_FAST)
+    xp = med_fast_xp(current_lv);
+  else if (type == XP_MED_SLOW)
+    xp = med_slow_xp(current_lv);
+  else if (type == XP_SLOW)
+    xp = slow_xp(current_lv);
+  else
+    xp = fluctuating_xp(current_lv);
+  return (xp);
 }
 
 /*

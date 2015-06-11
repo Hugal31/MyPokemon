@@ -5,7 +5,8 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Thu Jun 11 14:00:57 2015 Hugo Laloge
+** Last update Thu Jun 11 14:27:00 2015 Hippolyte QUIEF
+>>>>>>> Stashed changes
 */
 
 #ifndef		POKEMON_HPP_
@@ -17,6 +18,7 @@
 # include	"game/PokemonModel.hpp"
 # include	"game/Type.hpp"
 # include	"game/Stat.hpp"
+# include	"game/Skill.hpp"
 
 namespace	game
 {
@@ -46,6 +48,11 @@ namespace	game
     Stat		_spd;
     Stat		_spe;
 
+    Skill		_cap1;
+    Skill		_cap2;
+    Skill		_cap3;
+    Skill		_cap4;
+
     /* Serialisation */
 
     template<class Archive>
@@ -64,6 +71,10 @@ namespace	game
       ar & _spa;
       ar & _spd;
       ar & _spe;
+      ar & _cap1;
+      ar & _cap2;
+      ar & _cap3;
+      ar & _cap4;
     }
 
   public:
@@ -88,6 +99,10 @@ namespace	game
     const Stat		&get_spa() const;
     const Stat		&get_spd() const;
     const Stat		&get_spe() const;
+    const Skill		&get_cap1() const;
+    const Skill		&get_cap2() const;
+    const Skill		&get_cap3() const;
+    const Skill		&get_cap4() const;
 
     /* Aseteurs */
     void		set_nickname(const std::string &nickname);
