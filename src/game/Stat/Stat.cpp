@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Thu Jun 11 14:08:02 2015 Hugo Laloge
+** Last update Fri Jun 12 10:10:10 2015 Hugo Laloge
 */
 
 #include	<cstdlib>
@@ -48,7 +48,8 @@ void	Stat::display(std::ostream &os) const
 {
   os << "Base :\t" << _stat_base << std::endl
      << "EV :\t" << _ev << std::endl
-     << "IV :\t" << _iv << std::endl;
+     << "IV :\t" << _iv << std::endl
+     << "Value at level 100 : " << get_value(100) << std::endl;
 }
 
 /*
@@ -73,6 +74,5 @@ StatHp::~StatHp()
 
 unsigned int	StatHp::get_value(unsigned int level) const
 {
-  (void)level;
-  return (((_iv + (2 * _stat_base) + (_ev / 4) + 100) / 100) + 10);
+  return (((_iv + (2 * _stat_base) + (_ev / 4) + 100) * level / 100) + 10);
 }

@@ -2,7 +2,7 @@ In Generation III onward
 
 The stat is rounded down if the result is a decimal. The stat is also rounded down before the Nature multiplier, if any, is applied.
 
-HP = ((IV + (2 * Base) + (EV / 4) + 100) / 100) + 10
+HP = ((IV + (2 * Base) + (EV / 4) + 100) * Level / 100) + 10
 
 Other_Stat = ((((IV + (2 * Base) + (EV / 4)) * Level) / 100) + 5) * Nature
 
