@@ -26,7 +26,10 @@ namespace	game
     };
 }
 
-unsigned int	nb_level_pass(unsigned int level, unsigned int current_xp,
-			      unsigned int xp_gain, unsigned xp_max);
+unsigned int		xp_from_level(unsigned int current_lv, unsigned int xp_max);
+unsigned int	    nb_level_pass(unsigned int level, unsigned int current_xp,
+			                  unsigned int xp_gain, unsigned xp_max);
+
+
 
 #endif		/* !XP_HPP_ */

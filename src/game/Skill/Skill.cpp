@@ -9,11 +9,21 @@
 */
 
 #include	<ostream>
-#include	<string>
 #include	"game/Skill.hpp"
-#include	"game/Type.hpp"
 
 using namespace	game;
+
+Skill::Skill() :
+  _name("Unknown"),
+  _id(0),
+  _power(0),
+  _precision(0),
+  _pp(0),
+  _type_skill(IS_PHYSIC)
+{
+
+}
+
 
 /*
 ** Ageteurs
