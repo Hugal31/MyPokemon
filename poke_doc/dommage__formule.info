@@ -1,0 +1,92 @@
+The damage dealt when a Pokémon uses a damaging move depends on its Attack or Special Attack stat, the opponent's corresponding Defense or Special Defense stat, and the move's base power. In addition, the various factors of damage modification will also affect the damage dealt.
+
+The damage formula is :
+Dommage = (((2 * level + 10) / 250) * (atk / def) * base_atk + 2) * Modifier
+
+where :
+- Level is the level of the attacking Pokémon.
+- Attack and Defense are the working Attack and Defense stats of the attacking and defending Pokémon, respectively. If the attack is Special, the Special Attack and Special Defense stats are used instead. Some moves like Psystrike use stats other than what moves of this category would usually use (in case of Psystrike, it uses Special Attack and Defense).
+- Base is the base power of the attack.
+
+Modifier = STAB * Type * Critcal * other * (rand[0.85 ; 1])
+
+where :
+- STAB is the same-type attack bonus. This is equal to 1.5 if the attack is of the same type as the user, and 1 if otherwise.
+- Type is the type effectiveness. This can be either 0, 0.25, 0.5, 1, 2, or 4 depending on the type of attack and the type of the defending Pokémon.
+- Critical is 2 for a critical hit in Generations I-V, 1.5 for a critical hit in Generation VI, and 1 otherwise.
+other counts for things like held items, Abilities, field advantages, and whether the battle is a Double Battle or Triple Battle or not.
+- random is a random number from 0.85 to 1.00.
+
+Weather :
+Water-type and Fire-type moves' damage will be modified by rain and intense sunlight. During rain, Water-type moves do 50% more damage and Fire-type moves do 50% less damage. During intense sunlight, Fire-type moves do 50% more damage and Water-type moves do 50% less damage.
+
+Crtical hit :
+
+Stage		Chance of critical hit
++0	    	1/16 (6.25%)
++1	    	1/8 (12.5%)
++2	    	1/4 (25%)
++3	    	1/3 (33.3%)
++4 and above	1/2 (50%)
+
+Class  		Cause							II	III	IV	V	VI
+
+Attack 		Using a move with a high critical-hit ratio		+2	+2	+1	+1	+1
+
+Hold item    	Holding a Razor Claw or Scope Lens			+1	+1	+1	+1	+1
+     		Holding a Stick (if the user is Farfetch'd)		+2	+2	+2	+2	+2
+		Holding a Lucky Punch (if the user is Chansey)		+2	+2	+2	+2	+2
+
+Ability		Having Super Luck as its Ability					+1	+1	+1
+
+Triggered      	Being under the effect of Focus Energy			+1	+1	+2	+2	+2
+		Consuming a Lansat Berry (or being passed its effect)		+2	+2	+2
+		Using Dire Hit on it	     	   	      		+1  	+1	+1	+1	+1
+		Using Dire Hit 2 on it (Wonder Launcher only)					+2
+		Using Dire Hit 3 on it (Wonder Launcher only)					+3
+
+
+Moves with a high critical-hit ratio"
+
+The following 21 pages are in this category, out of 21 total.
+
+A
+Aeroblast (move)
+Air Cutter (move)
+Attack Order (move)
+
+B
+Blaze Kick (move)
+
+C
+Crabhammer (move)
+Cross Chop (move)
+Cross Poison (move)
+
+D
+Drill Run (move)
+
+K
+Karate Chop (move)
+
+L
+Leaf Blade (move)
+
+N
+Night Slash (move)
+
+P
+Poison Tail (move)
+Psycho Cut (move)
+
+R
+Razor Leaf (move)
+Razor Wind (move)
+
+S
+Shadow Blast (move)
+Shadow Claw (move)
+Sky Attack (move)
+Slash (move)
+Spacial Rend (move)
+Stone Edge (move)
