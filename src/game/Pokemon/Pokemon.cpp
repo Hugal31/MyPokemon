@@ -106,22 +106,22 @@ const Stat		&Pokemon::get_spe() const
   return (_spe);
 }
 
-const Skill		&Pokemon::get_cap1() const;
+const Skill		&Pokemon::get_cap1() const
 {
   return (_cap1);
 }
 
-const Skill		&Pokemon::get_cap2() const;
+const Skill		&Pokemon::get_cap2() const
 {
   return (_cap2);
 }
 
-const Skill		&Pokemon::get_cap3() const;
+const Skill		&Pokemon::get_cap3() const
 {
   return (_cap3);
 }
 
-const Skill		&Pokemon::get_cap4() const;
+const Skill		&Pokemon::get_cap4() const
 {
   return (_cap4);
 }
@@ -145,7 +145,7 @@ void	Pokemon::set_owner(e_owner owner)
 ** Surcharges externes
 */
 
-std::ostream	&game::operator<<(std::ostream &os, const Pokemon &pokemon)
+std::ostream	&operator<<(std::ostream &os, const Pokemon &pokemon)
 {
   os << "Id : " << pokemon.get_id() << std::endl
      << "Nickname : " << pokemon.get_nickname() << std::endl

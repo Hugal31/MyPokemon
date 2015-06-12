@@ -6,8 +6,8 @@ include_directories(include/)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
-    editor/src/editor.cpp
-    editor/src/main.cpp
+#    editor/src/main.cpp
+#    editor/src/editor.cpp
     src/game/Item/Item.cpp
     src/game/Pokemon/Pokemon.cpp
     src/game/Pokemon/PokemonModel.cpp
