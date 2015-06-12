@@ -60,7 +60,7 @@ endif
 
 all:		lib depends $(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(foreach LIB, $(LIBS), lib/$(LIB)/lib$(LIB).a) $(OBJS)
 		$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
 ifeq	($(DEBUG), 1)
 		@echo "\033[33;32m=== Compilation in debug mode\t\t\tDONE\033[33;39m"
