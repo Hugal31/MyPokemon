@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Thu Jun 11 14:27:00 2015 Hippolyte QUIEF
+** Last update Fri Jun 12 15:42:11 2015 Hippolyte QUIEF
 >>>>>>> Stashed changes
 */
 
@@ -104,13 +104,14 @@ namespace	game
     const Skill		&get_cap3() const;
     const Skill		&get_cap4() const;
 
-    /* Aseteurs */
+    /* Asseteurs */
     void		set_nickname(const std::string &nickname);
     void		set_owner(e_owner owner);
     // void		set_id_item_value(unsigned int id_item_holding);
   };
-
-  std::ostream	&operator<<(std::ostream &os, const Pokemon &poke);
 }
+
+std::ostream	&operator<<(std::ostream &os, const game::Pokemon &poke);
+
 
 #endif		/* !POKEMON_HPP_ */

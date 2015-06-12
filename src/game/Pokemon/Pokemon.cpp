@@ -10,6 +10,7 @@
 
 #include	<ostream>
 #include	<string>
+#include    "game/Skill.hpp"
 #include	"game/PokemonModel.hpp"
 #include	"game/Pokemon.hpp"
 
@@ -107,22 +108,22 @@ const Stat		&Pokemon::get_spe() const
 
 const Skill		&Pokemon::get_cap1() const;
 {
-  return (_skill[0]);
+  return (_cap1);
 }
 
 const Skill		&Pokemon::get_cap2() const;
 {
-  return (_skill[1]);
+  return (_cap2);
 }
 
 const Skill		&Pokemon::get_cap3() const;
 {
-  return (_skill[2]);
+  return (_cap3);
 }
 
 const Skill		&Pokemon::get_cap4() const;
 {
-  return (_skill[4]);
+  return (_cap4);
 }
 
 
