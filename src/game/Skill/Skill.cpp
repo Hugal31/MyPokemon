@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri Jun 12 14:51:40 2015 Hippolyte QUIEF
-** Last update Fri Jun 12 15:35:14 2015 Hippolyte QUIEF
+** Last update Fri Jun 12 18:48:19 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -19,11 +19,10 @@ Skill::Skill() :
   _power(0),
   _precision(0),
   _pp(0),
-  _type_skill(IS_PHYSIC)
+  _skill_type(IS_PHYSIC)
 {
 
 }
-
 
 /*
 ** Ageteurs
@@ -34,34 +33,34 @@ const std::string	&Skill::get_name() const
   return (_name);
 }
 
-unsigned int		&Skill::get_id() const
+unsigned int	Skill::get_id() const
 {
   return (_id);
 }
 
-const Type		&Skill::get_types() const
+Type	Skill::get_type() const
 {
-  return (_types);
+  return (_type);
 }
 
-unsigned int		&Skill::get_power() const
+unsigned int	Skill::get_power() const
 {
   return (_power);
 }
 
-unsigned int		&Skill::get_precision() const
+unsigned int	Skill::get_precision() const
 {
   return (_precision);
 }
 
-unsigned int		&Skill::get_pp() const
+unsigned int	Skill::get_pp() const
 {
   return (_pp);
 }
 
-e_type_move		&Skill::get_type_skill() const
+e_skill_type	Skill::get_skill_type() const
 {
-  return (_type_skill);
+  return (_skill_type);
 }
 
 /*
@@ -73,12 +72,13 @@ void		Skill::set_name(const std::string &name)
   _name = name;
 }
 
-void		Skill::set_type_skill(e_type_move type_skill)
+void		Skill::set_skill_type(e_skill_type skill_type)
 {
-  _type_skill = type_skill;
+  _skill_type = skill_type;
 }
 
-std::ostream	&operator<<(std::ostream &os)
+std::ostream	&operator<<(std::ostream &os, const Skill &skill)
 {
-  ;
+  (void)skill;
+  return (os);
 }
