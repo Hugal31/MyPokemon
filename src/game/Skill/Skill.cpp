@@ -5,11 +5,12 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri Jun 12 14:51:40 2015 Hippolyte QUIEF
-** Last update Sun Jun 14 23:18:30 2015 Hugo Laloge
+** Last update Mon Jun 15 01:33:03 2015 Hugo Laloge
 */
 
 #include	<ostream>
 #include	"game/Pokemon.hpp"
+#include	"game/PokemonModel.hpp"
 #include	"game/Skill.hpp"
 
 using namespace	game;
@@ -53,16 +54,18 @@ unsigned int	Skill::calc_dammage(const Pokemon &user,
 {
   unsigned int	dmg;
 
-  ///<TODO	Remplacer get_atk().get_value() par get_atk_value()
   dmg = ((2 * user.get_level() + 10) / 250
 	 * ((_skill_type == IS_PHYSIC)
 	    ? (user.get_atk_value() / target.get_def_value())
 	    : (user.get_spa_value() / target.get_spd_value()))
 	 * _power + 2);
-  ///<TODO STAB
-  //if (_type == user.get_types()[0] or _type == user.get_types()[1])
-  //dmg *= 1.5;
-  ///<TODO Types
+  // STAB
+  if (_type == PokemonModel::pokedex[user.get_id()].get_types()[0]
+      or _type == PokemonModel::pokedex[user.get_id()].get_types()[1])
+    dmg *= 1.5;
+  // Types
+  dmg *= _type.get_strengh(PokemonModel::pokedex[user.get_id()].get_types()[0])
+    * _type.get_strengh(PokemonModel::pokedex[user.get_id()].get_types()[1]);
   ///<TODO Critcal
   ///<TODO Other
   ///<TODO Random
