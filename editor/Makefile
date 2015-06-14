@@ -5,12 +5,13 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Thu Jun 11 15:06:53 2015 Hugo Laloge
+## Last update Sun Jun 14 09:10:17 2015 Hugo Laloge
 ##
 
 NAME	=	editor
 
 include	sources.mk
+include	ui.mk
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -22,15 +23,23 @@ INCLUDE	=	$(foreach LIB, $(LIBS), -I lib/$(LIB)/include/)		\
 		-I include						\
 		-I ../include						\
 		-I /usr/local/lib/boost_1_58_0/include/			\
+		-I /usr/include/qt5					\
+		-I /usr/include/qt5/QtGui -I /usr/include/qt5/QtCore	\
+		-I /usr/include/qt5/QtWidgets/				\
 
 RM	=	rm -f
 
+DEFINES	=	-DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB
+
 CXXFLAGS+=	-std=c++11
 CXXFLAGS+=	$(INCLUDE)
+CXXFLAGS+=	-m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE $(DEFINES)
 
 LDFLAGS	+=	$(foreach LIB, $(LIBS), -L lib/$(LIB) -l $(LIB))	\
 		-L/usr/local/lib/boost_1_58_0/lib			\
 		-lboost_serialization					\
+		-L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui		\
+		-L/usr/lib/x86_64-linux-gnu -lQt5Core -lGL -lpthread
 
 CLANG	?=	0
 
