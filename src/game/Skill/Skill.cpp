@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri Jun 12 14:51:40 2015 Hippolyte QUIEF
-** Last update Fri Jun 12 18:48:19 2015 Hugo Laloge
+** Last update Sun Jun 14 22:32:29 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -25,7 +25,7 @@ Skill::Skill() :
 }
 
 /*
-** Ageteurs
+** Accesseurs
 */
 
 const std::string	&Skill::get_name() const
@@ -65,6 +65,7 @@ e_skill_type	Skill::get_skill_type() const
 
 /*
 ** Asseteurs
+** A n'utiliser que pour de l'edition
 */
 
 void		Skill::set_name(const std::string &name)
@@ -79,6 +80,8 @@ void		Skill::set_skill_type(e_skill_type skill_type)
 
 std::ostream	&operator<<(std::ostream &os, const Skill &skill)
 {
-  (void)skill;
+  os << "Name : " << skill.get_name() << std::endl
+     << "Id : " << skill.get_id() << std::endl
+     << "PP : " << skill.get_pp() << std::endl;
   return (os);
 }

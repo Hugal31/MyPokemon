@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Thu Jun 11 13:16:48 2015 Hippolyte QUIEF
-** Last update Fri Jun 12 18:48:08 2015 Hugo Laloge
+** Last update Sun Jun 14 22:27:24 2015 Hugo Laloge
 */
 
 #ifndef		SKILL_HPP_
@@ -34,7 +34,7 @@ namespace	game
     unsigned int	_power;
     unsigned int	_precision;
     unsigned int	_pp;
-    e_skill_type		_skill_type;
+    e_skill_type	_skill_type;
 
   /* Serialisation */
     template<class Archive>
@@ -54,7 +54,7 @@ namespace	game
     Skill();
     //Skill();
 
-    /* Ageteurs */
+    /* Assesseurs */
     const std::string	&get_name() const;
     unsigned int	get_id() const;
     Type		get_type() const;
