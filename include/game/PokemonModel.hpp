@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Thu Jun 11 17:03:13 2015 Hugo Laloge
+** Last update Mon Jun 15 00:43:10 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -13,6 +13,7 @@
 
 # include	<iostream>
 # include	<string>
+# include	<vector>
 
 # include	"no_warnings.hpp"
 
@@ -79,8 +80,12 @@ namespace game
     }
 
   public:
+    /* Liste de tous les pokemons modeles */
+    static std::vector<PokemonModel>	pokedex;
+    static void	init_pokedex();
+
     /* Constructeur */
-    PokemonModel(unsigned int id);
+    PokemonModel(unsigned int id = 0);
 
     /* Accesseurs */
     const std::string	&get_name() const;

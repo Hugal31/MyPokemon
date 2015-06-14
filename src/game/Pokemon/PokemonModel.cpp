@@ -5,20 +5,59 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Thu Jun 11 18:40:19 2015 Hugo Laloge
+** Last update Mon Jun 15 00:59:29 2015 Hugo Laloge
 */
 
+#include	<fstream>
 #include	<ostream>
 #include	<string>
+#include	<vector>
+#include	"game/id.hpp"
 #include	"game/PokemonModel.hpp"
 
 using namespace	game;
+
+std::vector<PokemonModel>	PokemonModel::pokedex;
 
 PokemonModel::PokemonModel(unsigned int id) :
   _id(id), _max_xp(0), _heigth(10), _weight(10),
   _catch_rate(50), _gender_rate(50), _hp(true)
 {
-  //Ouvrir le fichier/DB et parser les infos
+  //Ouvrir le fichier/DB et parser les infos ?
+}
+
+namespace
+{
+  std::string	get_file_name(Id id)
+  {
+    return ("ressources/pokemon/" + std::to_string(id) + ".poke");
+  }
+}
+
+/*
+** Initialisation de la liste de pokemon
+*/
+
+void	PokemonModel::init_pokedex()
+{
+  bool	is_ok(true);
+  Id	id(1);
+
+  pokedex.push_back(PokemonModel());
+  while (is_ok)
+    {
+      std::ifstream	file(get_file_name(id));
+      if (file)
+	{
+	  std::cerr << "Ouverture du pokemon " << id << std::endl;
+	  pokedex.push_back(PokemonModel());
+	  boost::archive::text_iarchive	ia(file);
+	  ia >> *(pokedex.end() - 1);
+	  id++;
+	}
+      else
+	is_ok = false;
+    }
 }
 
 /*
