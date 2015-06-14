@@ -18,9 +18,9 @@ CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE $(DEFINES)
 INCPATH       = -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I. -Ilib/promptomatic/include -Iinclude -Iinclude/ui -I../include -I../include -I/usr/local/lib/boost_1_58_0/include -I/usr/include/qt5/QtWidgets -I/usr/include/qt5 -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtCore -I.
 LINK          = g++
 LFLAGS        = -m64 -Wl,-O1
-LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -L/usr/lib/x86_64-linux-gnu -Llib/promptomatic -lpromptomatic -L/usr/local/lib/boost_1_58_0/lib -lboost_serialization -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -L/usr/lib/x86_64-linux-gnu -Llib/promptomatic -lpromptomatic -L/usr/local/lib/boost_1_58_0/lib -lboost_serialization -lQt5Gui -lQt5Core -lGL -lpthread
 AR            = ar cqs
-RANLIB        = 
+RANLIB        =
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 TAR           = tar -cf
 COMPRESS      = gzip -9f
@@ -149,7 +149,7 @@ first: all
 
 all: Makefile $(TARGET)
 
-$(TARGET):  $(OBJECTS)  
+$(TARGET):  $(OBJECTS)
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: editor.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -282,12 +282,12 @@ qmake: FORCE
 
 qmake_all: FORCE
 
-dist: 
+dist:
 	@test -d .tmp/editor1.0.0 || mkdir -p .tmp/editor1.0.0
 	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/editor1.0.0/ && $(COPY_FILE) --parents include/editor.hpp include/ui/mainwindow.hpp include/ui/ui_mainwindow.h lib/promptomatic/include/arguments.hpp lib/promptomatic/include/command.hpp lib/promptomatic/include/promptomatic.hpp .tmp/editor1.0.0/ && $(COPY_FILE) --parents src/edit.cpp src/editor.cpp src/main.cpp src/mainwindow.cpp ../src/game/Pokemon/PokemonModel.cpp ../src/game/Type.cpp ../src/game/Stat/StatModel.cpp .tmp/editor1.0.0/ && (cd `dirname .tmp/editor1.0.0` && $(TAR) editor1.0.0.tar editor1.0.0 && $(COMPRESS) editor1.0.0.tar) && $(MOVE) `dirname .tmp/editor1.0.0`/editor1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/editor1.0.0
 
 
-clean:compiler_clean 
+clean:compiler_clean
 	-$(DEL_FILE) $(OBJECTS)
 	-$(DEL_FILE) *~ core *.core
 
@@ -295,7 +295,7 @@ clean:compiler_clean
 ####### Sub-libraries
 
 distclean: clean
-	-$(DEL_FILE) $(TARGET) 
+	-$(DEL_FILE) $(TARGET)
 	-$(DEL_FILE) Makefile
 
 
@@ -432,7 +432,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean 
+compiler_clean: compiler_moc_header_clean
 
 ####### Compile
 
@@ -4306,8 +4306,11 @@ StatModel.o: ../src/game/Stat/StatModel.cpp ../include/game/StatModel.hpp \
 		/usr/local/lib/boost_1_58_0/include/boost/archive/detail/basic_iserializer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StatModel.o ../src/game/Stat/StatModel.cpp
 
-moc_mainwindow.o: moc_mainwindow.cpp 
+moc_mainwindow.o: moc_mainwindow.cpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+include/ui/ui_mainwindow.h: ui/mainwindow.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ui/mainwindow.ui -o include/ui/ui_mainwindow.h
 
 ####### Install
 
@@ -4316,4 +4319,3 @@ install:   FORCE
 uninstall:   FORCE
 
 FORCE:
-

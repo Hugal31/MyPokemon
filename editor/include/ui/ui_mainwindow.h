@@ -68,6 +68,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", 0));
+        actionQuit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Q", 0));
         menuFiles->setTitle(QApplication::translate("MainWindow", "Files", 0));
     } // retranslateUi
 
