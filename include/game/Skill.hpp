@@ -5,15 +5,20 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Thu Jun 11 13:16:48 2015 Hippolyte QUIEF
-** Last update Sun Jun 14 22:27:24 2015 Hugo Laloge
+** Last update Sun Jun 14 22:52:23 2015 Hugo Laloge
 */
 
 #ifndef		SKILL_HPP_
 # define	SKILL_HPP_
 
+namespace	game
+{
+  class		Pokemon;
+}
+
 # include	<iostream>
 # include	<string>
-#include    "Type.hpp"
+# include	"Type.hpp"
 
 namespace	game
 {
@@ -50,9 +55,14 @@ namespace	game
       ar & _skill_type;
     }
 
+    virtual unsigned int	calc_dammage(const Pokemon &user,
+					     const Pokemon &target);
+
   public:
     Skill();
-    //Skill();
+    virtual		~Skill();
+
+    virtual int		use(Pokemon &user, Pokemon &target);
 
     /* Assesseurs */
     const std::string	&get_name() const;

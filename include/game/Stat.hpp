@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:21 2015 Hugo Laloge
-** Last update Thu Jun 11 14:06:41 2015 Hugo Laloge
+** Last update Sun Jun 14 23:14:54 2015 Hugo Laloge
 */
 
 #ifndef		STAT_HPP_
@@ -29,6 +29,7 @@ namespace game
     friend class	boost::serialization::access;
     unsigned int	_ev;
     unsigned int	_iv;
+    unsigned int	_value;
 
     /* Serialisation */
     template<class Archive>
@@ -41,23 +42,28 @@ namespace game
       ar & _iv;
     }
 
+    virtual unsigned int	calc_value(unsigned int level) const;
+
   public:
     Stat();
     Stat(const StatModel &model);
     virtual	~Stat();
 
     void	display(std::ostream &os = std::cout) const;
-    virtual unsigned int	get_value(unsigned int level) const;
+
+    ///<brief	A utiliser avant un combat
+    void	init_value(unsigned int level);
+    unsigned int	get_value() const;
   };
 
   class		StatHp : public Stat
   {
+    virtual unsigned int	calc_value(unsigned int level) const;
+
   public:
     StatHp();
     StatHp(const StatModel &model);
     virtual	~StatHp();
-
-    unsigned int	get_value(unsigned int level) const;
   };
 }
 

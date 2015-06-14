@@ -5,10 +5,11 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri Jun 12 14:51:40 2015 Hippolyte QUIEF
-** Last update Sun Jun 14 22:32:29 2015 Hugo Laloge
+** Last update Sun Jun 14 23:18:30 2015 Hugo Laloge
 */
 
 #include	<ostream>
+#include	"game/Pokemon.hpp"
 #include	"game/Skill.hpp"
 
 using namespace	game;
@@ -22,6 +23,50 @@ Skill::Skill() :
   _skill_type(IS_PHYSIC)
 {
 
+}
+
+Skill::~Skill()
+{
+
+}
+
+/*
+** @TODO	Rajouter en parametre les stats du combat actuel
+*/
+int	Skill::use(Pokemon &user, Pokemon &target)
+{
+  (void)user;
+  (void)target;
+  int	ret;
+
+  ret = -1;
+  if (_pp > 0)
+    {
+      _pp--;
+      ret = 0;
+    }
+  return (ret);
+}
+
+unsigned int	Skill::calc_dammage(const Pokemon &user,
+				    const Pokemon &target)
+{
+  unsigned int	dmg;
+
+  ///<TODO	Remplacer get_atk().get_value() par get_atk_value()
+  dmg = ((2 * user.get_level() + 10) / 250
+	 * ((_skill_type == IS_PHYSIC)
+	    ? (user.get_atk_value() / target.get_def_value())
+	    : (user.get_spa_value() / target.get_spd_value()))
+	 * _power + 2);
+  ///<TODO STAB
+  //if (_type == user.get_types()[0] or _type == user.get_types()[1])
+  //dmg *= 1.5;
+  ///<TODO Types
+  ///<TODO Critcal
+  ///<TODO Other
+  ///<TODO Random
+  return (dmg);
 }
 
 /*

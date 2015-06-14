@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Fri Jun 12 10:10:10 2015 Hugo Laloge
+** Last update Sun Jun 14 23:14:22 2015 Hugo Laloge
 */
 
 #include	<cstdlib>
@@ -39,9 +39,19 @@ Stat::~Stat()
 
 }
 
-unsigned int	Stat::get_value(unsigned int level) const
+unsigned int	Stat::calc_value(unsigned int level) const
 {
-  return (((((_iv + (2 * _stat_base) + (_ev / 4) * level) / 100 + 5))));
+  return ((_iv + (2 * _stat_base) + (_ev / 4) * level) / 100 + 5);
+}
+
+void	Stat::init_value(unsigned int level)
+{
+  _value = calc_value(level);
+}
+
+unsigned int	Stat::get_value() const
+{
+  return (_value);
 }
 
 void	Stat::display(std::ostream &os) const
@@ -49,7 +59,7 @@ void	Stat::display(std::ostream &os) const
   os << "Base :\t" << _stat_base << std::endl
      << "EV :\t" << _ev << std::endl
      << "IV :\t" << _iv << std::endl
-     << "Value at level 100 : " << get_value(100) << std::endl;
+     << "Value at level 100 : " << calc_value(100) << std::endl;
 }
 
 /*
@@ -72,7 +82,7 @@ StatHp::~StatHp()
 
 }
 
-unsigned int	StatHp::get_value(unsigned int level) const
+unsigned int	StatHp::calc_value(unsigned int level) const
 {
-  return (((_iv + (2 * _stat_base) + (_ev / 4) + 100) * level / 100) + 10);
+  return ((_iv + (2 * _stat_base) + (_ev / 4) + 100) * level / 100 + 10);
 }
