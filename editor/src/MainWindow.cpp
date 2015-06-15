@@ -1,22 +1,28 @@
 /*
-** poke_edit_window.cpp for editor in /home/laloge_h/rendu/MyPokemon/editor/src
+** MainWindow.cpp for editor in /home/laloge_h/rendu/MyPokemon/editor/src
 **
 ** Made by Hugo Laloge
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 11:34:52 2015 Hugo Laloge
-** Last update Mon Jun 15 14:06:54 2015 Hugo Laloge
+** Last update Mon Jun 15 15:31:44 2015 Hugo Laloge
 */
 
-#include       "PokeEditWindow.hpp"
+#include	"MainWindow.hpp"
+#include	"PokeEditWidget.hpp"
 
 using namespace	ui;
 
-PokeEditWindow::PokeEditWindow() : QMainWindow()
+MainWindow::MainWindow() : QMainWindow()
 {
   /* Boutons de menu  */
   /* Menu File  */
   QMenu	*menuFile(menuBar()->addMenu("&File"));
+
+  QAction *actionNew = new QAction("&New", this);
+  //QObject::connect(actionOpen, SIGNAL(triggered()), this, SLOT(open_file()));
+  actionNew->setShortcut(QKeySequence("Ctrl+N"));
+  menuFile->addAction(actionNew);
 
   QAction *actionOpen = new QAction("&Open", this);
   QObject::connect(actionOpen, SIGNAL(triggered()), this, SLOT(open_file()));
@@ -31,14 +37,18 @@ PokeEditWindow::PokeEditWindow() : QMainWindow()
   /* Menu Edit */
   QMenu	*menuEdit(menuBar()->addMenu("&Edit"));
   (void)menuEdit;
+
+  /* Onglets */
+  PokeEditWidget *pokeEdit = new PokeEditWidget;
+  setCentralWidget(pokeEdit);
 }
 
-PokeEditWindow::~PokeEditWindow()
+MainWindow::~MainWindow()
 {
 
 }
 
-void	PokeEditWindow::open_file()
+void	MainWindow::open_file()
 {
   QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
 						  "",

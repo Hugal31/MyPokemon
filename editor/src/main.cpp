@@ -5,16 +5,16 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 16:33:40 2015 Hugo Laloge
-** Last update Mon Jun 15 13:59:10 2015 Hugo Laloge
+** Last update Mon Jun 15 14:23:48 2015 Hugo Laloge
 */
 
 #include <QApplication>
-#include "PokeEditWindow.hpp"
+#include "MainWindow.hpp"
 
 int	main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
-  ui::PokeEditWindow w;
+  ui::MainWindow w;
   w.show();
 
   return a.exec();
