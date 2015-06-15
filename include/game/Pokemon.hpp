@@ -5,8 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Fri Jun 12 15:42:11 2015 Hippolyte QUIEF
->>>>>>> Stashed changes
+** Last update Sun Jun 14 23:14:00 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_HPP_
@@ -15,6 +14,7 @@
 # include	<iostream>
 # include	<string>
 
+# include	"game/id.hpp"
 # include	"game/PokemonModel.hpp"
 # include	"game/Type.hpp"
 # include	"game/Stat.hpp"
@@ -35,7 +35,7 @@ namespace	game
     friend class	boost::serialization::access;
 
     std::string		_nickname;
-    unsigned int	_id;
+    Id			_id;
     unsigned int	_level;
     e_owner		_owner;
     //unsigned int	_id_item_holding;
@@ -48,10 +48,7 @@ namespace	game
     Stat		_spd;
     Stat		_spe;
 
-    Skill		_cap1;
-    Skill		_cap2;
-    Skill		_cap3;
-    Skill		_cap4;
+    Skill		_skills[4];
 
     /* Serialisation */
 
@@ -71,10 +68,7 @@ namespace	game
       ar & _spa;
       ar & _spd;
       ar & _spe;
-      ar & _cap1;
-      ar & _cap2;
-      ar & _cap3;
-      ar & _cap4;
+      ar & _skills;
     }
 
   public:
@@ -88,7 +82,7 @@ namespace	game
 
     /* Ageteurs */
     const std::string	&get_nickname() const;
-    unsigned int	get_id() const;
+    Id			get_id() const;
     unsigned int	get_level() const;
     e_owner		get_owner() const;
     //unsigned int	get_id_item_holding() const;
@@ -99,10 +93,12 @@ namespace	game
     const Stat		&get_spa() const;
     const Stat		&get_spd() const;
     const Stat		&get_spe() const;
-    const Skill		&get_cap1() const;
-    const Skill		&get_cap2() const;
-    const Skill		&get_cap3() const;
-    const Skill		&get_cap4() const;
+    unsigned int	get_atk_value() const;
+    unsigned int	get_def_value() const;
+    unsigned int	get_spa_value() const;
+    unsigned int	get_spd_value() const;
+    unsigned int	get_spe_value() const;
+    const Skill		*get_skills() const;
 
     /* Asseteurs */
     void		set_nickname(const std::string &nickname);

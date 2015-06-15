@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 12:54:45 2015 Hippolyte QUIEF
-** Last update Thu Jun 11 14:27:25 2015 Hippolyte QUIEF
+** Last update Sun Jun 14 23:13:42 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -106,26 +106,35 @@ const Stat		&Pokemon::get_spe() const
   return (_spe);
 }
 
-const Skill		&Pokemon::get_cap1() const
+unsigned int	Pokemon::get_atk_value() const
 {
-  return (_cap1);
+  return (_atk.get_value());
 }
 
-const Skill		&Pokemon::get_cap2() const
+unsigned int	Pokemon::get_def_value() const
 {
-  return (_cap2);
+  return (_def.get_value());
 }
 
-const Skill		&Pokemon::get_cap3() const
+unsigned int	Pokemon::get_spa_value() const
 {
-  return (_cap3);
+  return (_spa.get_value());
 }
 
-const Skill		&Pokemon::get_cap4() const
+unsigned int	Pokemon::get_spd_value() const
 {
-  return (_cap4);
+  return (_spd.get_value());
 }
 
+unsigned int	Pokemon::get_spe_value() const
+{
+  return (_spe.get_value());
+}
+
+const Skill		*Pokemon::get_skills() const
+{
+  return (_skills);
+}
 
 /*
 ** Asseteur

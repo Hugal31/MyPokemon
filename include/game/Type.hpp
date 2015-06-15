@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Thu Jun 11 17:09:17 2015 Hugo Laloge
+** Last update Mon Jun 15 01:29:41 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
@@ -44,6 +44,9 @@ namespace	game
       ar & _value;
     }
 
+    static std::string	names[];
+    static float        strengh[TYPE_END][TYPE_END];
+
   public:
     Type();
     Type(e_type value);
@@ -51,15 +54,18 @@ namespace	game
 
     /* Accesseur */
     e_type	get_value() const;
+    const std::string	&get_name() const;
+    float       get_strengh(const Type &target) const;
 
     /* Assesseur*/
     void	set_value(e_type type);
     void	set_value(const std::string &type);
 
-    static std::string	names[];
+    /* Surcharges */
+    bool	operator==(const Type &other);
   };
 
-  std::ostream	&operator<<(std::ostream &os, const Type &type);
+  std::ostream	&operator<<(std::ostream &os, const game::Type &type);
 }
 
 #endif		/* !TYPE_H_ */
