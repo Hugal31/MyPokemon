@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Mon Jun 15 17:26:58 2015 Hugo Laloge
+** Last update Mon Jun 15 17:34:16 2015 Hugo Laloge
 */
 
 #include	"PokeEditWidget.hpp"
@@ -25,7 +25,9 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
     id = new QSpinBox;
     id->setMaximum(500);
     name = new QLineEdit;
+    name->setMaxLength(30);
     species = new QLineEdit;
+    species->setMaxLength(30);
     resum = new QTextEdit;
     xp = new XpWidget;
 
@@ -91,7 +93,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
 
       QLabel *hp_label = new QLabel(tr("<b>Hp</b>"));
       hp_base = new QSpinBox;
-      hp_base->setMaximum(200);
+      hp_base->setMaximum(255);
       hp_ev = new QSpinBox;
       hp_ev->setMaximum(3);
 
@@ -107,7 +109,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
 
       QLabel *atk_label = new QLabel(tr("<b>Atk</b>"));
       atk_base = new QSpinBox;
-      atk_base->setMaximum(200);
+      atk_base->setMaximum(255);
       atk_ev = new QSpinBox;
       atk_ev->setMaximum(3);
 
@@ -123,7 +125,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
 
       QLabel *def_label = new QLabel(tr("<b>Def</b>"));
       def_base = new QSpinBox;
-      def_base->setMaximum(200);
+      def_base->setMaximum(255);
       def_ev = new QSpinBox;
       def_ev->setMaximum(3);
 
@@ -139,7 +141,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
 
       QLabel *spa_label = new QLabel(tr("<b>Spa</b>"));
       spa_base = new QSpinBox;
-      spa_base->setMaximum(200);
+      spa_base->setMaximum(255);
       spa_ev = new QSpinBox;
       spa_ev->setMaximum(3);
 
@@ -155,7 +157,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
 
       QLabel *spd_label = new QLabel(tr("<b>Spd</b>"));
       spd_base = new QSpinBox;
-      spd_base->setMaximum(200);
+      spd_base->setMaximum(255);
       spd_ev = new QSpinBox;
       spd_ev->setMaximum(3);
 
@@ -171,7 +173,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
 
       QLabel *spe_label = new QLabel(tr("<b>Spe</b>"));
       spe_base = new QSpinBox;
-      spe_base->setMaximum(200);
+      spe_base->setMaximum(255);
       spe_ev = new QSpinBox;
       spe_ev->setMaximum(3);
 
