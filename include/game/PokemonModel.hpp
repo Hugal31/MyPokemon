@@ -48,6 +48,7 @@ namespace game
     unsigned short int	_weight;
     unsigned short int	_catch_rate;
     unsigned short int	_gender_rate;
+    //map_localisation
 
     StatModel		_hp;
     StatModel		_atk;
