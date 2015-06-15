@@ -5,13 +5,17 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 16:33:40 2015 Hugo Laloge
-** Last update Fri May 29 17:24:52 2015 Hugo Laloge
+** Last update Mon Jun 15 14:23:48 2015 Hugo Laloge
 */
 
-#include	"editor.hpp"
+#include <QApplication>
+#include "MainWindow.hpp"
 
-int	main()
+int	main(int argc, char *argv[])
 {
-  editor::editor();
-  return (0);
+  QApplication a(argc, argv);
+  ui::MainWindow w;
+  w.show();
+
+  return a.exec();
 }

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Fri May 29 18:17:33 2015 Hugo Laloge
-** Last update Mon Jun 15 01:29:41 2015 Hugo Laloge
+** Last update Mon Jun 15 15:42:39 2015 Hugo Laloge
 */
 
 #ifndef		TYPE_H_
@@ -59,7 +59,6 @@ namespace	game
       ar & _value;
     }
 
-    static std::string	names[];
     static float        strengh[TYPE_END][TYPE_END];
 
   public:
@@ -78,6 +77,8 @@ namespace	game
 
     /* Surcharges */
     bool	operator==(const Type &other);
+
+    static std::string	names[];
   };
 
   std::ostream	&operator<<(std::ostream &os, const game::Type &type);

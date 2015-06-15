@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun 15 00:43:10 2015 Hugo Laloge
+** Last update Mon Jun 15 16:21:51 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -26,6 +26,7 @@ WARNINGS
 
 # include	"Type.hpp"
 # include	"StatModel.hpp"
+# include	"xp.hpp"
 
 namespace game
 {
