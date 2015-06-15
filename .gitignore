@@ -35,3 +35,5 @@ my_pokemon
 # Temporary files
 *~
 \#*#
+.swp
+.idea/
