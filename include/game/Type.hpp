@@ -27,6 +27,21 @@ namespace	game
       TYPE_NONE,
       TYPE_NORMAL,
       TYPE_FIGHT,
+      TYPE_FLYINIG,
+      TYPE_POISON,
+      TYPE_GROUND,
+      TYPE_ROCK,
+      TYPE_BUG,
+      TYPE_GHOST,
+      TYPE_STEEL,
+      TYPE_FIRE,
+      TYPE_WATER,
+      TYPE_GRASS,
+      TYPE_ELECTRIC,
+      TYPE_PSYCHIC,
+      TYPE_ICE,
+      TYPE_DRAGON,
+      TYPE_DARK,
       TYPE_END
     };
 

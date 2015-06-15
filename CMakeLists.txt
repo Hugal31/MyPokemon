@@ -18,4 +18,7 @@ set(SOURCE_FILES
     src/game/xp.cpp
     src/main.cpp)
 
+Link_directories(/usr/include/boost/archive/)
+Link_directories(/usr/local/share/boost/)
+
 add_executable(MyPokemon ${SOURCE_FILES})
