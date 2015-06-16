@@ -12,4 +12,4 @@ LIBS+=		-lQt5Widgets						\
 
 QMAKE_CXX=	clang++
 
-QMAKE_CXXFLAGS+=      -std=c++11
+QMAKE_CXXFLAGS+=      -std=c++11 -DEDITOR

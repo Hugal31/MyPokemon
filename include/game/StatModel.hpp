@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Tue Jun 16 14:32:52 2015 Hugo Laloge
+** Last update Tue Jun 16 15:22:03 2015 Hugo Laloge
 */
 
 #ifndef		STATMODEL_HPP_
@@ -43,7 +43,7 @@ namespace game
 
   public:
     StatModel(const StatModel &stat);
-    StatModel(unsigned int stat_base = 0, unsigned int give_ev = 0);
+    StatModel(unsigned short int stat_base = 0, unsigned short int give_ev = 0);
     virtual ~StatModel();
 
     virtual void	display(std::ostream &os = std::cout) const;
@@ -51,6 +51,9 @@ namespace game
     /* Accesseurs */
     unsigned short int	get_stat_base() const;
     unsigned short int	get_give_ev() const;
+
+    void	set_stat_base(unsigned short int stat_base);
+    void	set_give_ev(unsigned short int give_ev);
   };
 
   std::ostream	&operator<<(std::ostream &os, const StatModel &stat);

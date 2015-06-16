@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Tue Jun  9 14:08:20 2015 Hippolyte QUIEF
-** Last update Tue Jun  9 16:39:14 2015 Hippolyte QUIEF
+** Last update Tue Jun 16 14:46:14 2015 Hugo Laloge
 */
 
 #ifndef		XP_HPP_
@@ -26,9 +26,9 @@ namespace	game
     };
 }
 
-unsigned int		xp_from_level(unsigned int current_lv, unsigned int xp_max);
-unsigned int	    nb_level_pass(unsigned int level, unsigned int current_xp,
-			                  unsigned int xp_gain, unsigned xp_max);
+unsigned int	xp_from_level(unsigned int current_lv, unsigned int xp_max);
+unsigned int	nb_level_pass(unsigned int level, unsigned int current_xp,
+			      unsigned int xp_gain, unsigned xp_max);
 
 
 

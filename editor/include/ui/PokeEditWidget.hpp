@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 14:28:38 2015 Hugo Laloge
+** Last update Tue Jun 16 15:27:56 2015 Hugo Laloge
 */
 
 #ifndef		POKEEDITWIDGET_H_
@@ -16,9 +16,14 @@ NO_WARNINGS
 # include    <QtWidgets>
 WARNINGS
 
+namespace game
+{
+  class	PokemonModel;
+}
+
 #include	"EditWidget.hpp"
-#include	"game/PokemonModel.hpp"
 #include	"game/Type.hpp"
+#include	"game/xp.hpp"
 
 namespace
 {
@@ -133,6 +138,7 @@ namespace	ui
     void	init_layout(void);
     void	open_poke(const QString &filename);
     void	load_poke(const game::PokemonModel &poke);
+    void        save_poke(game::PokemonModel &poke);
 
   public slots:
 
@@ -142,7 +148,7 @@ namespace	ui
     PokeEditWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
     ~PokeEditWidget();
 
-    void	save(const QString &path = ".");
+    void	save();
   };
 }
 

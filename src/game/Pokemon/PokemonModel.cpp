@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Tue Jun 16 14:14:47 2015 Hugo Laloge
+** Last update Tue Jun 16 14:42:39 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -144,6 +144,11 @@ const StatModel	&PokemonModel::get_spe() const
   return (_spe);
 }
 
+unsigned short int	PokemonModel::get_xp_base() const
+{
+  return (_xp_base);
+}
+
 /*
 ** Asseteurs
 */
@@ -199,6 +204,12 @@ void	PokemonModel::set_catch_rate(const unsigned short int catch_rate)
 void	PokemonModel::set_gender_rate(const unsigned short int gender_rate)
 {
   _gender_rate = gender_rate;
+}
+
+
+void	PokemonModel::set_xp_base(unsigned short int xp_base)
+{
+  _xp_base = xp_base;
 }
 
 /*

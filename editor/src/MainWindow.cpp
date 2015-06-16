@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 11:34:52 2015 Hugo Laloge
-** Last update Tue Jun 16 13:45:19 2015 Hugo Laloge
+** Last update Tue Jun 16 15:27:30 2015 Hugo Laloge
 */
 
 #include	"MainWindow.hpp"
@@ -62,7 +62,7 @@ void	MainWindow::new_pokemon()
   currentEditor = new PokeEditWidget;
   setCentralWidget(currentEditor);
 }
-#include	<iostream>
+
 void	MainWindow::open_file()
 {
   if (currentEditor != NULL)
@@ -79,8 +79,5 @@ void	MainWindow::open_file()
 
 void	MainWindow::save_file()
 {
-  QString path = QFileDialog::getExistingDirectory(this,
-						   tr("Save directory"),
-						   "../ressources");
-  currentEditor->save(path);
+  currentEditor->save();
 }

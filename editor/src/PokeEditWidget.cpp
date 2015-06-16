@@ -5,10 +5,11 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 14:35:31 2015 Hugo Laloge
+** Last update Tue Jun 16 15:28:38 2015 Hugo Laloge
 */
 
 #include	<fstream>
+#include	<string>
 #include	"game/PokemonModel.hpp"
 #include	"PokeEditWidget.hpp"
 
@@ -31,7 +32,7 @@ PokeEditWidget::~PokeEditWidget()
 {
 
 }
-#include	<iostream>
+
 void	PokeEditWidget::open_poke(const QString &filename)
 {
   std::ifstream	file(filename.toStdString());
@@ -48,7 +49,6 @@ void	PokeEditWidget::open_poke(const QString &filename)
 
 void	PokeEditWidget::load_poke(const game::PokemonModel &poke)
 {
-  std::cout << poke;
   id->setValue(poke.get_id());
   name->setText(poke.get_name().c_str());
   species->setText(poke.get_species().c_str());
@@ -72,16 +72,55 @@ void	PokeEditWidget::load_poke(const game::PokemonModel &poke)
   spd_ev->setValue(poke.get_spd().get_give_ev());
   spe_base->setValue(poke.get_spe().get_stat_base());
   spe_ev->setValue(poke.get_spe().get_give_ev());
-  //xp_base->setValue(poke.get_xp_base());
+  xp_base->setValue(poke.get_xp_base());
 }
 
 /**
 ** @param	path	Chemin vers le dossier de sauvegarde
 **			Le nom du fichier est deviné tout seul
 */
-void	PokeEditWidget::save(const QString &path)
+void	PokeEditWidget::save()
 {
-  (void)path;
+  QString path = QFileDialog::getExistingDirectory(this,
+						   tr("Save directory"),
+						   "../ressources/pokemon");
+  game::PokemonModel	poke;
+
+  save_poke(poke);
+  {
+    std::ofstream file(path.toStdString() + "/" + std::to_string(id->value()) + ".poke");
+    if (file)
+      {
+	boost::archive::text_oarchive oa(file);
+	oa << poke;
+      }
+  }
+}
+
+void	PokeEditWidget::save_poke(game::PokemonModel &poke)
+{
+  poke.set_name(name->text().toStdString());
+  poke.set_species(species->text().toStdString());
+  poke.set_resum(resum->toPlainText().toStdString());
+  poke.set_xp_type(xp->get_value());
+  poke.set_types(types[0]->currentText().toStdString(), types[1]->currentText().toStdString());
+  poke.set_heigth(static_cast<unsigned short int>(height->value() * 10));
+  poke.set_weight(static_cast<unsigned short int>(weight->value() * 10));
+  poke.set_catch_rate(static_cast<unsigned short int>(catch_rate->value()));
+  poke.set_gender_rate(static_cast<unsigned short int>(gender_rate->value()));
+  poke._hp.set_stat_base(static_cast<unsigned short int>(hp_base->value()));
+  poke._hp.set_give_ev(static_cast<unsigned short int>(hp_ev->value()));
+  poke._atk.set_stat_base(static_cast<unsigned short int>(atk_base->value()));
+  poke._atk.set_give_ev(static_cast<unsigned short int>(atk_ev->value()));
+  poke._def.set_stat_base(static_cast<unsigned short int>(def_base->value()));
+  poke._def.set_give_ev(static_cast<unsigned short int>(def_ev->value()));
+  poke._spa.set_stat_base(static_cast<unsigned short int>(spa_base->value()));
+  poke._spa.set_give_ev(static_cast<unsigned short int>(spa_ev->value()));
+  poke._spd.set_stat_base(static_cast<unsigned short int>(spd_base->value()));
+  poke._spd.set_give_ev(static_cast<unsigned short int>(spd_ev->value()));
+  poke._spe.set_stat_base(static_cast<unsigned short int>(spe_base->value()));
+  poke._spe.set_give_ev(static_cast<unsigned short int>(spe_ev->value()));
+  poke.set_xp_base(static_cast<unsigned short int>(xp_base->value()));
 }
 
 void	PokeEditWidget::init_layout()

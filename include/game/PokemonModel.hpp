@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Tue Jun 16 14:15:00 2015 Hugo Laloge
+** Last update Tue Jun 16 15:14:31 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -28,6 +28,10 @@ WARNINGS
 # include	"StatModel.hpp"
 # include	"xp.hpp"
 
+# ifdef	EDITOR
+#  include	"PokeEditWidget.hpp"
+# endif	/* EDITOR */
+
 namespace game
 {
   /*
@@ -37,6 +41,9 @@ namespace game
   class			PokemonModel
   {
   protected:
+# ifdef	EDITOR
+    friend class	ui::PokeEditWidget;
+# endif	/* EDITOR */
     friend class	boost::serialization::access;
 
     std::string		_name;
@@ -58,7 +65,7 @@ namespace game
     StatModel		_spa;
     StatModel		_spd;
     StatModel		_spe;
-    unsigned int    _xp;
+    unsigned short int	_xp_base;
 
     /* Serialisation */
 
@@ -81,7 +88,7 @@ namespace game
       ar & _spa;
       ar & _spd;
       ar & _spe;
-      ar & _xp;
+      ar & _xp_base;
     }
 
   public:
@@ -109,7 +116,7 @@ namespace game
     const StatModel	&get_spa() const;
     const StatModel	&get_spd() const;
     const StatModel	&get_spe() const;
-    unsigned int    get_xp() const;
+    unsigned short int	get_xp_base() const;
 
     /* Assesseurs */
     void	        set_name(const std::string &name);
@@ -122,7 +129,7 @@ namespace game
     void		set_weight(unsigned short int weight);
     void		set_catch_rate(unsigned short int catch_rate);
     void		set_gender_rate(unsigned short int gender_rate);
-    void        set_xp(unsigned int xp);
+    void		set_xp_base(unsigned short int xp_base);
   };
 
   std::ostream	&operator<<(std::ostream &os, const PokemonModel &pokemon);
