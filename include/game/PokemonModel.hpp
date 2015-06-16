@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Tue Jun 16 15:14:31 2015 Hugo Laloge
+** Last update Tue Jun 16 16:18:07 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -76,6 +76,7 @@ namespace game
       ar & _id;
       ar & _name;
       ar & _species;
+      ar & _resum;
       ar & _types;
       ar & _xp_type;
       ar & _heigth;
