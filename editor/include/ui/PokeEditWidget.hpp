@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 15:27:56 2015 Hugo Laloge
+** Last update Tue Jun 16 16:21:42 2015 Hugo Laloge
 */
 
 #ifndef		POKEEDITWIDGET_H_
@@ -110,7 +110,7 @@ namespace	ui
     QSpinBox	*id;
     QLineEdit	*name;
     QLineEdit	*species;
-    QTextEdit	*resum;
+    QPlainTextEdit	*resum;
     XpWidget	*xp;
     TypeWidget	*types[2];
 

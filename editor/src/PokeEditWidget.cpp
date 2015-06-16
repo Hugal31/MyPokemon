@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 16:13:57 2015 Hugo Laloge
+** Last update Tue Jun 16 16:22:34 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -52,7 +52,7 @@ void	PokeEditWidget::load_poke(const game::PokemonModel &poke)
   id->setValue(poke.get_id());
   name->setText(poke.get_name().c_str());
   species->setText(poke.get_species().c_str());
-  resum->setText(poke.get_resum().c_str());
+  resum->setPlainText(poke.get_resum().c_str());
   xp->set_value(poke.get_xp_type());
   types[0]->setCurrentText(poke.get_types()[0].get_name().c_str());
   types[1]->setCurrentText(poke.get_types()[1].get_name().c_str());
@@ -141,7 +141,7 @@ void	PokeEditWidget::init_layout()
     name->setMaxLength(30);
     species = new QLineEdit;
     species->setMaxLength(30);
-    resum = new QTextEdit;
+    resum = new QPlainTextEdit;
     xp = new XpWidget;
 
     types[0] = new TypeWidget;
