@@ -5,14 +5,86 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Mon Jun 15 21:58:40 2015 Hugo Laloge
+** Last update Tue Jun 16 14:35:31 2015 Hugo Laloge
 */
 
+#include	<fstream>
+#include	"game/PokemonModel.hpp"
 #include	"PokeEditWidget.hpp"
 
 using namespace	ui;
 
-PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
+PokeEditWidget::PokeEditWidget(QWidget *parent, Qt::WindowFlags f) :
+  EditWidget(parent, f)
+{
+  init_layout();
+}
+
+PokeEditWidget::PokeEditWidget(const QString &filename,
+			       QWidget *parent, Qt::WindowFlags f) :
+  PokeEditWidget(parent, f)
+{
+  open_poke(filename);
+}
+
+PokeEditWidget::~PokeEditWidget()
+{
+
+}
+#include	<iostream>
+void	PokeEditWidget::open_poke(const QString &filename)
+{
+  std::ifstream	file(filename.toStdString());
+  game::PokemonModel	poke;
+
+  if (file)
+    {
+      boost::archive::text_iarchive	ia(file);
+      ia >> poke;
+      load_poke(poke);
+    }
+  ///< TODO	Erreur
+}
+
+void	PokeEditWidget::load_poke(const game::PokemonModel &poke)
+{
+  std::cout << poke;
+  id->setValue(poke.get_id());
+  name->setText(poke.get_name().c_str());
+  species->setText(poke.get_species().c_str());
+  resum->setText(poke.get_resum().c_str());
+  xp->set_value(poke.get_xp_type());
+  types[0]->setCurrentText(poke.get_types()[0].get_name().c_str());
+  types[1]->setCurrentText(poke.get_types()[1].get_name().c_str());
+  height->setValue(static_cast<double>(poke.get_heigth()) / 10);
+  weight->setValue(static_cast<double>(poke.get_weight()) / 10);
+  catch_rate->setValue(poke.get_catch_rate());
+  gender_rate->setValue(poke.get_gender_rate());
+  hp_base->setValue(poke.get_hp().get_stat_base());
+  hp_ev->setValue(poke.get_hp().get_give_ev());
+  atk_base->setValue(poke.get_atk().get_stat_base());
+  atk_ev->setValue(poke.get_atk().get_give_ev());
+  def_base->setValue(poke.get_def().get_stat_base());
+  def_ev->setValue(poke.get_def().get_give_ev());
+  spa_base->setValue(poke.get_spa().get_stat_base());
+  spa_ev->setValue(poke.get_spa().get_give_ev());
+  spd_base->setValue(poke.get_spd().get_stat_base());
+  spd_ev->setValue(poke.get_spd().get_give_ev());
+  spe_base->setValue(poke.get_spe().get_stat_base());
+  spe_ev->setValue(poke.get_spe().get_give_ev());
+  //xp_base->setValue(poke.get_xp_base());
+}
+
+/**
+** @param	path	Chemin vers le dossier de sauvegarde
+**			Le nom du fichier est deviné tout seul
+*/
+void	PokeEditWidget::save(const QString &path)
+{
+  (void)path;
+}
+
+void	PokeEditWidget::init_layout()
 {
   QGroupBox	*main_info_box;
   QGroupBox	*second_info_box;
@@ -23,6 +95,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
     main_info_box = new QGroupBox(tr("Main informations"));
 
     id = new QSpinBox;
+    id->setMinimum(1);
     id->setMaximum(500);
     name = new QLineEdit;
     name->setMaxLength(30);
@@ -31,12 +104,10 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
     resum = new QTextEdit;
     xp = new XpWidget;
 
-    type_label = new QLabel(tr("Types"));
     types[0] = new TypeWidget;
     types[1] = new TypeWidget;
 
     QHBoxLayout *type_layout = new QHBoxLayout;
-    type_layout->addWidget(type_label);
     type_layout->addWidget(types[0]);
     type_layout->addWidget(types[1]);
 
@@ -45,8 +116,8 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
     form_layout->addRow(tr("Name"), name);
     form_layout->addRow(tr("Species"), species);
     form_layout->addRow(tr("Resum"), resum);
+    form_layout->addRow(tr("Types"), type_layout);
     form_layout->addRow(tr("Xp type"), xp);
-    form_layout->addRow(type_layout);
 
     main_info_box->setLayout(form_layout);
   }
@@ -55,23 +126,27 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
   {
     second_info_box = new QGroupBox(tr("Secondary information"));
 
-    heigth = new QDoubleSpinBox;
-    heigth->setSuffix(" m");
-    heigth->setDecimals(1);
-    heigth->setMaximum(100.0);
+    height = new QDoubleSpinBox;
+    height->setSuffix(" m");
+    height->setDecimals(1);
+    height->setMaximum(100.0);
+    height->setValue(0.5);
     weight = new QDoubleSpinBox;
     weight->setSuffix(" kg");
     weight->setDecimals(1);
     weight->setMaximum(2000.0);
+    weight->setValue(10.0);
     catch_rate = new QSpinBox;
     catch_rate->setMaximum(100);
     catch_rate->setSuffix("%");
+    catch_rate->setValue(50);
     gender_rate = new QSpinBox;
     gender_rate->setMaximum(100);
     gender_rate->setSuffix("%");
+    gender_rate->setValue(50);
 
     QFormLayout *form_layout = new QFormLayout;
-    form_layout->addRow(tr("Heigth"), heigth);
+    form_layout->addRow(tr("Height"), height);
     form_layout->addRow(tr("Weight"), weight);
     form_layout->addRow(tr("Catch rate"), catch_rate);
     form_layout->addRow(tr("Gender rate"), gender_rate);
@@ -87,6 +162,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
     QHBoxLayout *spa_box;
     QHBoxLayout *spd_box;
     QHBoxLayout *spe_box;
+    QHBoxLayout *xp_box;
 
     stats_info_box = new QGroupBox(tr("Stats"));
 
@@ -186,6 +262,18 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
       spe_box->addWidget(spe_ev);
     }
 
+    {
+      xp_box = new QHBoxLayout;
+
+      QLabel *xp_label = new QLabel(tr("<b>Xp</b>"));
+      xp_base = new QSpinBox;
+      xp_base->setMaximum(255);
+
+      xp_box->addWidget(xp_label);
+      xp_box->addWidget(new QLabel(tr("Base")));
+      xp_box->addWidget(xp_base);
+    }
+
     QVBoxLayout *stat_layout = new QVBoxLayout;
     stat_layout->addLayout(hp_box);
     stat_layout->addLayout(atk_box);
@@ -193,6 +281,7 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
     stat_layout->addLayout(spa_box);
     stat_layout->addLayout(spd_box);
     stat_layout->addLayout(spe_box);
+    stat_layout->addLayout(xp_box);
 
     stats_info_box->setLayout(stat_layout);
   }
@@ -203,9 +292,4 @@ PokeEditWidget::PokeEditWidget(QWidget *parent) : QWidget(parent)
   layout->addWidget(second_info_box);
   layout->addWidget(stats_info_box);
   this->setLayout(layout);
-}
-
-PokeEditWidget::~PokeEditWidget()
-{
-
 }

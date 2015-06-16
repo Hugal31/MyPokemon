@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Mon Jun 15 00:59:29 2015 Hugo Laloge
+** Last update Tue Jun 16 14:14:47 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -20,7 +20,7 @@ using namespace	game;
 std::vector<PokemonModel>	PokemonModel::pokedex;
 
 PokemonModel::PokemonModel(unsigned int id) :
-  _id(id), _max_xp(0), _heigth(10), _weight(10),
+  _id(id), _xp_type(XP_ERRATIC), _heigth(10), _weight(10),
   _catch_rate(50), _gender_rate(50), _hp(true)
 {
   //Ouvrir le fichier/DB et parser les infos ?
@@ -89,9 +89,9 @@ unsigned int	PokemonModel::get_id() const
   return (_id);
 }
 
-unsigned int	PokemonModel::get_max_xp() const
+e_xp_type	PokemonModel::get_xp_type() const
 {
-  return (_max_xp);
+  return (_xp_type);
 }
 
 unsigned short int	PokemonModel::get_heigth() const
@@ -176,9 +176,9 @@ void	PokemonModel::set_types(const std::string &type1,
   _types[1].set_value(type2);
 }
 
-void	PokemonModel::set_max_xp(const unsigned int max_xp)
+void	PokemonModel::set_xp_type(const e_xp_type xp_type)
 {
-  _max_xp = max_xp;
+  _xp_type = xp_type;
 }
 
 void	PokemonModel::set_heigth(const unsigned short int heigth)
@@ -213,7 +213,7 @@ std::ostream	&game::operator<<(std::ostream &os, const PokemonModel &pokemon)
      << "Species : " << pokemon.get_species() << std::endl
      << "Types : " << pokemon.get_types()[0] << " and "
      << pokemon.get_types()[1] << std::endl
-     << "Max xp : " << pokemon.get_max_xp() << std::endl
+     << "Max xp : " << pokemon.get_xp_type() << std::endl
      << "Heigth : " << pokemon.get_heigth() << std::endl
      << "Weight : " << pokemon.get_weight() << std::endl
      << "Catch rate : " << pokemon.get_catch_rate() << std::endl

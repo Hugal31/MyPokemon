@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Thu Jun 11 14:06:25 2015 Hugo Laloge
+** Last update Tue Jun 16 14:32:52 2015 Hugo Laloge
 */
 
 #ifndef		STATMODEL_HPP_
@@ -29,8 +29,8 @@ namespace game
   {
   protected:
     friend class	boost::serialization::access;
-    unsigned int	_stat_base;
-    unsigned int	_give_ev;
+    unsigned short int	_stat_base;
+    unsigned short int	_give_ev;
 
     /* Serialisation */
     template<class Archive>
@@ -49,8 +49,8 @@ namespace game
     virtual void	display(std::ostream &os = std::cout) const;
 
     /* Accesseurs */
-    unsigned int	get_stat_base() const;
-    unsigned int        get_give_ev() const;
+    unsigned short int	get_stat_base() const;
+    unsigned short int	get_give_ev() const;
   };
 
   std::ostream	&operator<<(std::ostream &os, const StatModel &stat);

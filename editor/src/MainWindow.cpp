@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 11:34:52 2015 Hugo Laloge
-** Last update Mon Jun 15 16:04:00 2015 Hugo Laloge
+** Last update Tue Jun 16 13:45:19 2015 Hugo Laloge
 */
 
 #include	"MainWindow.hpp"
@@ -13,39 +13,38 @@
 
 using namespace	ui;
 
-MainWindow::MainWindow() : QMainWindow()
+MainWindow::MainWindow() :
+  QMainWindow(),
+  currentEditor(NULL)
 {
   /* Boutons de menu  */
   /* Menu File  */
-  QMenu	*menuFile(menuBar()->addMenu("&File"));
+  QMenu	*menuFile = menuBar()->addMenu(tr("&File"));
+  QMenu *menuNew = menuFile->addMenu(tr("&New"));
 
-  QAction *actionNew = new QAction(tr("&New"), this);
-  //QObject::connect(actionOpen, SIGNAL(triggered()), this, SLOT(open_file()));
-  actionNew->setShortcut(QKeySequence("Ctrl+N"));
-  menuFile->addAction(actionNew);
+  QAction *actionNew = new QAction(tr("&Pokemon"), this);
+  QObject::connect(actionNew, SIGNAL(triggered()), this, SLOT(new_pokemon()));
+  actionNew->setShortcut(QKeySequence(tr("Ctrl+N")));
+  menuNew->addAction(actionNew);
 
   QAction *actionOpen = new QAction(tr("&Open"), this);
   QObject::connect(actionOpen, SIGNAL(triggered()), this, SLOT(open_file()));
-  actionOpen->setShortcut(QKeySequence("Ctrl+O"));
+  actionOpen->setShortcut(QKeySequence(tr("Ctrl+O")));
   menuFile->addAction(actionOpen);
 
   QAction *actionSave = new QAction(tr("&Save"), this);
-  //QObject::connect(actionOpen, SIGNAL(triggered()), this, SLOT(open_file()));
-  actionSave->setShortcut(QKeySequence("Ctrl+S"));
+  QObject::connect(actionSave, SIGNAL(triggered()), this, SLOT(save_file()));
+  actionSave->setShortcut(QKeySequence(tr("Ctrl+S")));
   menuFile->addAction(actionSave);
 
   QAction *actionQuit = new QAction(tr("&Quit"), this);
   QObject::connect(actionQuit, SIGNAL(triggered()), qApp, SLOT(quit()));
-  actionQuit->setShortcut(QKeySequence("Ctrl+Q"));
+  actionQuit->setShortcut(QKeySequence(tr("Ctrl+Q")));
   menuFile->addAction(actionQuit);
 
   /* Menu Edit */
   QMenu	*menuEdit(menuBar()->addMenu(tr("&Edit")));
   (void)menuEdit;
-
-  /* Onglets */
-  PokeEditWidget *pokeEdit = new PokeEditWidget;
-  setCentralWidget(pokeEdit);
 }
 
 MainWindow::~MainWindow()
@@ -53,9 +52,35 @@ MainWindow::~MainWindow()
 
 }
 
+void	MainWindow::new_pokemon()
+{
+  if (currentEditor != NULL)
+    {
+      delete currentEditor;
+      ///<TODO	Faire pop une fenetre de confirmation
+    }
+  currentEditor = new PokeEditWidget;
+  setCentralWidget(currentEditor);
+}
+#include	<iostream>
 void	MainWindow::open_file()
 {
+  if (currentEditor != NULL)
+    {
+      delete currentEditor;
+      ///<TODO	Faire pop une fenetre de confirmation
+    }
   QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-						  "",
-						  tr("Files (.poke)"));
+						  "../ressources",
+						  tr("MyPoke (*.poke)"));
+  currentEditor = new PokeEditWidget(fileName);
+  setCentralWidget(currentEditor);
+}
+
+void	MainWindow::save_file()
+{
+  QString path = QFileDialog::getExistingDirectory(this,
+						   tr("Save directory"),
+						   "../ressources");
+  currentEditor->save(path);
 }

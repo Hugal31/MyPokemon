@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Mon Jun 15 16:21:51 2015 Hugo Laloge
+** Last update Tue Jun 16 14:15:00 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -43,8 +43,9 @@ namespace game
     std::string		_species;
     std::string		_resum;
     Type		_types[2];
+    /* Pourquoi stocker l'id ? */
     unsigned int	_id;
-    unsigned int	_max_xp;
+    e_xp_type		_xp_type;
     unsigned short int	_heigth;
     unsigned short int	_weight;
     unsigned short int	_catch_rate;
@@ -68,7 +69,7 @@ namespace game
       ar & _name;
       ar & _species;
       ar & _types;
-      ar & _max_xp;
+      ar & _xp_type;
       ar & _heigth;
       ar & _weight;
       ar & _catch_rate;
@@ -95,7 +96,7 @@ namespace game
     const std::string	&get_resum() const;
     const Type		*get_types() const;
     unsigned int	get_id() const;
-    unsigned int	get_max_xp() const;
+    e_xp_type		get_xp_type() const;
     unsigned short int	get_heigth() const;
     unsigned short int	get_weight() const;
     unsigned short int	get_catch_rate() const;
@@ -113,7 +114,7 @@ namespace game
     void		set_resum(const std::string &resum);
     void		set_types(const Type &type1, const Type &type2);
     void		set_types(const std::string &type1, const std::string &type2);
-    void		set_max_xp(unsigned int max_xp);
+    void		set_xp_type(e_xp_type xp_type);
     void		set_heigth(unsigned short int heigth);
     void		set_weight(unsigned short int weight);
     void		set_catch_rate(unsigned short int catch_rate);

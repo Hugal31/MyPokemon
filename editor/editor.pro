@@ -11,6 +11,8 @@ include(spec.pro)
 # Input
 HEADERS += include/editor.hpp \
            include/ui/MainWindow.hpp \
+           include/ui/EditWidget.hpp \
            include/ui/PokeEditWidget.hpp
-SOURCES += src/main.cpp src/MainWindow.cpp src/PokeEditWidget.cpp
+SOURCES += src/main.cpp src/MainWindow.cpp src/EditWidget.cpp \
+           src/PokeEditWidget.cpp
 TRANSLATIONS = translations/editor_fr.ts

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 11:36:24 2015 Hugo Laloge
-** Last update Mon Jun 15 14:30:48 2015 Hugo Laloge
+** Last update Tue Jun 16 13:11:50 2015 Hugo Laloge
 */
 
 #ifndef		MAINWINDOW_H_
@@ -17,6 +17,8 @@ NO_WARNINGS
 # include    <QtWidgets>
 WARNINGS
 
+# include	"EditWidget.hpp"
+
 namespace ui
 {
     class   MainWindow : public QMainWindow
@@ -24,9 +26,12 @@ namespace ui
       Q_OBJECT
 
     private:
+      EditWidget	*currentEditor;
 
     public slots:
+      void	new_pokemon();
       void	open_file();
+      void	save_file();
 
     public:
         MainWindow();

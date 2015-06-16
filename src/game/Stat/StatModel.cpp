@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Thu Jun 11 14:06:56 2015 Hugo Laloge
+** Last update Tue Jun 16 14:33:17 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -42,12 +42,12 @@ void	StatModel::display(std::ostream &os) const
 ** Accesseurs
 */
 
-unsigned int	StatModel::get_stat_base() const
+unsigned short int	StatModel::get_stat_base() const
 {
   return (_stat_base);
 }
 
-unsigned int	StatModel::get_give_ev() const
+unsigned short int	StatModel::get_give_ev() const
 {
   return (_give_ev);
 }
