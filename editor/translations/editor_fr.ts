@@ -4,32 +4,32 @@
 <context>
     <name>XpWidget</name>
     <message>
-        <location filename="../include/ui/PokeEditWidget.hpp" line="39"/>
+        <location filename="../include/ui/PokeEditWidget.hpp" line="45"/>
         <source>ERRATIC (600000)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../include/ui/PokeEditWidget.hpp" line="40"/>
+        <location filename="../include/ui/PokeEditWidget.hpp" line="46"/>
         <source>FAST (800000)</source>
         <translation>RAPIDE (800000)</translation>
     </message>
     <message>
-        <location filename="../include/ui/PokeEditWidget.hpp" line="41"/>
+        <location filename="../include/ui/PokeEditWidget.hpp" line="47"/>
         <source>MED_FAST (1000000)</source>
         <translation>MOYEN RAPIDE (1000000)</translation>
     </message>
     <message>
-        <location filename="../include/ui/PokeEditWidget.hpp" line="42"/>
+        <location filename="../include/ui/PokeEditWidget.hpp" line="48"/>
         <source>MED_SLOW (1059860)</source>
         <translation>MED LENT (1059860)</translation>
     </message>
     <message>
-        <location filename="../include/ui/PokeEditWidget.hpp" line="43"/>
+        <location filename="../include/ui/PokeEditWidget.hpp" line="49"/>
         <source>SLOW (1250000)</source>
         <translation>LENT (1250000)</translation>
     </message>
     <message>
-        <location filename="../include/ui/PokeEditWidget.hpp" line="44"/>
+        <location filename="../include/ui/PokeEditWidget.hpp" line="50"/>
         <source>FLUCTUATING (1640000)</source>
         <translation>FLUCTUANT (1640000)</translation>
     </message>
@@ -92,132 +92,151 @@
         <translation>&amp;Edition</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="68"/>
+        <location filename="../src/MainWindow.cpp" line="73"/>
         <source>Open File</source>
         <translation>Ouvrir un fichier</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="76"/>
+        <location filename="../src/MainWindow.cpp" line="75"/>
+        <source>MyPoke (*.poke)</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Save directory</source>
-        <translation>Dossier de sauvegarde</translation>
+        <translation type="vanished">Dossier de sauvegarde</translation>
     </message>
 </context>
 <context>
     <name>ui::PokeEditWidget</name>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="24"/>
+        <location filename="../src/PokeEditWidget.cpp" line="134"/>
         <source>Main informations</source>
         <translation>Informations principales</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="35"/>
+        <location filename="../src/PokeEditWidget.cpp" line="158"/>
         <source>Types</source>
         <translation>Types</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="45"/>
+        <location filename="../src/PokeEditWidget.cpp" line="154"/>
         <source>Id</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="46"/>
+        <location filename="../src/PokeEditWidget.cpp" line="85"/>
+        <source>Save directory</source>
+        <translation>Dossier de sauvegarde</translation>
+    </message>
+    <message>
+        <location filename="../src/PokeEditWidget.cpp" line="155"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="47"/>
+        <location filename="../src/PokeEditWidget.cpp" line="156"/>
         <source>Species</source>
         <translation>Espèce</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="48"/>
+        <location filename="../src/PokeEditWidget.cpp" line="157"/>
         <source>Resum</source>
         <translation>Résumé</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="49"/>
+        <location filename="../src/PokeEditWidget.cpp" line="159"/>
         <source>Xp type</source>
         <translation>Type d&apos;Xp</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="57"/>
+        <location filename="../src/PokeEditWidget.cpp" line="166"/>
         <source>Secondary information</source>
         <translation>Informations secondaires</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="75"/>
         <source>Heigth</source>
+        <translation type="vanished">Hauteur</translation>
+    </message>
+    <message>
+        <location filename="../src/PokeEditWidget.cpp" line="188"/>
+        <source>Height</source>
         <translation>Hauteur</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="76"/>
+        <location filename="../src/PokeEditWidget.cpp" line="189"/>
         <source>Weight</source>
         <translation>Poids</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="77"/>
+        <location filename="../src/PokeEditWidget.cpp" line="190"/>
         <source>Catch rate</source>
         <translation>Taux de capture</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="78"/>
+        <location filename="../src/PokeEditWidget.cpp" line="191"/>
         <source>Gender rate</source>
         <translation>Taux de mâle</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="92"/>
+        <location filename="../src/PokeEditWidget.cpp" line="206"/>
         <source>Stats</source>
         <translation>Statistiques</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="97"/>
+        <location filename="../src/PokeEditWidget.cpp" line="211"/>
         <source>&lt;b&gt;Hp&lt;/b&gt;</source>
         <translation>&lt;b&gt;Pv&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="104"/>
-        <location filename="../src/PokeEditWidget.cpp" line="120"/>
-        <location filename="../src/PokeEditWidget.cpp" line="136"/>
-        <location filename="../src/PokeEditWidget.cpp" line="152"/>
-        <location filename="../src/PokeEditWidget.cpp" line="168"/>
-        <location filename="../src/PokeEditWidget.cpp" line="184"/>
+        <location filename="../src/PokeEditWidget.cpp" line="218"/>
+        <location filename="../src/PokeEditWidget.cpp" line="234"/>
+        <location filename="../src/PokeEditWidget.cpp" line="250"/>
+        <location filename="../src/PokeEditWidget.cpp" line="266"/>
+        <location filename="../src/PokeEditWidget.cpp" line="282"/>
+        <location filename="../src/PokeEditWidget.cpp" line="298"/>
+        <location filename="../src/PokeEditWidget.cpp" line="312"/>
         <source>Base</source>
         <translation>Base</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="106"/>
-        <location filename="../src/PokeEditWidget.cpp" line="122"/>
-        <location filename="../src/PokeEditWidget.cpp" line="138"/>
-        <location filename="../src/PokeEditWidget.cpp" line="154"/>
-        <location filename="../src/PokeEditWidget.cpp" line="170"/>
-        <location filename="../src/PokeEditWidget.cpp" line="186"/>
+        <location filename="../src/PokeEditWidget.cpp" line="220"/>
+        <location filename="../src/PokeEditWidget.cpp" line="236"/>
+        <location filename="../src/PokeEditWidget.cpp" line="252"/>
+        <location filename="../src/PokeEditWidget.cpp" line="268"/>
+        <location filename="../src/PokeEditWidget.cpp" line="284"/>
+        <location filename="../src/PokeEditWidget.cpp" line="300"/>
         <source>Gived ev</source>
         <translation>Ev donnés</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="113"/>
+        <location filename="../src/PokeEditWidget.cpp" line="227"/>
         <source>&lt;b&gt;Atk&lt;/b&gt;</source>
         <translation>&lt;b&gt;Atk&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="129"/>
+        <location filename="../src/PokeEditWidget.cpp" line="243"/>
         <source>&lt;b&gt;Def&lt;/b&gt;</source>
         <translation>&lt;b&gt;Def&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="145"/>
+        <location filename="../src/PokeEditWidget.cpp" line="259"/>
         <source>&lt;b&gt;Spa&lt;/b&gt;</source>
         <translation>&lt;b&gt;Spa&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="161"/>
+        <location filename="../src/PokeEditWidget.cpp" line="275"/>
         <source>&lt;b&gt;Spd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Spa&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/PokeEditWidget.cpp" line="177"/>
+        <location filename="../src/PokeEditWidget.cpp" line="291"/>
         <source>&lt;b&gt;Spe&lt;/b&gt;</source>
         <translation>&lt;b&gt;Vit&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/PokeEditWidget.cpp" line="307"/>
+        <source>&lt;b&gt;Xp&lt;/b&gt;</source>
+        <translation></translation>
     </message>
 </context>
 </TS>

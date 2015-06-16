@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 15:28:38 2015 Hugo Laloge
+** Last update Tue Jun 16 16:13:57 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -99,6 +99,7 @@ void	PokeEditWidget::save()
 
 void	PokeEditWidget::save_poke(game::PokemonModel &poke)
 {
+  poke._id = static_cast<unsigned int>(id->value());
   poke.set_name(name->text().toStdString());
   poke.set_species(species->text().toStdString());
   poke.set_resum(resum->toPlainText().toStdString());
@@ -131,7 +132,7 @@ void	PokeEditWidget::init_layout()
 
   /* Main info  */
   {
-    main_info_box = new QGroupBox(tr("Main informations"));
+    main_info_box = new QGroupBox(tr("Main informtions"));
 
     id = new QSpinBox;
     id->setMinimum(1);
