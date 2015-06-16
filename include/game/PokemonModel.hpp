@@ -58,6 +58,7 @@ namespace game
     StatModel		_spa;
     StatModel		_spd;
     StatModel		_spe;
+    unsigned int    _xp;
 
     /* Serialisation */
 
@@ -80,6 +81,7 @@ namespace game
       ar & _spa;
       ar & _spd;
       ar & _spe;
+      ar & _xp;
     }
 
   public:
@@ -107,6 +109,7 @@ namespace game
     const StatModel	&get_spa() const;
     const StatModel	&get_spd() const;
     const StatModel	&get_spe() const;
+    unsigned int    get_xp() const;
 
     /* Assesseurs */
     void	        set_name(const std::string &name);
@@ -119,6 +122,7 @@ namespace game
     void		set_weight(unsigned short int weight);
     void		set_catch_rate(unsigned short int catch_rate);
     void		set_gender_rate(unsigned short int gender_rate);
+    void        set_xp(unsigned int xp);
   };
 
   std::ostream	&operator<<(std::ostream &os, const PokemonModel &pokemon);
