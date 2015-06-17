@@ -11,6 +11,9 @@
 #include        "Combat.hpp"
 #include        "Pokemon.hpp"
 
+
+
+
 int         xp_gain(Pokemon &poke, Pokemon &poke_adv)
 {
     int     xp;
