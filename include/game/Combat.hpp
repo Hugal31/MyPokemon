@@ -14,15 +14,50 @@
 # include	<iostream>
 # include	<string>
 
-NO_WARNINGS
+#include    "game/Pokemon.hpp"
 
-# include	<boost/archive/text_oarchive.hpp>
-# include	<boost/archive/text_iarchive.hpp>
+namespace   game
+{
+    enum    e_weather
+    {
+        WEATHER_CLEAR,
+        WEATHER_HOT,
+        WEATHER_RAINING
+    };
 
-WARNINGS
+    enum    e_play
+    {
+        OWN_PLAY,
+        OTHER_PLAY
+    };
 
-#include    "Pokemon.hpp"
+    class   Combat
+    {
+    protected:
+        unsigned int    _nb_turn;
+        e_weather       _weather;
+        e_play          _play;
+        Pokemon         *_own_pokemon;
+        Pokemon         *_other_pokemon;
 
-int         xp_gain(Pokemon &poke, Pokemon &poke_adv);
+    public:
+        Combat();
+        virtual ~Combat();
+
+        /* Ageteurs */
+        unsigned int    get_nb_turn() const;
+        e_weather       get_weather() const;
+        e_play          get_play() const;
+        const Pokemon   &get_own_pokemon() const;
+        const Pokemon   &get_other_pokemon() const;
+
+        /* Asseteurs */
+        void            set_weather(e_weather weather);
+        void            set_play(e_play play);
+    };
+}
+
+std::ostream    &operator<<(std::ostream &os, const game::Combat &fight);
+int             xp_gain(game::Pokemon &poke, game::Pokemon &poke_adv);
 
 #endif		/* !COMBAT_HPP_ */
