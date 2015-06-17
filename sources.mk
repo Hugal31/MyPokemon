@@ -1,4 +1,5 @@
 SRCS	=	src/main.cpp						\
+		src/game/Combat/Combat.cpp				\
 		src/game/Item/Item.cpp					\
 		src/game/Pokemon/Pokemon.cpp				\
 		src/game/Pokemon/PokemonModel.cpp			\

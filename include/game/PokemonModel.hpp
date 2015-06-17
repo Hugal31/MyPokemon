@@ -49,7 +49,7 @@ namespace game
     std::string		_name;
     std::string		_species;
     std::string		_resum;
-    Type		_types[2];
+    Type		    _types[2];
     /* Pourquoi stocker l'id ? */
     unsigned int	_id;
     e_xp_type		_xp_type;
@@ -120,7 +120,7 @@ namespace game
     unsigned short int	get_xp_base() const;
 
     /* Assesseurs */
-    void	        set_name(const std::string &name);
+    void	    set_name(const std::string &name);
     void		set_species(const std::string &species);
     void		set_resum(const std::string &resum);
     void		set_types(const Type &type1, const Type &type2);

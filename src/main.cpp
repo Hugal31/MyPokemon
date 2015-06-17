@@ -11,7 +11,6 @@
 #include	<cstdlib>
 #include	<iostream>
 #include	"game/PokemonModel.hpp"
-#include    "game/Combat.hpp"
 
 namespace
 {
