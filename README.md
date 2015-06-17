@@ -2,7 +2,7 @@
 Un jeu pokemon pour s'exercer au C++
 
 DEPENDANCES
-===========
+===
 
 Le jeu nécessite l'installation de boost 1.58.0
 
@@ -19,22 +19,16 @@ shellish
 Attention : l'editeur nécéssite gcc-5 ou clang pour être compilé
 
 Installation des dépendances
-============================
+===
 
 Boost : ```sudo apt-get install libboost-all-dev```
 
 Pour l'editeur :
-----------------
+---
 
-ncurses : ```sudo apt-get install libncurses5-dev```
-
-readline : ```sudo apt-get install libreadline-dev```
-
-readline_cpp : http://wanderinghorse.net/computing/readline/
-
-shellish : http://wanderinghorse.net/wh/computing/shellish/
+Qt5
 
 TITRE
-=====
+===
 
 Le jeux s'appelera : "Pokemon Caillou !!! mes mortels ennemies !"
