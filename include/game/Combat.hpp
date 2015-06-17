@@ -11,10 +11,10 @@
 #ifndef		COMBAT_HPP_
 # define	COMBAT_HPP_
 
-# include	<iostream>
+# include	<ostream>
 # include	<string>
 
-#include    "game/Pokemon.hpp"
+# include    "game/Pokemon.hpp"
 
 namespace   game
 {
@@ -48,8 +48,9 @@ namespace   game
         unsigned int    get_nb_turn() const;
         e_weather       get_weather() const;
         e_play          get_play() const;
-        const Pokemon   &get_own_pokemon() const;
-        const Pokemon   &get_other_pokemon() const;
+        const Pokemon   *get_own_pokemon() const;
+        const Pokemon   *get_other_pokemon() const;
+
 
         /* Asseteurs */
         void            set_weather(e_weather weather);
@@ -58,6 +59,6 @@ namespace   game
 }
 
 std::ostream    &operator<<(std::ostream &os, const game::Combat &fight);
-int             xp_gain(game::Pokemon &poke, game::Pokemon &poke_adv);
+unsigned int    xp_gain(game::Pokemon &poke, game::Pokemon &poke_adv);
 
 #endif		/* !COMBAT_HPP_ */

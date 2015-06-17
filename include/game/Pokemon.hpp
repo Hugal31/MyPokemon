@@ -35,9 +35,9 @@ namespace	game
     friend class	boost::serialization::access;
 
     std::string		_nickname;
-    Id			_id;
+    Id			    _id;
     unsigned int	_level;
-    e_owner		_owner;
+    e_owner		    _owner;
     //unsigned int	_id_item_holding;
     unsigned int	_xp;
 
