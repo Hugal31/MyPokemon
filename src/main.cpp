@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:55:50 2015 Hugo Laloge
-** Last update Thu Jun 18 11:08:57 2015 Hugo Laloge
+** Last update Thu Jun 18 12:56:10 2015 Hugo Laloge
 */
 
 #include	<array>
@@ -21,6 +21,7 @@ namespace
     for (std::array<game::PokemonModel*, MAX_POKEMON>::iterator i = game::PokemonModel::pokedex.begin() + 1;
 	 i != game::PokemonModel::pokedex.end();
 	 i++)
+
       {
 	if (*i != nullptr)
 	  std::cout << **i << std::endl;

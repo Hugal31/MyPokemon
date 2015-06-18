@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Tue Jun 16 11:20:57 2015 Hippolyte QUIEF
-** Last update Thu Jun 18 11:03:55 2015 Hugo Laloge
+** Last update Thu Jun 18 11:12:05 2015 Hugo Laloge
 */
 
 #include        <iostream>
@@ -42,16 +42,6 @@ e_weather       Combat::get_weather() const
 e_play          Combat::get_play() const
 {
     return (_play);
-}
-
-const Pokemon   *Combat::get_own_pokemon() const
-{
-    return (_own_pokemon);
-}
-
-const Pokemon   *Combat::get_other_pokemon() const
-{
-    return (_other_pokemon);
 }
 
 /*
