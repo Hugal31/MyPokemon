@@ -1,11 +1,6 @@
 /*
-** id.hpp for MyPokemon in /home/laloge_h/rendu/MyPokemon/src/game/Skill
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Sun Jun 14 23:01:20 2015 Hugo Laloge
-** Last update Sun Jun 14 23:10:46 2015 Hugo Laloge
+** id.hpp
+** Created by laloge_h on 18 juin 06:00 2015.
 */
 
 #ifndef		ID_H_

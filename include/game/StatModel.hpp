@@ -1,11 +1,6 @@
 /*
-** StatModel.hpp for my_pokemon in /home/quief_h/rendu/MyPokemon/include/game
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Fri May 29 15:36:28 2015 Hippolyte QUIEF
-** Last update Tue Jun 16 15:22:03 2015 Hugo Laloge
+** StatModel.hpp
+** Created by laloge_h on 18 juin 06:02 2015.
 */
 
 #ifndef		STATMODEL_HPP_

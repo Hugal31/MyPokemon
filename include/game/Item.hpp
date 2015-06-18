@@ -1,11 +1,6 @@
 /*
-** Item.hpp for MyPokemon in /home/quief_h/rendu/MyPokemon/include/game
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Thu Jun  4 09:42:29 2015 Hippolyte QUIEF
-** Last update Tue Jun  9 16:01:02 2015 Hugo Laloge
+** Item.hpp
+** Created by laloge_h on 18 juin 06:00 2015.
 */
 
 #ifndef		ITEM_H_

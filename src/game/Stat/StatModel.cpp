@@ -1,11 +1,6 @@
 /*
-** StatModel.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Tue Jun 16 15:22:52 2015 Hugo Laloge
+** StatModel.cpp
+** Created by laloge_h on 18 juin 06:09 2015.
 */
 
 #include	<ostream>

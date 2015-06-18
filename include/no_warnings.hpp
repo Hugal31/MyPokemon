@@ -1,17 +1,12 @@
 /*
-** no_warnings.hpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Wed Jun  3 13:04:54 2015 Hugo Laloge
-** Last update Mon Jun 15 13:34:42 2015 Hugo Laloge
+** no_warnings.hpp
+** Created by laloge_h on 18 juin 06:03 2015.
 */
 
 #ifndef		NO_WARNINGS_H_
 # define	NO_WARNINGS_H_
 
-# ifdef	__clang__
+# ifdef        __clang__
 #  define       NO_WARNINGS						\
   _Pragma("clang diagnostic push")					\
   _Pragma("clang diagnostic ignored \"-Wweak-vtables\"")		\
@@ -30,7 +25,7 @@
   _Pragma("clang diagnostic ignored \"-Winconsistent-missing-override\"")
 #  define	WARNINGS	_Pragma("clang diagnostic pop")
 # else
-#  define       NO_WARNINGS
+#  define	NO_WARNINGS
 #  define	WARNINGS
 # endif
 

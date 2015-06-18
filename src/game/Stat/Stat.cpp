@@ -1,11 +1,6 @@
 /*
-** Stat.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Tue May 26 16:05:11 2015 Hugo Laloge
-** Last update Sun Jun 14 23:14:22 2015 Hugo Laloge
+** Stat.cpp
+** Created by laloge_h on 18 juin 06:08 2015.
 */
 
 #include	<cstdlib>
@@ -14,19 +9,19 @@
 
 using namespace	game;
 
-/*
-** @brief	Constructeur par defaut
-**		N'utiliser que pour avant une désérialisation
-*/
+/**
+ * @brief	Constructeur par defaut
+ *		N'utiliser que pour avant une désérialisation
+ */
 Stat::Stat() :
   _ev(0), _iv(0)
 {
 
 }
 
-/*
-** @brief	A utiliser lors de la creation d'un nouveau pokemon
-*/
+/**
+ * @brief	A utiliser lors de la creation d'un nouveau pokemon
+ */
 Stat::Stat(const StatModel &model) :
   StatModel(model),
   _ev(0), _iv(rand() % 32)
@@ -62,10 +57,10 @@ void	Stat::display(std::ostream &os) const
      << "Value at level 100 : " << calc_value(100) << std::endl;
 }
 
-/*
-** @brief	Constructeur par defaut
-**		N'utiliser que pour avant une désérialisation
-*/
+/**
+ * @brief	Constructeur par defaut
+ *		N'utiliser que pour avant une désérialisation
+ */
 StatHp::StatHp()
 {
 

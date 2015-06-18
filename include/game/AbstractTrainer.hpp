@@ -1,11 +1,6 @@
 /*
-** AbstractTrainer.hpp for MyPokemon in /home/laloge_h/rendu/MyPokemon/src/game/Player
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Thu Jun 18 13:45:25 2015 Hugo Laloge
-** Last update Thu Jun 18 15:43:57 2015 Hugo Laloge
+** AbstractTrainer.hpp
+** Created by laloge_h on 18 juin 05:59 2015.
 */
 
 #ifndef		ABSTRACTTRAINER_HPP_

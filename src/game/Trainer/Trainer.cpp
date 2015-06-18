@@ -1,11 +1,6 @@
 /*
-** Trainer.cpp for MyPokemon in /home/laloge_h/projets/Perso/C++/MyPokemon/src/game/Trainer
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Thu Jun 18 14:13:43 2015 Hugo Laloge
-** Last update Thu Jun 18 15:48:47 2015 Hugo Laloge
+** Trainer.cpp
+** Created by laloge_h on 18 juin 06:10 2015.
 */
 
 #include	"game/Trainer.hpp"

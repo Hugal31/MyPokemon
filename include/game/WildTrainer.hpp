@@ -1,11 +1,6 @@
 /*
-** WildTrainer.hpp for MyPokemon in /home/laloge_h/rendu/MyPokemon/src/game/Player
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Thu Jun 18 13:48:41 2015 Hugo Laloge
-** Last update Thu Jun 18 15:46:31 2015 Hugo Laloge
+** WildTrainer.hpp
+** Created by laloge_h on 18 juin 06:03 2015.
 */
 
 #ifndef		WILDTRAINER_H_

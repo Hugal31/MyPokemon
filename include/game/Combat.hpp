@@ -1,11 +1,6 @@
 /*
-** Combat.hpp for MyPokemon in /home/quief_h/rendu/MyPokemon
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Tue Jun 16 11:56:41 2015 Hippolyte QUIEF
-** Last update Thu Jun 18 15:47:22 2015 Hugo Laloge
+** Combat.hpp
+** Created by laloge_h on 18 juin 05:59 2015.
 */
 
 #ifndef		COMBAT_HPP_

@@ -5,10 +5,10 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Thu Jun 18 11:05:38 2015 Hugo Laloge
+## Last update Thu Jun 18 17:14:30 2015 Hugo Laloge
 ##
 
-NAME	=	my_pokemon
+NAME	=	MyPokemon
 
 include	sources.mk
 

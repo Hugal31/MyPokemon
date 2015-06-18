@@ -1,11 +1,6 @@
 /*
-** Item.cpp for MyPokemon in /home/quief_h/rendu/MyPokemon/src/game/Item
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Thu Jun  4 10:35:57 2015 Hippolyte QUIEF
-** Last update Wed Jun 10 16:45:01 2015 Hugo Laloge
+** Item.cpp
+** Created by laloge_h on 18 juin 06:07 2015.
 */
 
 #include	<ostream>

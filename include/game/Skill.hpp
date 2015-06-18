@@ -1,11 +1,6 @@
 /*
-** Skill.hpp for MyPokemon in /home/quief_h/rendu/MyPokemon/include/game
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Thu Jun 11 13:16:48 2015 Hippolyte QUIEF
-** Last update Sun Jun 14 22:52:23 2015 Hugo Laloge
+** Skill.hpp
+** Created by laloge_h on 18 juin 06:03 2015.
 */
 
 #ifndef		SKILL_HPP_

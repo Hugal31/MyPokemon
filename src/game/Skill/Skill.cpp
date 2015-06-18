@@ -1,11 +1,6 @@
 /*
-** Skill.cpp for MyPokemon in /home/quief_h/rendu/MyPokemon/src/game/Skill
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Fri Jun 12 14:51:40 2015 Hippolyte QUIEF
-** Last update Thu Jun 18 11:06:58 2015 Hugo Laloge
+** Skill.cpp
+** Created by laloge_h on 18 juin 06:08 2015.
 */
 
 #include	<ostream>

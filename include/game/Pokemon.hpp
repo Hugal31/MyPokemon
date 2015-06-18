@@ -1,15 +1,12 @@
 /*
-** Pokemon.hpp for MyPokemon in /home/quief_h/rendu/MyPokemon/include/game
-**
-** Made by Hippolyte QUIEF
-** Login   <quief_h@epitech.net>
-**
-** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Thu Jun 18 15:49:11 2015 Hugo Laloge
+** Pokemon.hpp
+** Created by laloge_h on 18 juin 06:00 2015.
 */
 
 #ifndef		POKEMON_HPP_
 # define	POKEMON_HPP_
+
+class ar;
 
 # include	<iostream>
 # include	<string>

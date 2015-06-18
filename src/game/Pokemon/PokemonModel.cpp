@@ -1,11 +1,6 @@
 /*
-** PokemonModel.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Thu Jun 18 13:02:12 2015 Hugo Laloge
+** PokemonModel.cpp
+** Created by laloge_h on 18 juin 06:08 2015.
 */
 
 #include	<fstream>

@@ -1,11 +1,6 @@
 /*
-** PokemonModel.hpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Thu Jun 18 13:02:03 2015 Hugo Laloge
+** PokemonModel.hpp
+** Created by laloge_h on 18 juin 06:01 2015.
 */
 
 #ifndef		POKEMON_MODEL_HPP_
@@ -123,7 +118,7 @@ namespace game
     unsigned short int	get_xp_base() const;
 
     /* Assesseurs */
-    void	    set_name(const std::string &name);
+    void		set_name(const std::string &name);
     void		set_species(const std::string &species);
     void		set_resum(const std::string &resum);
     void		set_types(const Type &type1, const Type &type2);

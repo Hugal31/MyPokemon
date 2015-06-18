@@ -1,11 +1,6 @@
 /*
-** Type.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon/src/game
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Fri May 29 18:25:30 2015 Hugo Laloge
-** Last update Mon Jun 15 01:30:26 2015 Hugo Laloge
+** Type.cpp
+** Created by laloge_h on 18 juin 06:10 2015.
 */
 
 #include	<string>

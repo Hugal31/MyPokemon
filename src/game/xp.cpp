@@ -145,12 +145,12 @@ namespace
   }
 }
 
-/*
-** @brief	Renvoie l'xp min a un level
-**
-** @param	level courrant
-** @return	xp min du level
-*/
+/**
+ * @brief	Renvoie l'xp min a un level
+ *
+ * @param	level courrant
+ * @return	xp min du level
+ */
 unsigned int		xp_from_level(unsigned int current_lv, unsigned int xp_max)
 {
   e_xp_type		type;
@@ -172,12 +172,12 @@ unsigned int		xp_from_level(unsigned int current_lv, unsigned int xp_max)
   return (xp);
 }
 
-/*
-** @brief	Renvoie le nombre de niveau gagne
-**
-** @param	level	Niveau actuel du pokemon
-** @return	Nombre de niveau gagne
-*/
+/**
+ * @brief	Renvoie le nombre de niveau gagne
+ *
+ * @param	level	Niveau actuel du pokemon
+ * @return	Nombre de niveau gagne
+ */
 unsigned int		nb_level_pass(unsigned int level, unsigned int current_xp,
 				      unsigned int xp_gain, unsigned int xp_max)
 {

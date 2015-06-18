@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
-my_pokemon
+MyPokemon
 
 # Temporary files
 *~

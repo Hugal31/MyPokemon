@@ -1,11 +1,6 @@
 /*
-** main.cpp for my_pokemon in /home/laloge_h/projets/Perso/C++/MyPokemon
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Tue May 26 15:55:50 2015 Hugo Laloge
-** Last update Thu Jun 18 15:37:32 2015 Hugo Laloge
+** main.cpp
+** Created by laloge_h on 18 juin 06:12 2015.
 */
 
 #include	<array>

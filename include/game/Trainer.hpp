@@ -1,11 +1,6 @@
 /*
-** Trainer.hpp for MyPokemon in /home/laloge_h/rendu/MyPokemon/src/game/Player
-**
-** Made by Hugo Laloge
-** Login   <laloge_h@epitech.net>
-**
-** Started on  Thu Jun 18 13:36:19 2015 Hugo Laloge
-** Last update Thu Jun 18 15:47:01 2015 Hugo Laloge
+** Trainer.hpp
+** Created by laloge_h on 18 juin 06:03 2015.
 */
 
 #ifndef		TRAINER_HPP_
