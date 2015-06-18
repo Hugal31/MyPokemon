@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Fri Jun 12 14:51:40 2015 Hippolyte QUIEF
-** Last update Mon Jun 15 01:33:03 2015 Hugo Laloge
+** Last update Thu Jun 18 11:06:58 2015 Hugo Laloge
 */
 
 #include	<ostream>
@@ -60,12 +60,12 @@ unsigned int	Skill::calc_dammage(const Pokemon &user,
 	    : (user.get_spa_value() / target.get_spd_value()))
 	 * _power + 2);
   // STAB
-  if (_type == PokemonModel::pokedex[user.get_id()].get_types()[0]
-      or _type == PokemonModel::pokedex[user.get_id()].get_types()[1])
+  if (_type == PokemonModel::pokedex[user.get_id()]->get_types()[0]
+      or _type == PokemonModel::pokedex[user.get_id()]->get_types()[1])
     dmg *= 1.5;
   // Types
-  dmg *= _type.get_strengh(PokemonModel::pokedex[user.get_id()].get_types()[0])
-    * _type.get_strengh(PokemonModel::pokedex[user.get_id()].get_types()[1]);
+  dmg *= _type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[0])
+    * _type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[1]);
   ///<TODO Critcal
   ///<TODO Other
   ///<TODO Random

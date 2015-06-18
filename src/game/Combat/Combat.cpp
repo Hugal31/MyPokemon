@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Tue Jun 16 11:20:57 2015 Hippolyte QUIEF
-** Last update Tue Jun 16 11:21:17 2015 Hippolyte QUIEF
+** Last update Thu Jun 18 11:03:55 2015 Hugo Laloge
 */
 
 #include        <iostream>
@@ -89,10 +89,10 @@ std::ostream    &operator<<(std::ostream &os, const Combat &fight)
 
 unsigned int    xp_gain(Pokemon &poke, Pokemon &poke_adv)
 {
-    unsigned int         xp;
-    float       a;
-    int         e;  //Lucky egg
-    float       s;  //xp_share, pokemon on the battle etc... cf poke_doc/xp.info
+    unsigned int	xp;
+    unsigned int	e;  //Lucky egg
+    float		a;
+    float		s;  //xp_share, pokemon on the battle etc... cf poke_doc/xp.info
 
     if (poke_adv.get_owner() == IS_WILD)
         a = 1;
@@ -100,6 +100,8 @@ unsigned int    xp_gain(Pokemon &poke, Pokemon &poke_adv)
         a = 1.5;
     e = 1;
     s = 1;
-    xp = ((a * PokemonModel::pokedex[poke_adv.get_id()].get_xp_base() * poke_adv.get_level()) / (5 * s)) * ((std::pow((2 * poke_adv.get_level()), 2.5) + 1) * e);
+    xp = ((a * PokemonModel::pokedex[poke_adv.get_id()]->get_xp_base()
+	   * poke_adv.get_level()) / static_cast<unsigned int>(5 * s))
+      * (static_cast<unsigned int>(std::pow((2 * poke_adv.get_level()), 2.5) + 1) * e);
     return (xp);
 }

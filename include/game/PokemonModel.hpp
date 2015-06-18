@@ -5,12 +5,13 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:57 2015 Hugo Laloge
-** Last update Tue Jun 16 16:18:07 2015 Hugo Laloge
+** Last update Thu Jun 18 10:56:13 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_MODEL_HPP_
 # define	POKEMON_MODEL_HPP_
 
+# include	<array>
 # include	<iostream>
 # include	<string>
 # include	<vector>
@@ -31,6 +32,8 @@ WARNINGS
 # ifdef	EDITOR
 #  include	"PokeEditWidget.hpp"
 # endif	/* EDITOR */
+
+# define	MAX_POKEMON	151
 
 namespace game
 {
@@ -94,7 +97,7 @@ namespace game
 
   public:
     /* Liste de tous les pokemons modeles */
-    static std::vector<PokemonModel>	pokedex;
+    static std::array<PokemonModel*, MAX_POKEMON>	pokedex;
     static void	init_pokedex();
 
     /* Constructeur */

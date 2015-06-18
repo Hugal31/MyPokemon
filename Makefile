@@ -5,7 +5,7 @@
 ## Login   <laloge_h@epitech.net>
 ##
 ## Started on  Wed May 27 07:45:50 2015 Hugo Laloge
-## Last update Wed Jun 10 17:03:20 2015 Hugo Laloge
+## Last update Thu Jun 18 11:05:38 2015 Hugo Laloge
 ##
 
 NAME	=	my_pokemon
@@ -41,7 +41,8 @@ ifeq ($(CLANG), 1)
 	CXX	=	clang++
 	CXXFLAGS+=	-Weverything -Wno-padded		\
 			-Wno-exit-time-destructors		\
-			-Wno-global-constructors
+			-Wno-global-constructors		\
+			-Wno-c++98-compat
 else
 	CXX	=	g++
 	CXXFLAGS	+=	-W -Wextra -Wall

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Tue Jun 16 14:42:39 2015 Hugo Laloge
+** Last update Thu Jun 18 11:08:32 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -17,7 +17,7 @@
 
 using namespace	game;
 
-std::vector<PokemonModel>	PokemonModel::pokedex;
+std::array<PokemonModel*, MAX_POKEMON>	PokemonModel::pokedex;
 
 PokemonModel::PokemonModel(unsigned int id) :
   _id(id), _xp_type(XP_ERRATIC), _heigth(10), _weight(10),
@@ -40,23 +40,23 @@ namespace
 
 void	PokemonModel::init_pokedex()
 {
-  bool	is_ok(true);
   Id	id(1);
 
-  pokedex.push_back(PokemonModel());
-  while (is_ok)
+  pokedex[0] = nullptr;
+  while (id < MAX_POKEMON)
     {
       std::ifstream	file(get_file_name(id));
       if (file)
 	{
-	  std::cerr << "Ouverture du pokemon " << id << std::endl;
-	  pokedex.push_back(PokemonModel());
+	  PokemonModel	*model;
+	  model = new PokemonModel;
 	  boost::archive::text_iarchive	ia(file);
-	  ia >> *(pokedex.end() - 1);
-	  id++;
+	  ia >> *model;
+	  pokedex[id] = model;
 	}
       else
-	is_ok = false;
+        pokedex[id] = nullptr;
+      id++;
     }
 }
 
