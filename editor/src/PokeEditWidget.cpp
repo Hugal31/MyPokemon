@@ -177,9 +177,8 @@ void	PokeEditWidget::init_layout()
     weight->setMaximum(2000.0);
     weight->setValue(10.0);
     catch_rate = new QSpinBox;
-    catch_rate->setMaximum(100);
-    catch_rate->setSuffix("%");
-    catch_rate->setValue(50);
+    catch_rate->setMaximum(255);
+    catch_rate->setValue(45);
     gender_rate = new QSpinBox;
     gender_rate->setMaximum(100);
     gender_rate->setSuffix("%");
