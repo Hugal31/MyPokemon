@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:26:27 2015 Hugo Laloge
-** Last update Thu Jun 18 11:08:32 2015 Hugo Laloge
+** Last update Thu Jun 18 13:02:12 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -17,7 +17,7 @@
 
 using namespace	game;
 
-std::array<PokemonModel*, MAX_POKEMON>	PokemonModel::pokedex;
+std::array<PokemonModel*, MAX_POKEMON_ID>	PokemonModel::pokedex;
 
 PokemonModel::PokemonModel(unsigned int id) :
   _id(id), _xp_type(XP_ERRATIC), _heigth(10), _weight(10),
@@ -43,7 +43,7 @@ void	PokemonModel::init_pokedex()
   Id	id(1);
 
   pokedex[0] = nullptr;
-  while (id < MAX_POKEMON)
+  while (id < MAX_POKEMON_ID)
     {
       std::ifstream	file(get_file_name(id));
       if (file)
