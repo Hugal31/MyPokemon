@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Wed Jun 10 11:20:38 2015 Hippolyte QUIEF
-** Last update Sun Jun 14 23:14:00 2015 Hugo Laloge
+** Last update Thu Jun 18 15:49:11 2015 Hugo Laloge
 */
 
 #ifndef		POKEMON_HPP_
@@ -35,9 +35,9 @@ namespace	game
     friend class	boost::serialization::access;
 
     std::string		_nickname;
-    Id			    _id;
+    Id			_id;
     unsigned int	_level;
-    e_owner		    _owner;
+    e_owner		_owner;
     //unsigned int	_id_item_holding;
     unsigned int	_xp;
 
@@ -78,7 +78,7 @@ namespace	game
     virtual	 ~Pokemon();
 
     void	generate(const PokemonModel &model,
-			  unsigned int level, e_owner owner);
+			 unsigned int level, e_owner owner);
 
     /* Ageteurs */
     const std::string	&get_nickname() const;

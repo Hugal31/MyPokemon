@@ -20,6 +20,12 @@ Pour l'editeur :
 
 Qt5
 
+TODO
+---
+
+Utiliser SQLite
+
+
 TITRE
 ===
 

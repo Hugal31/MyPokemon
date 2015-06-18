@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Thu Jun 18 12:58:12 2015 Hugo Laloge
-** Last update Thu Jun 18 13:45:47 2015 Hugo Laloge
+** Last update Thu Jun 18 15:46:56 2015 Hugo Laloge
 */
 
 #ifndef		PLAYER_HPP_
@@ -27,6 +27,8 @@ namespace game
   public:
     Player(const std::string &name, e_gender gender = GENDER_MALE);
     virtual	~Player();
+
+    void	set_pokemon(Pokemon *pokemon, unsigned int index);
   };
 }
 

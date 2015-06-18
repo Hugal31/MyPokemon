@@ -5,13 +5,16 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue May 26 15:55:50 2015 Hugo Laloge
-** Last update Thu Jun 18 13:02:22 2015 Hugo Laloge
+** Last update Thu Jun 18 15:37:32 2015 Hugo Laloge
 */
 
 #include	<array>
 #include	<cstdlib>
 #include	<iostream>
+#include	"game/Combat.hpp"
+#include	"game/Player.hpp"
 #include	"game/PokemonModel.hpp"
+#include	"game/WildTrainer.hpp"
 
 namespace
 {
@@ -27,6 +30,16 @@ namespace
 	  std::cout << **i << std::endl;
       }
   }
+
+  void	combat_test()
+  {
+    game::WildTrainer	wild(1, 5);
+    game::Player	player("Sacha");
+    player.set_pokemon(new game::Pokemon(*game::PokemonModel::pokedex[1], 5, game::IS_OWN), 0);
+    player.set_current_pokemon(0);
+    game::Combat	fight(&player, &wild);
+    fight.start();
+  }
 }
 
 int	main(void)
@@ -34,6 +47,7 @@ int	main(void)
   int	ret;
 
   init_game();
+  combat_test();
   ret = EXIT_SUCCESS;
   return (ret);
 }

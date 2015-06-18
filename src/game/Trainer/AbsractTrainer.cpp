@@ -5,7 +5,14 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Thu Jun 18 14:04:55 2015 Hugo Laloge
-** Last update Thu Jun 18 14:12:39 2015 Hugo Laloge
+** Last update Thu Jun 18 15:48:17 2015 Hugo Laloge
 */
 
 #include	"game/AbstractTrainer.hpp"
+
+using namespace	game;
+
+AbstractTrainer::~AbstractTrainer()
+{
+
+}

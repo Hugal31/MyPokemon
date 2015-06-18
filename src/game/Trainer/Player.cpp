@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Thu Jun 18 12:58:12 2015 Hugo Laloge
-** Last update Thu Jun 18 14:16:26 2015 Hugo Laloge
+** Last update Thu Jun 18 15:23:22 2015 Hugo Laloge
 */
 
 #include	<limits>
@@ -32,4 +32,9 @@ Player::Player(const std::string &name, e_gender gender) :
 Player::~Player()
 {
 
+}
+
+void	Player::set_pokemon(Pokemon *pokemon, unsigned int index)
+{
+  _pokemons[index] = pokemon;
 }

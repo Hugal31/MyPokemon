@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Tue Jun 16 11:20:57 2015 Hippolyte QUIEF
-** Last update Thu Jun 18 13:20:18 2015 Hugo Laloge
+** Last update Thu Jun 18 15:47:57 2015 Hugo Laloge
 */
 
 #include        <iostream>
@@ -13,12 +13,13 @@
 
 using namespace game;
 
-Combat::Combat() :
+Combat::Combat(AbstractTrainer *trainer1, AbstractTrainer *trainer2) :
     _nb_turn(0),
     _weather(WEATHER_CLEAR),
     _play(OWN_PLAY)
 {
-
+  _trainers[0] = trainer1;
+  _trainers[1] = trainer2;
 }
 
 Combat::~Combat()
@@ -26,8 +27,22 @@ Combat::~Combat()
 
 }
 
+/**
+** @brief	Lance le combat
+**
+** @return	Renvoie le gagnant
+*/
+e_play	Combat::start()
+{
+  while (!_trainers[0]->lose() && !_trainers[1]->lose())
+    {
+
+    }
+  return (OWN_PLAY);
+}
+
 /*
-** Ageteurs
+** Accesseurs
 */
 
 unsigned int    Combat::get_nb_turn() const

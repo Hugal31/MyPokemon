@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Thu Jun 18 13:48:41 2015 Hugo Laloge
-** Last update Thu Jun 18 14:18:05 2015 Hugo Laloge
+** Last update Thu Jun 18 15:46:31 2015 Hugo Laloge
 */
 
 #ifndef		WILDTRAINER_H_
@@ -25,8 +25,12 @@ namespace game
 
   public:
     WildTrainer(Id id, unsigned int level);
+
+    /* Attention : delete le pokemon */
     WildTrainer(Pokemon *poke);
     virtual	~WildTrainer();
+
+    bool	lose();
   };
 }
 
