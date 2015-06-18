@@ -132,7 +132,7 @@ void	PokeEditWidget::init_layout()
 
   /* Main info  */
   {
-    main_info_box = new QGroupBox(tr("Main informtions"));
+    main_info_box = new QGroupBox(tr("Main informations"));
 
     id = new QSpinBox;
     id->setMinimum(1);
