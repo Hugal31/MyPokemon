@@ -23,10 +23,10 @@ namespace game
   class		Trainer : public AbstractTrainer
   {
   protected:
-    e_gender				            _gender;
-    std::string				            _name;
+    e_gender				_gender;
+    std::string				_name;
     std::array<Pokemon*, MAX_POKEMON>	_pokemons;
-    Pokemon				                *_current_pokemon;
+    Pokemon				*_current_pokemon;
 
   public:
     Trainer(const std::string &name, e_gender gender = GENDER_MALE);

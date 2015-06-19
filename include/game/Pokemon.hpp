@@ -32,20 +32,20 @@ namespace	game
     friend class	boost::serialization::access;
 
     std::string		_nickname;
-    Id			    _id;
+    Id			_id;
     unsigned int	_level;
-    e_owner		    _owner;
+    e_owner		_owner;
     //unsigned int	_id_item_holding;
     unsigned int	_xp;
 
-    StatHp		    _hp;
-    Stat		    _atk;
-    Stat		    _def;
-    Stat		    _spa;
-    Stat		    _spd;
-    Stat		    _spe;
+    StatHp		_hp;
+    Stat		_atk;
+    Stat		_def;
+    Stat		_spa;
+    Stat		_spd;
+    Stat		_spe;
 
-    Skill		    _skills[4];
+    Skill		_skills[4];
 
     /* Serialisation */
 
@@ -78,10 +78,10 @@ namespace	game
 			 unsigned int level, e_owner owner);
 
     /* Ageteurs */
-    const std::string	&get_nickname() const;
-    Id			        get_id() const;
+    const std::string	    &get_nickname() const;
+    Id			    get_id() const;
     unsigned int	    get_level() const;
-    e_owner		        get_owner() const;
+    e_owner		    get_owner() const;
     //unsigned int	    get_id_item_holding() const;
     unsigned int	    get_xp() const;
     const Stat		    &get_hp() const;

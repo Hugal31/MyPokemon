@@ -62,7 +62,7 @@ namespace	game
     Type(const std::string &value);
 
     /* Accesseur */
-    e_type	            get_value() const;
+    e_type	        get_value() const;
     const std::string	&get_name() const;
     float               get_strengh(const Type &target) const;
 

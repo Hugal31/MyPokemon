@@ -60,9 +60,9 @@ namespace	game
     virtual int		use(Pokemon &user, Pokemon &target);
 
     /* Assesseurs */
-    const std::string	&get_name() const;
+    const std::string	    &get_name() const;
     unsigned int	    get_id() const;
-    Type		        get_type() const;
+    Type		    get_type() const;
     unsigned int	    get_power() const;
     unsigned int	    get_precision() const;
     unsigned int	    get_pp() const;

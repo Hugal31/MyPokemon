@@ -15,8 +15,8 @@ namespace game
   class		Player : public Trainer
   {
   protected:
-    Id					_id;
-    Id					_secret_id;
+    Id		_id;
+    Id		_secret_id;
     //unsigned int		_money;
 
   public:
