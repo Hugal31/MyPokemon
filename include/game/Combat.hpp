@@ -30,9 +30,9 @@ namespace game
     class		Combat
     {
     protected:
-      unsigned int	_nb_turn;
-      e_weather		_weather;
-      e_play		_play;
+      unsigned int	    _nb_turn;
+      e_weather		    _weather;
+      e_play		    _play;
       AbstractTrainer	*_trainers[2];
 
     public:

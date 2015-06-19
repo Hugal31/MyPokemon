@@ -62,10 +62,10 @@ namespace	game
     /* Accesseurs */
     const std::string	&get_name() const;
     const std::string	&get_resum() const;
-    unsigned int	get_id() const;
-    e_item_type		get_type() const;
-    unsigned int	get_buy_value() const;
-    unsigned int	get_sell_value() const;
+    unsigned int	    get_id() const;
+    e_item_type		    get_type() const;
+    unsigned int	    get_buy_value() const;
+    unsigned int	    get_sell_value() const;
 
     /* Assesseurs */
     void		set_name(const std::string &name);

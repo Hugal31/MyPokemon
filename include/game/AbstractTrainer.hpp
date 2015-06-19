@@ -13,7 +13,7 @@ namespace game
   protected:
 
   public:
-    virtual		~AbstractTrainer();
+    virtual		    ~AbstractTrainer();
     virtual bool	lose() = 0;
   };
 }

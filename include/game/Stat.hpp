@@ -3,7 +3,7 @@
 ** Created by laloge_h on 18 juin 06:01 2015.
 */
 
-#ifndef                STAT_HPP_
+#ifndef         STAT_HPP_
 # define        STAT_HPP_
 
 # include	<iostream>

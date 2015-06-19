@@ -44,25 +44,25 @@ namespace game
 # endif	/* EDITOR */
     friend class	boost::serialization::access;
 
-    std::string		_name;
-    std::string		_species;
-    std::string		_resum;
-    Type		    _types[2];
+    std::string		    _name;
+    std::string		    _species;
+    std::string		    _resum;
+    Type		        _types[2];
     /* Pourquoi stocker l'id ? */
-    unsigned int	_id;
-    e_xp_type		_xp_type;
+    unsigned int	    _id;
+    e_xp_type		    _xp_type;
     unsigned short int	_heigth;
     unsigned short int	_weight;
     unsigned short int	_catch_rate;
     unsigned short int	_gender_rate;
     //map_localisation
 
-    StatModel		_hp;
-    StatModel		_atk;
-    StatModel		_def;
-    StatModel		_spa;
-    StatModel		_spd;
-    StatModel		_spe;
+    StatModel		    _hp;
+    StatModel		    _atk;
+    StatModel		    _def;
+    StatModel		    _spa;
+    StatModel		    _spd;
+    StatModel		    _spe;
     unsigned short int	_xp_base;
 
     /* Serialisation */
@@ -102,19 +102,19 @@ namespace game
     const std::string	&get_name() const;
     const std::string	&get_species() const;
     const std::string	&get_resum() const;
-    const Type		*get_types() const;
-    unsigned int	get_id() const;
-    e_xp_type		get_xp_type() const;
+    const Type		    *get_types() const;
+    unsigned int	    get_id() const;
+    e_xp_type		    get_xp_type() const;
     unsigned short int	get_heigth() const;
     unsigned short int	get_weight() const;
     unsigned short int	get_catch_rate() const;
     unsigned short int	get_gender_rate() const;
-    const StatModel	&get_hp() const;
-    const StatModel	&get_atk() const;
-    const StatModel	&get_def() const;
-    const StatModel	&get_spa() const;
-    const StatModel	&get_spd() const;
-    const StatModel	&get_spe() const;
+    const StatModel	    &get_hp() const;
+    const StatModel	    &get_atk() const;
+    const StatModel	    &get_def() const;
+    const StatModel	    &get_spa() const;
+    const StatModel	    &get_spd() const;
+    const StatModel	    &get_spe() const;
     unsigned short int	get_xp_base() const;
 
     /* Assesseurs */

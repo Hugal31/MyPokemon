@@ -3,7 +3,7 @@
 ** Created by quief_h on 18 juin 06:03 2015.
 */
 
-#ifndef		XP_HPP_
+#ifndef		    XP_HPP_
 # define        XP_HPP_
 
 # include	<string>

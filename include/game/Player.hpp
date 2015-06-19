@@ -17,7 +17,7 @@ namespace game
   protected:
     Id					_id;
     Id					_secret_id;
-    //unsigned int			_money;
+    //unsigned int		_money;
 
   public:
     Player(const std::string &name, e_gender gender = GENDER_MALE);
