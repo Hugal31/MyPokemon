@@ -33,3 +33,9 @@ void	Player::set_pokemon(Pokemon *pokemon, unsigned int index)
 {
   _pokemons[index] = pokemon;
 }
+
+void	Player::play(Combat *fight, AbstractTrainer *opponent)
+{
+  (void)fight;
+  (void)opponent;
+}

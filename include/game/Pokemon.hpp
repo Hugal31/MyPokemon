@@ -78,24 +78,24 @@ namespace	game
 			 unsigned int level, e_owner owner);
 
     /* Ageteurs */
-    const std::string	&get_nickname() const;
-    Id			get_id() const;
-    unsigned int	get_level() const;
-    e_owner		get_owner() const;
-    //unsigned int	get_id_item_holding() const;
-    unsigned int	get_xp() const;
-    const Stat		&get_hp() const;
-    const Stat		&get_atk() const;
-    const Stat		&get_def() const;
-    const Stat		&get_spa() const;
-    const Stat		&get_spd() const;
-    const Stat		&get_spe() const;
-    unsigned int	get_atk_value() const;
-    unsigned int	get_def_value() const;
-    unsigned int	get_spa_value() const;
-    unsigned int	get_spd_value() const;
-    unsigned int	get_spe_value() const;
-    const Skill		*get_skills() const;
+    const std::string	    &get_nickname() const;
+    Id			    get_id() const;
+    unsigned int	    get_level() const;
+    e_owner		    get_owner() const;
+    //unsigned int	    get_id_item_holding() const;
+    unsigned int	    get_xp() const;
+    const Stat		    &get_hp() const;
+    const Stat		    &get_atk() const;
+    const Stat		    &get_def() const;
+    const Stat		    &get_spa() const;
+    const Stat		    &get_spd() const;
+    const Stat		    &get_spe() const;
+    unsigned int	    get_atk_value() const;
+    unsigned int	    get_def_value() const;
+    unsigned int	    get_spa_value() const;
+    unsigned int	    get_spd_value() const;
+    unsigned int	    get_spe_value() const;
+    const Skill		    *get_skills() const;
 
     /* Asseteurs */
     void		set_nickname(const std::string &nickname);

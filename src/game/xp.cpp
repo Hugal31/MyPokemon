@@ -5,7 +5,7 @@
 ** Login   <quief_h@epitech.net>
 **
 ** Started on  Tue Jun  9 11:34:28 2015 Hippolyte QUIEF
-** Last update Thu Jun 11 14:13:22 2015 Hippolyte QUIEF
+** Last update Wed Jun 24 13:58:34 2015 Hippolyte QUIEF
 */
 
 #include	<cmath>
@@ -148,7 +148,7 @@ namespace
 /**
  * @brief	Renvoie l'xp min a un level
  *
- * @param	level courrant
+ * @param	current_lv	niveau actuel du pokemon
  * @return	xp min du level
  */
 unsigned int		xp_from_level(unsigned int current_lv, unsigned int xp_max)

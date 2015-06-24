@@ -30,7 +30,7 @@ namespace	game
 
     std::string		_name;
     unsigned int	_id;
-    Type		_type;
+    Type		    _type;
     unsigned int	_power;
     unsigned int	_precision;
     unsigned int	_pp;
@@ -60,13 +60,13 @@ namespace	game
     virtual int		use(Pokemon &user, Pokemon &target);
 
     /* Assesseurs */
-    const std::string	&get_name() const;
-    unsigned int	get_id() const;
-    Type		get_type() const;
-    unsigned int	get_power() const;
-    unsigned int	get_precision() const;
-    unsigned int	get_pp() const;
-    e_skill_type	get_skill_type() const;
+    const std::string	    &get_name() const;
+    unsigned int	    get_id() const;
+    Type		    get_type() const;
+    unsigned int	    get_power() const;
+    unsigned int	    get_precision() const;
+    unsigned int	    get_pp() const;
+    e_skill_type	    get_skill_type() const;
 
     /*  Asseteurs */
     void		set_name(const std::string &name);

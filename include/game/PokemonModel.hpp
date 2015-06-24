@@ -44,26 +44,26 @@ namespace game
 # endif	/* EDITOR */
     friend class	boost::serialization::access;
 
-    std::string		_name;
-    std::string		_species;
-    std::string		_resum;
+    std::string		    _name;
+    std::string		    _species;
+    std::string		    _resum;
     Type		    _types[2];
     /* Pourquoi stocker l'id ? */
-    unsigned int	_id;
-    e_xp_type		_xp_type;
-    unsigned short int	_heigth;
-    unsigned short int	_weight;
-    unsigned short int	_catch_rate;
-    unsigned short int	_gender_rate;
+    unsigned int	    _id;
+    e_xp_type		    _xp_type;
+    unsigned short int	    _heigth;
+    unsigned short int	    _weight;
+    unsigned short int	    _catch_rate;
+    unsigned short int	    _gender_rate;
     //map_localisation
 
-    StatModel		_hp;
-    StatModel		_atk;
-    StatModel		_def;
-    StatModel		_spa;
-    StatModel		_spd;
-    StatModel		_spe;
-    unsigned short int	_xp_base;
+    StatModel		    _hp;
+    StatModel		    _atk;
+    StatModel		    _def;
+    StatModel		    _spa;
+    StatModel		    _spd;
+    StatModel		    _spe;
+    unsigned short int	    _xp_base;
 
     /* Serialisation */
 
@@ -103,8 +103,8 @@ namespace game
     const std::string	&get_species() const;
     const std::string	&get_resum() const;
     const Type		*get_types() const;
-    unsigned int	get_id() const;
-    e_xp_type		get_xp_type() const;
+    unsigned int        get_id() const;
+    e_xp_type   	get_xp_type() const;
     unsigned short int	get_heigth() const;
     unsigned short int	get_weight() const;
     unsigned short int	get_catch_rate() const;

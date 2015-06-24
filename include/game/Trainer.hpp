@@ -35,6 +35,7 @@ namespace game
     virtual void	set_current_pokemon(unsigned int index);
 
     bool	lose();
+    Pokemon	*get_current_pokemon();
   };
 }
 

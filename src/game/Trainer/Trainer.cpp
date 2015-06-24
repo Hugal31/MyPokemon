@@ -28,10 +28,17 @@ void	Trainer::set_current_pokemon(unsigned int index)
 
 bool	Trainer::lose()
 {
+  unsigned int  nb_pokemon_alive = 0;
+
   for (unsigned int i(0); i < MAX_POKEMON; i++)
     {
-      if (_pokemons[i]->get_hp().get_value() != 0)
-	return (false);
+      if (_pokemons[i] != nullptr and _pokemons[i]->get_hp().get_value() != 0)
+	nb_pokemon_alive++;
     }
-  return (true);
+  return (nb_pokemon_alive);
+}
+
+Pokemon *Trainer::get_current_pokemon()
+{
+  return _current_pokemon;
 }

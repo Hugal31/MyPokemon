@@ -6,10 +6,12 @@
 #ifndef		ABSTRACTTRAINER_HPP_
 # define	ABSTRACTTRAINER_HPP_
 
-#include <game/Pokemon.hpp>
+# include	<game/Pokemon.hpp>
 
 namespace game
 {
+  class		Combat;
+
   class		AbstractTrainer
   {
   protected:
@@ -19,6 +21,7 @@ namespace game
 
     virtual bool	lose() = 0;
     virtual Pokemon	*get_current_pokemon() = 0;
+    virtual void	play(Combat *fight, AbstractTrainer *opponent) = 0;
   };
 }
 

@@ -6,6 +6,7 @@
 
 #include	<stdexcept>
 #include	<string>
+#include	"game/Combat.hpp"
 #include	"game/WildTrainer.hpp"
 
 using namespace	game;
@@ -30,11 +31,21 @@ WildTrainer::~WildTrainer()
   delete _pokemon;
 }
 
-/*
-** @brief	Retourn vrai si le pokemon n'a plus de HP.
-**		La fuite n'est pas admise !
-*/
+/**
+ * @brief	Retourn vrai si le pokemon n'a plus de HP.
+ *		La fuite n'est pas admise !
+ */
 bool	WildTrainer::lose()
 {
   return (_pokemon->get_hp().get_value() == 0);
+}
+
+Pokemon *WildTrainer::get_current_pokemon()
+{
+  return _pokemon;
+}
+
+void  WildTrainer::play(Combat *fight, AbstractTrainer *opponent)
+{
+
 }
