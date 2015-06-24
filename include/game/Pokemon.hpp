@@ -45,7 +45,7 @@ namespace	game
     Stat		_spd;
     Stat		_spe;
 
-    Skill		_skills[4];
+    Skill		*_skills[4];
 
     /* Serialisation */
 
@@ -95,16 +95,17 @@ namespace	game
     unsigned int	    get_spa_value() const;
     unsigned int	    get_spd_value() const;
     unsigned int	    get_spe_value() const;
-    const Skill		    *get_skills() const;
+    Skill                   *get_skill(unsigned int index);
 
     /* Asseteurs */
     void		set_nickname(const std::string &nickname);
     void		set_owner(e_owner owner);
     // void		set_id_item_value(unsigned int id_item_holding);
   };
+
+  std::ostream	&operator<<(std::ostream &os, const Pokemon &poke);
 }
 
-std::ostream	&operator<<(std::ostream &os, const game::Pokemon &poke);
 
 
 #endif		/* !POKEMON_HPP_ */

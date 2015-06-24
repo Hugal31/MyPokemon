@@ -17,7 +17,8 @@ Pokemon::Pokemon() :
   _owner(IS_WILD),
   _xp(0)
 {
-
+  for (int i = 0; i < 4; i++)
+    _skills[i] = nullptr;
 }
 
 Pokemon::Pokemon(const PokemonModel &model, unsigned int level, e_owner owner) :
@@ -33,7 +34,8 @@ Pokemon::Pokemon(const PokemonModel &model, unsigned int level, e_owner owner) :
   _spd(model.get_spd()),
   _spe(model.get_spe())
 {
-
+  for (int i = 0; i < 4; i++)
+    _skills[i] = nullptr;
 }
 
 Pokemon::~Pokemon()
@@ -100,34 +102,34 @@ const Stat &Pokemon::get_spe() const
   return (_spe);
 }
 
-unsigned int        Pokemon::get_atk_value() const
+unsigned int	Pokemon::get_atk_value() const
 {
   return (_atk.get_value());
 }
 
-unsigned int        Pokemon::get_def_value() const
+unsigned int	Pokemon::get_def_value() const
 {
   return (_def.get_value());
 }
 
-unsigned int        Pokemon::get_spa_value() const
+unsigned int	Pokemon::get_spa_value() const
 {
   return (_spa.get_value());
 }
 
-unsigned int        Pokemon::get_spd_value() const
+unsigned int	Pokemon::get_spd_value() const
 {
   return (_spd.get_value());
 }
 
-unsigned int        Pokemon::get_spe_value() const
+unsigned int	Pokemon::get_spe_value() const
 {
   return (_spe.get_value());
 }
 
-const Skill *Pokemon::get_skills() const
+Skill	*Pokemon::get_skill(unsigned int index)
 {
-  return (_skills);
+  return (_skills[index]);
 }
 
 /*
@@ -148,7 +150,7 @@ void        Pokemon::set_owner(e_owner owner)
 ** Surcharges externes
 */
 
-std::ostream &operator<<(std::ostream &os, const Pokemon &pokemon)
+std::ostream &game::operator<<(std::ostream &os, const Pokemon &pokemon)
 {
   os << "Id : " << pokemon.get_id() << std::endl
   << "Nickname : " << pokemon.get_nickname() << std::endl

@@ -5,12 +5,12 @@
 
 #include	"game/Trainer.hpp"
 
-using namespace	game;
+using namespace        game;
 
 Trainer::Trainer(const std::string &name, e_gender gender) :
   _gender(gender),
   _name(name),
-  _current_pokemon(nullptr)
+  _current_pokemon(0)
 {
   for (unsigned int i = 0; i < MAX_POKEMON; i++)
     _pokemons[i] = nullptr;
@@ -21,24 +21,24 @@ Trainer::~Trainer()
 
 }
 
-void	Trainer::set_current_pokemon(unsigned int index)
+void        Trainer::set_current_pokemon(unsigned int index)
 {
-  _current_pokemon = _pokemons[index];
+  _current_pokemon = index;
 }
 
-bool	Trainer::lose()
+bool        Trainer::lose()
 {
-  unsigned int  nb_pokemon_alive = 0;
+  unsigned int nb_pokemon_alive = 0;
 
   for (unsigned int i(0); i < MAX_POKEMON; i++)
-    {
-      if (_pokemons[i] != nullptr and _pokemons[i]->get_hp().get_value() != 0)
-	nb_pokemon_alive++;
-    }
+  {
+    if (_pokemons[i] != nullptr and _pokemons[i]->get_hp().get_value() != 0)
+      nb_pokemon_alive++;
+  }
   return (nb_pokemon_alive);
 }
 
 Pokemon *Trainer::get_current_pokemon()
 {
-  return _current_pokemon;
+  return _pokemons[_current_pokemon];
 }

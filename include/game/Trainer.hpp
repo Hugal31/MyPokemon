@@ -26,13 +26,13 @@ namespace game
     e_gender				_gender;
     std::string				_name;
     std::array<Pokemon*, MAX_POKEMON>	_pokemons;
-    Pokemon				*_current_pokemon;
+    unsigned int			_current_pokemon;
 
   public:
     Trainer(const std::string &name, e_gender gender = GENDER_MALE);
     virtual	~Trainer();
 
-    virtual void	set_current_pokemon(unsigned int index);
+    void	set_current_pokemon(unsigned int index);
 
     bool	lose();
     Pokemon	*get_current_pokemon();

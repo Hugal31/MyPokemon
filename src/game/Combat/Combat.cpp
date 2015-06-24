@@ -5,6 +5,7 @@
 
 #include	<iostream>
 #include	"game/Combat.hpp"
+#include	"game/Pokemon.hpp"
 
 using namespace game;
 
@@ -27,14 +28,19 @@ Combat::~Combat()
  *
  * @return	Renvoie le gagnant
  */
-e_play		Combat::start()
+e_play                Combat::start()
 {
-  e_play	current_trainer;
+  e_play current_trainer = OWN_PLAY;
+  Pokemon	*pokemons[2];
 
+  std::cout << "Your pokemon : " << *_trainers[0]->get_current_pokemon() << std::endl
+  << "Oponnent's pokemon : " << *_trainers[1]->get_current_pokemon() << std::endl;
   while (!_trainers[0]->lose() && !_trainers[1]->lose())
   {
-    	_trainers[current_trainer]->play(this, _trainers[(current_trainer + 1) % 2]);
-	current_trainer = static_cast<e_play>((current_trainer + 1) % 2);
+    _trainers[current_trainer]->play(this, _trainers[(current_trainer + 1) % 2]);
+    current_trainer = static_cast<e_play>((current_trainer + 1) % 2);
+    std::cout << "Your pokemon : " << *_trainers[0]->get_current_pokemon() << std::endl
+    << "Oponnent's pokemon : " << *_trainers[1]->get_current_pokemon() << std::endl;
   }
   return ((!_trainers[0]->lose()) ? OWN_PLAY : OTHER_PLAY);
 }
@@ -43,17 +49,17 @@ e_play		Combat::start()
 ** Accesseurs
 */
 
-unsigned int	Combat::get_nb_turn() const
+unsigned int        Combat::get_nb_turn() const
 {
   return (_nb_turn);
 }
 
-e_weather	Combat::get_weather() const
+e_weather        Combat::get_weather() const
 {
   return (_weather);
 }
 
-e_play	Combat::get_play() const
+e_play        Combat::get_play() const
 {
   return (_play);
 }
@@ -62,12 +68,12 @@ e_play	Combat::get_play() const
 ** Asseteurs
 */
 
-void	Combat::set_weather(e_weather weather)
+void        Combat::set_weather(e_weather weather)
 {
   _weather = weather;
 }
 
-void	Combat::set_play(e_play play)
+void        Combat::set_play(e_play play)
 {
   _play = play;
 }
@@ -76,7 +82,7 @@ void	Combat::set_play(e_play play)
 ** Surcharge operateur
 */
 
-std::ostream	&operator<<(std::ostream &os, const Combat &fight)
+std::ostream &operator<<(std::ostream &os, const Combat &fight)
 {
   os << "Nombre Tours" << fight.get_nb_turn() << std::endl
   << "Temps" << fight.get_weather() << std::endl
@@ -91,13 +97,13 @@ std::ostream	&operator<<(std::ostream &os, const Combat &fight)
 ** Fonction
 */
 
-unsigned int	xp_gain(Pokemon &poke, Pokemon &poke_adv)
+unsigned int xp_gain(Pokemon &poke, Pokemon &poke_adv)
 {
-  (void)	poke;
-  unsigned int	xp;
-  unsigned int	e;  //Lucky egg
-  float		a;
-  float		s;  //xp_share, pokemon on the battle etc... cf poke_doc/xp.info
+  (void) poke;
+  unsigned int xp;
+  unsigned int e;  //Lucky egg
+  float a;
+  float s;  //xp_share, pokemon on the battle etc... cf poke_doc/xp.info
 
   a = (poke_adv.get_owner() == IS_WILD) ? 1 : 1.5;
   e = 1;

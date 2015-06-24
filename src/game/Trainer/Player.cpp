@@ -20,8 +20,6 @@ Player::Player(const std::string &name, e_gender gender) :
 
   _id = id_distrib(generator);
   _secret_id = secret_id_distrib(generator);
-  for (unsigned int i = 0; i < MAX_POKEMON; i++)
-    _pokemons[i] = nullptr;
 }
 
 Player::~Player()
@@ -36,6 +34,9 @@ void	Player::set_pokemon(Pokemon *pokemon, unsigned int index)
 
 void	Player::play(Combat *fight, AbstractTrainer *opponent)
 {
+  std::string	cmd;
+  std::cin >> cmd;
+  std::cin.clear();
   (void)fight;
   (void)opponent;
 }

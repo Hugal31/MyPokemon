@@ -21,7 +21,7 @@ NO_WARNINGS
 WARNINGS
 
 # include	"Type.hpp"
-# include	"StatModel.hpp"
+# include "StatModel.hpp"
 # include	"xp.hpp"
 
 # ifdef	EDITOR

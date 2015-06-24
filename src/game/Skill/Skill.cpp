@@ -26,9 +26,9 @@ Skill::~Skill()
 
 }
 
-/*
-** @TODO	Rajouter en parametre les stats du combat actuel
-*/
+/**
+ * @TODO	Rajouter en parametre les stats du combat actuel
+ */
 int	Skill::use(Pokemon &user, Pokemon &target)
 {
   (void)user;

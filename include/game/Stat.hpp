@@ -7,7 +7,7 @@
 # define        STAT_HPP_
 
 # include	<iostream>
-# include	"StatModel.hpp"
+# include	"game/StatModel.hpp"
 
 # include	"no_warnings.hpp"
 

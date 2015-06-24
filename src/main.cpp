@@ -28,7 +28,7 @@ namespace
 
   void	combat_test()
   {
-    game::WildTrainer	wild(1, 5);
+    game::WildTrainer	wild(2, 5);
     game::Player	player("Sacha");
     player.set_pokemon(new game::Pokemon(*game::PokemonModel::pokedex[1], 5, game::IS_OWN), 0);
     player.set_current_pokemon(0);
