@@ -27,11 +27,14 @@ Combat::~Combat()
  *
  * @return	Renvoie le gagnant
  */
-e_play        Combat::start()
+e_play		Combat::start()
 {
+  e_play	current_trainer;
+
   while (!_trainers[0]->lose() && !_trainers[1]->lose())
   {
-
+    	_trainers[current_trainer].play(*this, _trainers[(current_trainer + 1) % 2].get_current_pokemon());
+	current_trainer = (current_trainer + 1) % 2;
   }
   return ((!_trainers[0]->lose()) ? OWN_PLAY : OTHER_PLAY);
 }

@@ -6,6 +6,8 @@
 #ifndef		ABSTRACTTRAINER_HPP_
 # define	ABSTRACTTRAINER_HPP_
 
+#include <game/Pokemon.hpp>
+
 namespace game
 {
   class		AbstractTrainer
@@ -14,7 +16,9 @@ namespace game
 
   public:
     virtual		~AbstractTrainer();
+
     virtual bool	lose() = 0;
+    virtual Pokemon	*get_current_pokemon() = 0;
   };
 }
 

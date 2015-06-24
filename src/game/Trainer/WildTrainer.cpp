@@ -1,7 +1,8 @@
 /*
 ** WildTrainer.cpp
-** Created by laloge_h on 18 juin 06:10 2015.
+** Created by laloge_h on 18 juin 06:43 2015.
 */
+
 
 #include	<stdexcept>
 #include	<string>
