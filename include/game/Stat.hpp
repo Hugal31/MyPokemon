@@ -54,6 +54,10 @@ namespace game
     void init_value(unsigned int level);
 
     unsigned int get_value() const;
+
+    unsigned int	operator=(unsigned int value);
+    unsigned int	operator+=(unsigned int value);
+    unsigned int	operator-=(unsigned int value);
   };
 
   class StatHp : public Stat

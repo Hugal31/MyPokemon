@@ -78,6 +78,7 @@ namespace	game
 			 unsigned int level, e_owner owner);
 
     void	init_stats();
+    void	take_damages(unsigned int damages);
 
     /* Ageteurs */
     const std::string	    &get_nickname() const;

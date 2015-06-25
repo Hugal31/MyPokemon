@@ -57,6 +57,25 @@ void	Stat::display(std::ostream &os) const
      << "Value at level 100 : " << calc_value(100) << std::endl;
 }
 
+unsigned int	Stat::operator=(unsigned int value)
+{
+  _value = value;
+  return _value;
+}
+
+unsigned int	Stat::operator+=(unsigned int value)
+{
+  _value += value;
+}
+
+unsigned int	Stat::operator-=(unsigned int value)
+{
+  if (_value > value)
+    _value -= value;
+  else
+    _value = 0;
+}
+
 /**
  * @brief	Constructeur par defaut
  *		N'utiliser que pour avant une désérialisation

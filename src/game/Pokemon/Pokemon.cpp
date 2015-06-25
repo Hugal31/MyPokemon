@@ -54,6 +54,11 @@ void	Pokemon::init_stats()
   _spe.init_value(_level);
 }
 
+void	Pokemon::take_damages(unsigned int damages)
+{
+  _hp -= damages;
+}
+
 /*
 ** Accesseurs
 */

@@ -31,16 +31,19 @@ Skill::~Skill()
  */
 int	Skill::use(Pokemon &user, Pokemon &target)
 {
-  (void)user;
-  (void)target;
   int	ret;
 
   ret = -1;
   if (_pp > 0)
     {
+      unsigned int damages = calc_dammage(user, target);
+      std::cout << "Damages : " << damages << std::endl;
+      target.take_damages(damages);
       _pp--;
       ret = 0;
     }
+  else
+    std::cerr << "No enough PP" << std::endl;
   return (ret);
 }
 
