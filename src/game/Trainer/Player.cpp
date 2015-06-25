@@ -32,10 +32,24 @@ void	Player::set_pokemon(Pokemon *pokemon, unsigned int index)
   _pokemons[index] = pokemon;
 }
 
+namespace
+{
+  void	display_skills(Pokemon &poke)
+  {
+    for (unsigned int i = 0; i < 4; i++)
+      if (poke.get_skill(i) != nullptr)
+	std::cout << i + 1 << " : " << *poke.get_skill(i) << std::endl;
+  }
+}
+
 void	Player::play(Combat *fight, AbstractTrainer *opponent)
 {
+  display_skills(*get_current_pokemon());
   std::string	cmd;
-  std::cin >> cmd;
+  while (std::cin >> cmd)
+  {
+    break;
+  }
   std::cin.clear();
   (void)fight;
   (void)opponent;

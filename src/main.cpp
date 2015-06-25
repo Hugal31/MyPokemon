@@ -30,7 +30,8 @@ namespace
   {
     game::WildTrainer	wild(2, 5);
     game::Player	player("Sacha");
-    player.set_pokemon(new game::Pokemon(*game::PokemonModel::pokedex[1], 5, game::IS_OWN), 0);
+    game::Pokemon	player_pokemon(*game::PokemonModel::pokedex[1], 5, game::IS_OWN);
+    player.set_pokemon(&player_pokemon, 0);
     player.set_current_pokemon(0);
     game::Combat	fight(&player, &wild);
     fight.start();

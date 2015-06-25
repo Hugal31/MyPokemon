@@ -23,24 +23,32 @@ Combat::~Combat()
 
 }
 
+void  Combat::display_combat_info()
+{
+  system("clear");
+  std::cout << "Your Pokemon" << "\t\t\t" << "Opponent's Pokemon" << std::endl
+  << _trainers[0]->get_current_pokemon()->get_nickname() << "\t\t\t\t"
+  << _trainers[1]->get_current_pokemon()->get_nickname() << std::endl
+  << "Hp : " << _trainers[0]->get_current_pokemon()->get_hp().get_value() << "\t\t\t\t\t"
+  << "Hp : " << _trainers[1]->get_current_pokemon()->get_hp().get_value() << std::endl;
+}
+
 /**
  * @brief	Lance le combat
  *
  * @return	Renvoie le gagnant
  */
-e_play                Combat::start()
+e_play		Combat::start()
 {
-  e_play current_trainer = OWN_PLAY;
+  e_play	current_trainer = OWN_PLAY;
   Pokemon	*pokemons[2];
 
-  std::cout << "Your pokemon : " << *_trainers[0]->get_current_pokemon() << std::endl
-  << "Oponnent's pokemon : " << *_trainers[1]->get_current_pokemon() << std::endl;
+  display_combat_info();
   while (!_trainers[0]->lose() && !_trainers[1]->lose())
   {
     _trainers[current_trainer]->play(this, _trainers[(current_trainer + 1) % 2]);
     current_trainer = static_cast<e_play>((current_trainer + 1) % 2);
-    std::cout << "Your pokemon : " << *_trainers[0]->get_current_pokemon() << std::endl
-    << "Oponnent's pokemon : " << *_trainers[1]->get_current_pokemon() << std::endl;
+    display_combat_info();
   }
   return ((!_trainers[0]->lose()) ? OWN_PLAY : OTHER_PLAY);
 }

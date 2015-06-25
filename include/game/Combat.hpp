@@ -35,6 +35,8 @@ namespace game
       e_play		_play;
       AbstractTrainer	*_trainers[2];
 
+      void		display_combat_info();
+
     public:
       Combat(AbstractTrainer *trainer1, AbstractTrainer *trainer2);
       virtual ~Combat();
