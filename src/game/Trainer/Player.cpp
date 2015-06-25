@@ -46,12 +46,19 @@ namespace
 void	Player::play(Combat *fight, AbstractTrainer *opponent)
 {
   display_skills(*get_current_pokemon());
-  std::string	cmd;
-  while (std::cin >> cmd)
+  unsigned int	cmd = 0;
+  while (1)
   {
-    break;
+    if ((std::cin >> cmd).fail() or cmd == 0 or cmd > 4)
+      std::cerr << "Out of range" << std::endl;
+    else if (get_current_pokemon()->get_skill(cmd - 1) == nullptr)
+      std::cerr << "Not a skill" << std::endl;
+    else
+      break;
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   }
-  std::cin.clear();
-  (void)fight;
-  (void)opponent;
+  Skill *skill = get_current_pokemon()->get_skill(cmd - 1);
+  std::cout << get_current_pokemon()->get_nickname() << " utilise " << skill->get_name() << std::endl;
+  skill->use(*get_current_pokemon(), *opponent->get_current_pokemon());
 }
