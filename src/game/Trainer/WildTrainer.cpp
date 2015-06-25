@@ -30,6 +30,11 @@ WildTrainer::~WildTrainer()
   delete _pokemon;
 }
 
+void	WildTrainer::init_pokemons()
+{
+  _pokemon->init_stats();
+}
+
 /**
  * @brief	Retourn vrai si le pokemon n'a plus de HP.
  *		La fuite n'est pas admise !
@@ -60,6 +65,6 @@ void  WildTrainer::play(Combat *fight, AbstractTrainer *opponent)
   {
     Skill *selected_skill;
     while ((selected_skill = _pokemon->get_skill(distribution(generator))) != nullptr);
-    selected_skill->use(*_pokemon, *opponent->get_current_pokemon());
+    //selected_skill->use(*_pokemon, *opponent->get_current_pokemon());
   }
 }

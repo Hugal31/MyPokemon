@@ -77,6 +77,8 @@ namespace	game
     void	generate(const PokemonModel &model,
 			 unsigned int level, e_owner owner);
 
+    void	init_stats();
+
     /* Ageteurs */
     const std::string	    &get_nickname() const;
     Id			    get_id() const;

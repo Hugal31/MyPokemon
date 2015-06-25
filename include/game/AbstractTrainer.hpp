@@ -19,6 +19,7 @@ namespace game
   public:
     virtual		~AbstractTrainer();
 
+    virtual void	init_pokemons() = 0;
     virtual bool	lose() = 0;
     virtual Pokemon	*get_current_pokemon() = 0;
     virtual void	play(Combat *fight, AbstractTrainer *opponent) = 0;

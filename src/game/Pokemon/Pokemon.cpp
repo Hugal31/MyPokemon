@@ -44,6 +44,16 @@ Pokemon::~Pokemon()
     delete _skills[i];
 }
 
+void	Pokemon::init_stats()
+{
+  _hp.init_value(_level);
+  _atk.init_value(_level);
+  _def.init_value(_level);
+  _spa.init_value(_level);
+  _spd.init_value(_level);
+  _spe.init_value(_level);
+}
+
 /*
 ** Accesseurs
 */

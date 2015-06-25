@@ -21,6 +21,15 @@ Trainer::~Trainer()
 
 }
 
+void	Trainer::init_pokemons()
+{
+  for (unsigned int i = 0; i < MAX_POKEMON; i++)
+  {
+    if (_pokemons[i] != nullptr)
+      _pokemons[i]->init_stats();
+  }
+}
+
 void        Trainer::set_current_pokemon(unsigned int index)
 {
   _current_pokemon = index;
@@ -35,7 +44,7 @@ bool        Trainer::lose()
     if (_pokemons[i] != nullptr and _pokemons[i]->get_hp().get_value() != 0)
       nb_pokemon_alive++;
   }
-  return (nb_pokemon_alive);
+  return (!nb_pokemon_alive);
 }
 
 Pokemon *Trainer::get_current_pokemon()

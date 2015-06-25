@@ -25,6 +25,7 @@ namespace game
     WildTrainer(Pokemon *poke);
     virtual	~WildTrainer();
 
+    void	init_pokemons();
     bool	lose();
     Pokemon	*get_current_pokemon();
     void	play(Combat *fight, AbstractTrainer *opponent);

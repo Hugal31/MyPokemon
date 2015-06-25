@@ -32,8 +32,8 @@ namespace game
     Trainer(const std::string &name, e_gender gender = GENDER_MALE);
     virtual	~Trainer();
 
+    void	init_pokemons();
     void	set_current_pokemon(unsigned int index);
-
     bool	lose();
     Pokemon	*get_current_pokemon();
   };

@@ -41,8 +41,9 @@ void  Combat::display_combat_info()
 e_play		Combat::start()
 {
   e_play	current_trainer = OWN_PLAY;
-  Pokemon	*pokemons[2];
 
+  _trainers[0]->init_pokemons();
+  _trainers[1]->init_pokemons();
   display_combat_info();
   while (!_trainers[0]->lose() && !_trainers[1]->lose())
   {
