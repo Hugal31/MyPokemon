@@ -116,6 +116,31 @@ void		Skill::set_name(const std::string &name)
   _name = name;
 }
 
+void            Skill::set_id(unsigned int id)
+{
+  _id = id;
+}
+
+void            Skill::set_type(Type type)
+{
+  _type = type;
+}
+
+void            Skill::set_power(unsigned int power)
+{
+  _power = power;
+}
+
+void            Skill::set_precision(unsigned int precision)
+{
+  _precision = precision;
+}
+
+void            Skill::set_pp(unsigned int pp)
+{
+  _pp = pp;
+}
+
 void		Skill::set_skill_type(e_skill_type skill_type)
 {
   _skill_type = skill_type;

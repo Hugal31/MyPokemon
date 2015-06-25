@@ -70,6 +70,11 @@ namespace	game
 
     /*  Asseteurs */
     void		set_name(const std::string &name);
+    void                set_id(unsigned int id);
+    void                set_type(Type type);
+    void                set_power(unsigned int power);
+    void                set_precision(unsigned int precision);
+    void                set_pp(unsigned int pp);
     void		set_skill_type(e_skill_type skill_type);
   };
 }
