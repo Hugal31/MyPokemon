@@ -100,6 +100,7 @@ namespace	game
     /* Asseteurs */
     void		set_nickname(const std::string &nickname);
     void		set_owner(e_owner owner);
+    void		set_skill(unsigned int i, Skill *skill);
     // void		set_id_item_value(unsigned int id_item_holding);
   };
 

@@ -36,9 +36,10 @@ namespace
 {
   void	display_skills(Pokemon &poke)
   {
+    std::cout << "Skills : " << std::endl;
     for (unsigned int i = 0; i < 4; i++)
       if (poke.get_skill(i) != nullptr)
-	std::cout << i + 1 << " : " << *poke.get_skill(i) << std::endl;
+	std::cout << i + 1 << " : " << poke.get_skill(i)->get_name() << std::endl;
   }
 }
 

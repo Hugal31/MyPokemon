@@ -40,7 +40,8 @@ Pokemon::Pokemon(const PokemonModel &model, unsigned int level, e_owner owner) :
 
 Pokemon::~Pokemon()
 {
-
+  for (int i = 0; i < 4; i++)
+    delete _skills[i];
 }
 
 /*
@@ -136,14 +137,20 @@ Skill	*Pokemon::get_skill(unsigned int index)
 ** Asseteur
 */
 
-void        Pokemon::set_nickname(const std::string &nickname)
+void	Pokemon::set_nickname(const std::string &nickname)
 {
   _nickname = nickname;
 }
 
-void        Pokemon::set_owner(e_owner owner)
+void	Pokemon::set_owner(e_owner owner)
 {
   _owner = owner;
+}
+
+void	Pokemon::set_skill(unsigned int i, Skill *skill)
+{
+  delete _skills[i];
+  _skills[i] = skill;
 }
 
 /*

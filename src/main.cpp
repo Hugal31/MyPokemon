@@ -31,6 +31,8 @@ namespace
     game::WildTrainer	wild(2, 5);
     game::Player	player("Sacha");
     game::Pokemon	player_pokemon(*game::PokemonModel::pokedex[1], 5, game::IS_OWN);
+    game::Skill		skill;
+    player_pokemon.set_skill(0, &skill);
     player.set_pokemon(&player_pokemon, 0);
     player.set_current_pokemon(0);
     game::Combat	fight(&player, &wild);
