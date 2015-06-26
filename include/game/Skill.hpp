@@ -23,6 +23,15 @@ namespace	game
       IS_SPECIAL
     };
 
+  enum	e_result
+    {
+      RESULT_FAIL,
+      RESULT_NO_ENOUGH_PP,
+      RESULT_SUCCESS,
+      RESULT_VERY_EFFECTIVE,
+      RESULT_NOT_EFFECTIVE
+    };
+
   class			Skill
   {
   private:
@@ -57,7 +66,7 @@ namespace	game
     Skill();
     virtual		~Skill();
 
-    virtual int		use(Pokemon &user, Pokemon &target);
+    virtual e_result	use(Pokemon &user, Pokemon &target);
 
     /* Assesseurs */
     const std::string	&get_name() const;

@@ -3,6 +3,7 @@
 ** Created by laloge_h on 18 juin 06:08 2015.
 */
 
+#include	<cmath>
 #include	<ostream>
 #include	"game/Pokemon.hpp"
 #include	"game/PokemonModel.hpp"
@@ -29,21 +30,44 @@ Skill::~Skill()
 /**
  * @TODO	Rajouter en parametre les stats du combat actuel
  */
-int	Skill::use(Pokemon &user, Pokemon &target)
+e_result	Skill::use(Pokemon &user, Pokemon &target)
 {
-  int	ret;
+  e_result	ret;
 
-  ret = -1;
+  ret = RESULT_FAIL;
   if (_pp > 0)
     {
       unsigned int damages = calc_dammage(user, target);
-      std::cout << "Damages : " << damages << std::endl;
+      std::cerr << "Damages : " << damages << std::endl;
       target.take_damages(damages);
       _pp--;
-      ret = 0;
+      switch (static_cast<unsigned int>(_type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[0])
+					* _type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[1]) * 10))
+	{
+	case 0:
+	  ret = RESULT_FAIL;
+	  break;
+
+	case 2:
+	case 5:
+	  ret = RESULT_NOT_EFFECTIVE;
+	  break;
+
+	case 10:
+	default:
+	  ret = RESULT_SUCCESS;
+	  break;
+
+	case 20:
+	case 40:
+	  ret = RESULT_VERY_EFFECTIVE;
+	}
     }
   else
-    std::cerr << "No enough PP" << std::endl;
+    {
+      std::cerr << "No enough PP" << std::endl;
+      ret = RESULT_NO_ENOUGH_PP;
+    }
   return (ret);
 }
 

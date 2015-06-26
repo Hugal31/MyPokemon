@@ -66,6 +66,7 @@ unsigned int	Stat::operator=(unsigned int value)
 unsigned int	Stat::operator+=(unsigned int value)
 {
   _value += value;
+  return _value;
 }
 
 unsigned int	Stat::operator-=(unsigned int value)
@@ -74,6 +75,7 @@ unsigned int	Stat::operator-=(unsigned int value)
     _value -= value;
   else
     _value = 0;
+  return _value;
 }
 
 /**

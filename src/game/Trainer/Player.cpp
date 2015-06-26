@@ -60,5 +60,27 @@ void	Player::play(Combat *fight, AbstractTrainer *opponent)
   }
   Skill *skill = get_current_pokemon()->get_skill(cmd - 1);
   std::cout << get_current_pokemon()->get_nickname() << " utilise " << skill->get_name() << std::endl;
-  skill->use(*get_current_pokemon(), *opponent->get_current_pokemon());
+  switch (skill->use(*get_current_pokemon(), *opponent->get_current_pokemon()))
+    {
+    case RESULT_FAIL:
+      std::cout << "Mais il rate !";
+      break;
+
+    case RESULT_NO_ENOUGH_PP:
+      std::cout << "Pas assez de PP";
+      break;
+
+    case RESULT_SUCCESS:
+      std::cout << "Il reussit";
+      break;
+
+    case RESULT_VERY_EFFECTIVE:
+      std::cout << "C'est tres efficace !";
+      break;
+
+    case RESULT_NOT_EFFECTIVE:
+      std::cout << "Ce n'est pas tres efficace...";
+      break;
+    }
+  std::cout << std::endl;
 }
