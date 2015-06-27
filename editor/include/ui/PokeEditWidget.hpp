@@ -5,15 +5,15 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 16:21:42 2015 Hugo Laloge
+** Last update Sat Jun 27 14:15:00 2015 Hugo Laloge
 */
 
-#ifndef		POKEEDITWIDGET_H_
-# define	POKEEDITWIDGET_H_
+#ifndef		POKEEDITWIDGET_HPP_
+# define	POKEEDITWIDGET_HPP_
 
 # include	"no_warnings.hpp"
 NO_WARNINGS
-# include    <QtWidgets>
+# include	<QtWidgets>
 WARNINGS
 
 namespace game
@@ -22,33 +22,24 @@ namespace game
 }
 
 #include	"EditWidget.hpp"
-#include	"game/Type.hpp"
+#include	"TypeWidget.hpp"
 #include	"game/xp.hpp"
 
 namespace
 {
-  class	TypeWidget : public QComboBox
-  {
-  public:
-    TypeWidget(QWidget *parent = NULL) : QComboBox(parent)
-      {
-	for (unsigned int i(game::TYPE_NONE); i < game::TYPE_END; i++)
-	  addItem(QString(game::Type::names[i].c_str()));
-      }
-  };
 
   class	XpWidget : public QComboBox
   {
   public:
     XpWidget(QWidget *parent = NULL) : QComboBox(parent)
-      {
-	addItem(tr("ERRATIC (600000)"));
-	addItem(tr("FAST (800000)"));
-	addItem(tr("MED_FAST (1000000)"));
-	addItem(tr("MED_SLOW (1059860)"));
-	addItem(tr("SLOW (1250000)"));
-	addItem(tr("FLUCTUATING (1640000)"));
-      }
+    {
+      addItem(tr("ERRATIC (600000)"));
+      addItem(tr("FAST (800000)"));
+      addItem(tr("MED_FAST (1000000)"));
+      addItem(tr("MED_SLOW (1059860)"));
+      addItem(tr("SLOW (1250000)"));
+      addItem(tr("FLUCTUATING (1640000)"));
+    }
 
     game::e_xp_type	get_value() const
     {
@@ -152,4 +143,4 @@ namespace	ui
   };
 }
 
-#endif		/* !POKEEDITWIDGET_H_ */
+#endif		/* !POKEEDITWIDGET_HPP_ */

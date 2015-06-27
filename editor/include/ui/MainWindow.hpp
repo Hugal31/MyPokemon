@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 11:36:24 2015 Hugo Laloge
-** Last update Tue Jun 16 13:11:50 2015 Hugo Laloge
+** Last update Sat Jun 27 16:19:13 2015 Hugo Laloge
 */
 
 #ifndef		MAINWINDOW_H_
@@ -30,6 +30,7 @@ namespace ui
 
     public slots:
       void	new_pokemon();
+      void	new_skill();
       void	open_file();
       void	save_file();
 
