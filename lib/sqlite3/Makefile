@@ -1,7 +1,6 @@
-NAME	=	sqlite.a
+NAME	=	libsqlite3.a
 
-SRCS	=	src/shell.c						\
-		src/sqlite3.c						\
+SRCS	=	src/sqlite3.c						\
 
 OBJS	=	$(SRCS:.c=.o)
 
