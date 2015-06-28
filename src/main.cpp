@@ -47,7 +47,16 @@ namespace
     player.set_current_pokemon(0);
     wild.get_current_pokemon()->set_skill(0, new game::Skill(charge));
     game::Combat	fight(&player, &wild);
-    fight.start();
+    switch (fight.start())
+      {
+      case game::OWN_PLAY:
+	std::cout << "Vous avez gagné !";
+	break;
+      case game::OTHER_PLAY:
+	std::cout << "Vous avez perdu !";
+	  break;
+      }
+    std::cout << std::endl;
   }
 }
 

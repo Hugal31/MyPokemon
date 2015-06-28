@@ -83,4 +83,6 @@ void	Player::play(Combat *fight, AbstractTrainer *opponent)
       break;
     }
   std::cout << std::endl;
+  std::cin.get();
+  std::cin.get();
 }

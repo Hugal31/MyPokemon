@@ -53,18 +53,35 @@ void  WildTrainer::play(Combat *fight, AbstractTrainer *opponent)
 {
   std::default_random_engine	generator;
   std::uniform_int_distribution<unsigned int>	distribution(0, 3);
-  bool	have_skill = false;
 
-  for (int i = 0; i < 4; i++)
-    if (_pokemon->get_skill(i) != nullptr)
-    {
-      have_skill = true;
-      break;
-    }
-  if (have_skill)
+  if (!_pokemon->get_skills().empty())
   {
     Skill *selected_skill;
-    while ((selected_skill = _pokemon->get_skill(distribution(generator))) != nullptr);
-    //selected_skill->use(*_pokemon, *opponent->get_current_pokemon());
+    while ((selected_skill = _pokemon->get_skill(distribution(generator))) == nullptr);
+    std::cout << _pokemon->get_nickname() << " utilise "
+	      << selected_skill->get_name() << std::endl;
+    switch (selected_skill->use(*_pokemon, *opponent->get_current_pokemon()))
+    {
+    case RESULT_FAIL:
+      std::cout << "Mais il rate !";
+      break;
+
+    case RESULT_NO_ENOUGH_PP:
+      std::cout << "Pas assez de PP";
+      break;
+
+    case RESULT_SUCCESS:
+      std::cout << "Il reussit";
+      break;
+
+    case RESULT_VERY_EFFECTIVE:
+      std::cout << "C'est tres efficace !";
+      break;
+
+    case RESULT_NOT_EFFECTIVE:
+      std::cout << "Ce n'est pas tres efficace...";
+      break;
+    }
+    std::cin.get();
   }
 }

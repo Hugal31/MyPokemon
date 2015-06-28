@@ -17,7 +17,7 @@ Pokemon::Pokemon() :
   _owner(IS_WILD),
   _xp(0)
 {
-  for (int i = 0; i < 4; i++)
+  for (unsigned int i = 0; i < 4; i++)
     _skills[i] = nullptr;
 }
 
@@ -34,13 +34,13 @@ Pokemon::Pokemon(const PokemonModel &model, unsigned int level, e_owner owner) :
   _spd(model.get_spd()),
   _spe(model.get_spe())
 {
-  for (int i = 0; i < 4; i++)
+  for (unsigned int i = 0; i < 4; i++)
     _skills[i] = nullptr;
 }
 
 Pokemon::~Pokemon()
 {
-  for (int i = 0; i < 4; i++)
+  for (unsigned int i = 0; i < 4; i++)
     delete _skills[i];
 }
 
@@ -146,6 +146,11 @@ unsigned int	Pokemon::get_spe_value() const
 Skill	*Pokemon::get_skill(unsigned int index)
 {
   return (_skills[index]);
+}
+
+std::array<Skill*, 4>	&Pokemon::get_skills()
+{
+  return (_skills);
 }
 
 /*
