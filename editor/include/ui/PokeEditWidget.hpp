@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Sat Jun 27 14:15:00 2015 Hugo Laloge
+** Last update Sun Jun 28 21:39:54 2015 Hugo Laloge
 */
 
 #ifndef		POKEEDITWIDGET_HPP_
@@ -127,9 +127,6 @@ namespace	ui
     QSpinBox	*xp_base;
 
     void	init_layout(void);
-    void	open_poke(const QString &filename);
-    void	load_poke(const game::PokemonModel &poke);
-    void        save_poke(game::PokemonModel &poke);
 
   public slots:
 
@@ -140,6 +137,10 @@ namespace	ui
     ~PokeEditWidget();
 
     void	save();
+    void	open_file(const QString &filename);
+    void	load_poke(const game::PokemonModel &poke);
+    void        save_poke(game::PokemonModel &poke);
+
   };
 }
 

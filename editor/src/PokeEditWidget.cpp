@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 14:26:11 2015 Hugo Laloge
-** Last update Tue Jun 16 16:22:34 2015 Hugo Laloge
+** Last update Sun Jun 28 21:58:58 2015 Hugo Laloge
 */
 
 #include	<fstream>
@@ -25,7 +25,7 @@ PokeEditWidget::PokeEditWidget(const QString &filename,
 			       QWidget *parent, Qt::WindowFlags f) :
   PokeEditWidget(parent, f)
 {
-  open_poke(filename);
+  open_file(filename);
 }
 
 PokeEditWidget::~PokeEditWidget()
@@ -33,7 +33,7 @@ PokeEditWidget::~PokeEditWidget()
 
 }
 
-void	PokeEditWidget::open_poke(const QString &filename)
+void	PokeEditWidget::open_file(const QString &filename)
 {
   std::ifstream	file(filename.toStdString());
   game::PokemonModel	poke;
@@ -54,8 +54,8 @@ void	PokeEditWidget::load_poke(const game::PokemonModel &poke)
   species->setText(poke.get_species().c_str());
   resum->setPlainText(poke.get_resum().c_str());
   xp->set_value(poke.get_xp_type());
-  types[0]->setCurrentText(poke.get_types()[0].get_name().c_str());
-  types[1]->setCurrentText(poke.get_types()[1].get_name().c_str());
+  types[0]->setCurrentIndex(poke.get_types()[0].get_value());
+  types[1]->setCurrentIndex(poke.get_types()[1].get_value());
   height->setValue(static_cast<double>(poke.get_heigth()) / 10);
   weight->setValue(static_cast<double>(poke.get_weight()) / 10);
   catch_rate->setValue(poke.get_catch_rate());

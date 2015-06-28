@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Tue Jun 16 12:18:33 2015 Hugo Laloge
-** Last update Tue Jun 16 15:28:06 2015 Hugo Laloge
+** Last update Sun Jun 28 21:39:32 2015 Hugo Laloge
 */
 
 #ifndef		EDITWIDGET_H_
@@ -30,6 +30,7 @@ namespace ui
     ~EditWidget();
 
     virtual void	save() = 0;
+    virtual void	open_file(const QString &filename) = 0;
   };
 }
 

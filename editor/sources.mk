@@ -4,4 +4,5 @@ SRCS	=	src/main.cpp						\
 		src/mainwindow.cpp					\
 		../src/game/Pokemon/PokemonModel.cpp			\
 		../src/game/Type.cpp					\
+		../src/game/Skill/Skill.cpp				\
 		../src/game/Stat/StatModel.cpp				\

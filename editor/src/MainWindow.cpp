@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Mon Jun 15 11:34:52 2015 Hugo Laloge
-** Last update Sat Jun 27 16:21:28 2015 Hugo Laloge
+** Last update Sun Jun 28 21:35:02 2015 Hugo Laloge
 */
 
 #include	<iostream>
@@ -93,9 +93,9 @@ namespace
     {
       e_file_type	type;
 
-      if (fileName == QString("*.poke"))
+      if (fileName.endsWith(".poke"))
 	type = FILE_POKEMON;
-      else if (fileName == QString("*.skill"))
+      else if (fileName.endsWith(".skill"))
 	type = FILE_SKILL;
       else
 	type = FILE_UNKNONWED;
@@ -113,7 +113,7 @@ void	MainWindow::open_file()
   //On determine le type de fichier ouvert
   QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
 						  "../ressources",
-						  tr("MyPoke (*.poke, *.skill)"));
+						  tr("Pokemon (*.poke)"));
   switch (get_file_type(fileName))
     {
     case FILE_POKEMON:

@@ -5,7 +5,7 @@
 ** Login   <laloge_h@epitech.net>
 **
 ** Started on  Sat Jun 27 14:05:48 2015 Hugo Laloge
-** Last update Sat Jun 27 16:16:46 2015 Hugo Laloge
+** Last update Sun Jun 28 21:59:45 2015 Hugo Laloge
 */
 
 #ifndef		SKILLEDITWIDGET_HPP_
@@ -41,9 +41,10 @@ namespace	ui
     SkillEditWidget(const QString &filename,
 				     QWidget *parent = 0, Qt::WindowFlags f = 0);
     ~SkillEditWidget();
-    void	open_skill(const QString &filename);
+    void	open_file(const QString &filename);
     void	load_skill(const game::Skill &skill);
     void	save();
+    void	save_skill(game::Skill &skill);
   };
 }
 
