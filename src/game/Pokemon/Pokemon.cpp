@@ -88,6 +88,11 @@ unsigned int        Pokemon::get_xp() const
   return (_xp);
 }
 
+const Type	*Pokemon::get_types() const
+{
+  return (PokemonModel::pokedex[_id]->get_types());
+}
+
 const Stat &Pokemon::get_hp() const
 {
   return (_hp);
