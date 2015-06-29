@@ -34,6 +34,7 @@ namespace
     game::Pokemon	player_pokemon(*game::PokemonModel::pokedex[4], 5, game::IS_OWN);
     game::Skill		charge;
     game::Skill		flameche;
+    game::Skill		fouet;
 
     charge.set_name("Charge");
     charge.set_id(33);
@@ -51,11 +52,20 @@ namespace
     flameche.set_pp(25);
     flameche.set_skill_type(game::IS_SPECIAL);
 
+    fouet.set_name("Fouet Liane");
+    fouet.set_id(22);
+    fouet.set_type(game::TYPE_GRASS);
+    fouet.set_power(45);
+    fouet.set_precision(100);
+    fouet.set_pp(25);
+    fouet.set_skill_type(game::IS_PHYSIC);
+
     player_pokemon.set_skill(0, new game::Skill(charge));
     player_pokemon.set_skill(1, new game::Skill(flameche));
     player.set_pokemon(&player_pokemon, 0);
     player.set_current_pokemon(0);
     wild.get_current_pokemon()->set_skill(0, new game::Skill(charge));
+    wild.get_current_pokemon()->set_skill(1, new game::Skill(fouet));
     game::Combat	fight(&player, &wild);
     switch (fight.start())
       {

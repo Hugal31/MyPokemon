@@ -79,7 +79,7 @@ namespace	game
     void	init_stats();
     void	take_damages(unsigned int damages);
 
-    /* Ageteurs */
+    /* Accesseurs */
     const std::string	&get_nickname() const;
     Id			get_id() const;
     unsigned int	get_level() const;
