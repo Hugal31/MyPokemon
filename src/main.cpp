@@ -31,8 +31,9 @@ namespace
   {
     game::WildTrainer	wild(2, 5);
     game::Player	player("Sacha");
-    game::Pokemon	player_pokemon(*game::PokemonModel::pokedex[1], 5, game::IS_OWN);
+    game::Pokemon	player_pokemon(*game::PokemonModel::pokedex[4], 5, game::IS_OWN);
     game::Skill		charge;
+    game::Skill		flameche;
 
     charge.set_name("Charge");
     charge.set_id(33);
@@ -42,7 +43,16 @@ namespace
     charge.set_precision(100);
     charge.set_skill_type(game::IS_PHYSIC);
 
+    flameche.set_name("Flameche");
+    flameche.set_id(52);
+    flameche.set_type(game::TYPE_FIRE);
+    flameche.set_power(40);
+    flameche.set_precision(100);
+    flameche.set_pp(25);
+    flameche.set_skill_type(game::IS_SPECIAL);
+
     player_pokemon.set_skill(0, new game::Skill(charge));
+    player_pokemon.set_skill(1, new game::Skill(flameche));
     player.set_pokemon(&player_pokemon, 0);
     player.set_current_pokemon(0);
     wild.get_current_pokemon()->set_skill(0, new game::Skill(charge));

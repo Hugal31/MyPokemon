@@ -92,6 +92,7 @@ namespace	game
     const Stat		&get_spa() const;
     const Stat		&get_spd() const;
     const Stat		&get_spe() const;
+    const Type		*get_types() const;
     unsigned int	get_atk_value() const;
     unsigned int	get_def_value() const;
     unsigned int	get_spa_value() const;

@@ -41,8 +41,8 @@ e_result	Skill::use(Pokemon &user, Pokemon &target)
       std::cerr << "Damages : " << damages << std::endl;
       target.take_damages(damages);
       _pp--;
-      switch (static_cast<unsigned int>(_type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[0])
-					* _type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[1]) * 10))
+      switch (static_cast<unsigned int>(_type.get_strengh(target.get_types()[0])
+					* _type.get_strengh(target.get_types()[1]) * 10))
 	{
 	case 0:
 	  ret = RESULT_FAIL;
@@ -61,11 +61,11 @@ e_result	Skill::use(Pokemon &user, Pokemon &target)
 	case 20:
 	case 40:
 	  ret = RESULT_VERY_EFFECTIVE;
+	  break;
 	}
     }
   else
     {
-      std::cerr << "No enough PP" << std::endl;
       ret = RESULT_NO_ENOUGH_PP;
     }
   return (ret);
@@ -82,12 +82,12 @@ unsigned int	Skill::calc_dammage(const Pokemon &user,
 	    : (user.get_spa_value() / target.get_spd_value()))
 	 * _power + 2);
   // STAB
-  if (_type == PokemonModel::pokedex[user.get_id()]->get_types()[0]
-      or _type == PokemonModel::pokedex[user.get_id()]->get_types()[1])
+  if (_type == user.get_types()[0]
+      or _type == user.get_types()[1])
     dmg *= 1.5;
   // Types
-  dmg *= _type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[0])
-    * _type.get_strengh(PokemonModel::pokedex[user.get_id()]->get_types()[1]);
+  dmg *= _type.get_strengh(target.get_types()[0])
+    * _type.get_strengh(target.get_types()[1]);
   ///<TODO Critcal
   ///<TODO Other
   ///<TODO Random

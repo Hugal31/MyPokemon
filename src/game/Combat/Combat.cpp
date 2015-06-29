@@ -27,9 +27,11 @@ void  Combat::display_combat_info()
 {
   system("clear");
   std::cout << "Your Pokemon" << "\t\t\t" << "Opponent's Pokemon" << std::endl
-  << _trainers[0]->get_current_pokemon()->get_nickname() << "\t\t\t\t"
+  << _trainers[0]->get_current_pokemon()->get_nickname() << "\t\t\t"
   << _trainers[1]->get_current_pokemon()->get_nickname() << std::endl
-  << "Hp : " << _trainers[0]->get_current_pokemon()->get_hp().get_value() << "\t\t\t\t\t"
+  << "Level : " << _trainers[0]->get_current_pokemon()->get_level() << "\t\t\t"
+  << "Level : " << _trainers[1]->get_current_pokemon()->get_level() << std::endl
+  << "Hp : " << _trainers[0]->get_current_pokemon()->get_hp().get_value() << "\t\t\t\t"
   << "Hp : " << _trainers[1]->get_current_pokemon()->get_hp().get_value() << std::endl;
 }
 
